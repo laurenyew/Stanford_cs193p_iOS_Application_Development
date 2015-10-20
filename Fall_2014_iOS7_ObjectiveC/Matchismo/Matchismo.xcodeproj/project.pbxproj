@@ -58,8 +58,6 @@
 		B977A1DC1BD487F300EA3305 /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
-				B977A1E01BD487F300EA3305 /* CardGameAppDelegate.h */,
-				B977A1E11BD487F300EA3305 /* CardGameAppDelegate.m */,
 				B977A1E31BD487F300EA3305 /* CardGameViewController.h */,
 				B977A1E41BD487F300EA3305 /* CardGameViewController.m */,
 				B977A1E61BD487F300EA3305 /* Main.storyboard */,
@@ -74,6 +72,8 @@
 		B977A1DD1BD487F300EA3305 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B977A1E01BD487F300EA3305 /* CardGameAppDelegate.h */,
+				B977A1E11BD487F300EA3305 /* CardGameAppDelegate.m */,
 				B977A1DE1BD487F300EA3305 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -298,6 +298,7 @@
 				B977A1F31BD487F300EA3305 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
