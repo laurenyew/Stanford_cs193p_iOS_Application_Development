@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Card Game View Controller-->
@@ -16,52 +17,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMf-Cs-oNd">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="A♣︎" backgroundImage="cardFront">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tck-0C-P6w"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flips: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkH-vu-uXP">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="20" y="541" width="360" height="39"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMf-Cs-oNd">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" backgroundImage="cardBack">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tck-0C-P6w"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tkH-vu-uXP" secondAttribute="bottom" constant="20" id="H0W-xG-A1N"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="tkH-vu-uXP" secondAttribute="leading" id="cbn-Dg-T5d"/>
                             <constraint firstItem="HMf-Cs-oNd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iz8-9g-bqT"/>
                             <constraint firstItem="HMf-Cs-oNd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jS7-pR-YB5"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="HMf-Cs-oNd"/>
                                 <exclude reference="tkH-vu-uXP"/>
+                                <exclude reference="HMf-Cs-oNd"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="iz8-9g-bqT"/>
                                 <exclude reference="jS7-pR-YB5"/>
+                                <exclude reference="cbn-Dg-T5d"/>
+                                <exclude reference="H0W-xG-A1N"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="HMf-Cs-oNd"/>
                                 <include reference="tkH-vu-uXP"/>
+                                <include reference="HMf-Cs-oNd"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="iz8-9g-bqT"/>
                                 <include reference="jS7-pR-YB5"/>
+                                <include reference="cbn-Dg-T5d"/>
+                                <include reference="H0W-xG-A1N"/>
                             </mask>
                         </variation>
                     </view>
@@ -75,6 +82,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cardFront" width="64" height="96"/>
+        <image name="cardBack" width="64" height="96"/>
     </resources>
 </document>
