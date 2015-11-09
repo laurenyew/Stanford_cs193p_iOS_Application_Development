@@ -29,17 +29,67 @@
 {
     self = [super init];
     if (self) {
-        
+        for (int i = 0; i < count; i++) {
+            Card *card = [deck drawRandomCard];
+            if (card) {
+                [self.cards addObject:card];
+            }
+            else{
+                self = nil;
+                break;
+            }
+            
+        }
     }
     return self;
 }
 
-- (void)chooseCardAtIndex:(NSUInteger)index
-{
-    
-}
+
 - (Card *)cardAtIndex:(NSUInteger)index
 {
-    return nil;
+    return (index <[self.cards count])? self.cards[index] : nil;
+}
+
+static const int MATCH_BONUS = 4;
+static const int MISMATCH_PENALTY = 2;
+static const int COST_TO_CHOOSE = 1;
+
+- (void)chooseCardAtIndex:(NSUInteger)index
+{
+    Card *card = [self cardAtIndex:index];
+    
+    //cards only allowed to be matched once
+    if (!card.matched) {
+        //allow the card to be flipped
+        if(card.isChosen)
+        {
+            card.chosen = NO;
+        }
+        else
+        {
+            //try to match the card against other cards
+            for (Card *othercard in self.cards) {
+                if(othercard.isChosen && !othercard.isMatched)
+                {
+                    //calculate if the cards match
+                    int matchScore = [card match:@[othercard]];
+                    if (matchScore) {
+                        self.score += matchScore * MATCH_BONUS;
+                        othercard.matched = YES;
+                        card.matched = YES;
+                    } else {
+                        self.score -= MISMATCH_PENALTY;
+                        othercard.chosen = NO;
+                    }
+                    
+                    //only matching 2 cards at a time for now.
+                    break;
+                }
+            }
+            
+            self.score -= COST_TO_CHOOSE;
+            card.chosen = YES;
+        }
+    }
 }
 @end
