@@ -20,6 +20,7 @@
 
 @implementation CardGameViewController
 
+#pragma Setup
 - (CardMatchingGame *)game
 {
     if (!_game) {
@@ -33,8 +34,14 @@
 {
     return [[PlayingCardDeck  alloc]init];
 }
+#pragma Game Buttons
 
+- (IBAction)touchDealButton {
+    self.game = nil;
+    [self updateUI];
+}
 
+#pragma Card Buttons
 - (IBAction)touchCardButton:(UIButton *)sender {
     
     int chosenButtonIndex = [self.cardButtons indexOfObject:sender];

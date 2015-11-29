@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -157,9 +157,33 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="548" width="360" height="32"/>
+                                    <rect key="frame" x="20" y="550" width="208" height="30"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhW-m4-hd3">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="PDH-hQ-3CS"/>
+                                </constraints>
+                                <state key="normal" title="Deal">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="PDH-hQ-3CS"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="PDH-hQ-3CS"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="touchDealButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cfh-zX-FwS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -171,6 +195,7 @@
                             <constraint firstItem="HMf-Cs-oNd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="9N2-x6-aav"/>
                             <constraint firstItem="V3r-f4-II1" firstAttribute="leading" secondItem="tei-EQ-v8X" secondAttribute="trailing" constant="8" id="Bfs-40-KOE"/>
                             <constraint firstItem="WXC-fL-ia3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ELU-ZY-m85"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hhW-m4-hd3" secondAttribute="bottom" constant="20" id="G3K-9j-EOU"/>
                             <constraint firstItem="HMf-Cs-oNd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="I24-mm-bl6"/>
                             <constraint firstItem="pfQ-yZ-1oz" firstAttribute="leading" secondItem="tei-EQ-v8X" secondAttribute="leading" id="Ibm-kI-Rla"/>
                             <constraint firstItem="z0Z-as-cbm" firstAttribute="leading" secondItem="V3r-f4-II1" secondAttribute="leading" id="Iuh-Hc-wF8"/>
@@ -179,6 +204,7 @@
                             <constraint firstItem="kYD-Gq-cPB" firstAttribute="top" secondItem="Gna-5D-5GL" secondAttribute="top" id="RoE-2G-XJH"/>
                             <constraint firstItem="wQ1-1a-oxK" firstAttribute="top" secondItem="WY5-eC-GNI" secondAttribute="top" id="Uak-dy-8Ei"/>
                             <constraint firstItem="tei-EQ-v8X" firstAttribute="top" secondItem="HMf-Cs-oNd" secondAttribute="top" id="W4s-TX-Lph"/>
+                            <constraint firstItem="hhW-m4-hd3" firstAttribute="trailing" secondItem="VEO-Nn-m3G" secondAttribute="trailing" id="WEx-KX-zDt"/>
                             <constraint firstItem="HMf-Cs-oNd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="WYp-NZ-ahn"/>
                             <constraint firstItem="pfQ-yZ-1oz" firstAttribute="top" secondItem="Gna-5D-5GL" secondAttribute="top" id="Wae-18-7HZ"/>
                             <constraint firstItem="Lyk-so-5PK" firstAttribute="top" secondItem="WY5-eC-GNI" secondAttribute="top" id="Xx4-9I-Vc1"/>
@@ -211,6 +237,7 @@
                                 <exclude reference="VEO-Nn-m3G"/>
                                 <exclude reference="HMf-Cs-oNd"/>
                                 <exclude reference="WXC-fL-ia3"/>
+                                <exclude reference="hhW-m4-hd3"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="9N2-x6-aav"/>
@@ -241,6 +268,8 @@
                                 <exclude reference="iO2-4a-Qoe"/>
                                 <exclude reference="ELU-ZY-m85"/>
                                 <exclude reference="w9W-Xg-Pj0"/>
+                                <exclude reference="WEx-KX-zDt"/>
+                                <exclude reference="G3K-9j-EOU"/>
                                 <exclude reference="sPd-pB-6k5"/>
                             </mask>
                         </variation>
@@ -259,6 +288,7 @@
                                 <include reference="VEO-Nn-m3G"/>
                                 <include reference="HMf-Cs-oNd"/>
                                 <include reference="WXC-fL-ia3"/>
+                                <include reference="hhW-m4-hd3"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="9N2-x6-aav"/>
@@ -288,7 +318,9 @@
                                 <include reference="JoN-Ou-eSw"/>
                                 <include reference="iO2-4a-Qoe"/>
                                 <include reference="ELU-ZY-m85"/>
-                                <include reference="w9W-Xg-Pj0"/>
+                                <exclude reference="w9W-Xg-Pj0"/>
+                                <include reference="WEx-KX-zDt"/>
+                                <include reference="G3K-9j-EOU"/>
                                 <include reference="sPd-pB-6k5"/>
                             </mask>
                         </variation>
