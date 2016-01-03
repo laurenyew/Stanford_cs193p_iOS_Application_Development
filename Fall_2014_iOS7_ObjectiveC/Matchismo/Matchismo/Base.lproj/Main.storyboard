@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -20,7 +20,6 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Hs-zZ-ndX">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -31,7 +30,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tei-EQ-v8X">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -42,7 +40,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3r-f4-II1">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -53,7 +50,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WY5-eC-GNI">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -64,7 +60,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQ1-1a-oxK">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -75,7 +70,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyk-so-5PK">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -86,7 +80,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0Z-as-cbm">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -97,7 +90,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gna-5D-5GL">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -108,7 +100,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYD-Gq-cPB">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -119,7 +110,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfQ-yZ-1oz">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -128,20 +118,8 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tdy-dC-fqX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEO-Nn-m3G">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="cardBack">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AVd-I6-ord"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMf-Cs-oNd">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -152,17 +130,12 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXC-fL-ia3">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="550" width="208" height="30"/>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhW-m4-hd3">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="64" id="PDH-hQ-3CS"/>
@@ -184,8 +157,17 @@
                                     <action selector="touchDealButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cfh-zX-FwS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEO-Nn-m3G">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" backgroundImage="cardBack">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AVd-I6-ord"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="WY5-eC-GNI" firstAttribute="top" secondItem="HMf-Cs-oNd" secondAttribute="bottom" constant="8" id="1VI-Rl-UFK"/>
@@ -234,43 +216,43 @@
                                 <exclude reference="Gna-5D-5GL"/>
                                 <exclude reference="kYD-Gq-cPB"/>
                                 <exclude reference="pfQ-yZ-1oz"/>
-                                <exclude reference="VEO-Nn-m3G"/>
                                 <exclude reference="HMf-Cs-oNd"/>
                                 <exclude reference="WXC-fL-ia3"/>
                                 <exclude reference="hhW-m4-hd3"/>
+                                <exclude reference="VEO-Nn-m3G"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="G3K-9j-EOU"/>
+                                <exclude reference="sPd-pB-6k5"/>
+                                <exclude reference="Lov-oA-lDK"/>
+                                <exclude reference="qri-2F-ADP"/>
+                                <exclude reference="fiU-XL-UdI"/>
+                                <exclude reference="sR3-8h-bEh"/>
                                 <exclude reference="9N2-x6-aav"/>
                                 <exclude reference="I24-mm-bl6"/>
                                 <exclude reference="WYp-NZ-ahn"/>
                                 <exclude reference="bFZ-Ru-i4V"/>
-                                <exclude reference="Lov-oA-lDK"/>
-                                <exclude reference="qri-2F-ADP"/>
-                                <exclude reference="1VI-Rl-UFK"/>
-                                <exclude reference="42O-sB-6NH"/>
-                                <exclude reference="Uak-dy-8Ei"/>
-                                <exclude reference="Yir-D1-Xuw"/>
-                                <exclude reference="4Rl-Sq-oHH"/>
-                                <exclude reference="W4s-TX-Lph"/>
                                 <exclude reference="Xx4-9I-Vc1"/>
                                 <exclude reference="ZtT-Nw-zYz"/>
-                                <exclude reference="fiU-XL-UdI"/>
-                                <exclude reference="sR3-8h-bEh"/>
                                 <exclude reference="Bfs-40-KOE"/>
                                 <exclude reference="aqi-Ro-BJj"/>
-                                <exclude reference="5nC-k0-L8q"/>
-                                <exclude reference="RoE-2G-XJH"/>
-                                <exclude reference="Iuh-Hc-wF8"/>
-                                <exclude reference="omJ-6S-hrE"/>
-                                <exclude reference="Ibm-kI-Rla"/>
-                                <exclude reference="Wae-18-7HZ"/>
                                 <exclude reference="JoN-Ou-eSw"/>
                                 <exclude reference="iO2-4a-Qoe"/>
+                                <exclude reference="1VI-Rl-UFK"/>
+                                <exclude reference="42O-sB-6NH"/>
+                                <exclude reference="WEx-KX-zDt"/>
+                                <exclude reference="5nC-k0-L8q"/>
+                                <exclude reference="RoE-2G-XJH"/>
+                                <exclude reference="Ibm-kI-Rla"/>
+                                <exclude reference="Wae-18-7HZ"/>
+                                <exclude reference="4Rl-Sq-oHH"/>
+                                <exclude reference="W4s-TX-Lph"/>
+                                <exclude reference="Uak-dy-8Ei"/>
+                                <exclude reference="Yir-D1-Xuw"/>
+                                <exclude reference="Iuh-Hc-wF8"/>
+                                <exclude reference="omJ-6S-hrE"/>
                                 <exclude reference="ELU-ZY-m85"/>
                                 <exclude reference="w9W-Xg-Pj0"/>
-                                <exclude reference="WEx-KX-zDt"/>
-                                <exclude reference="G3K-9j-EOU"/>
-                                <exclude reference="sPd-pB-6k5"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -285,43 +267,43 @@
                                 <include reference="Gna-5D-5GL"/>
                                 <include reference="kYD-Gq-cPB"/>
                                 <include reference="pfQ-yZ-1oz"/>
-                                <include reference="VEO-Nn-m3G"/>
                                 <include reference="HMf-Cs-oNd"/>
                                 <include reference="WXC-fL-ia3"/>
                                 <include reference="hhW-m4-hd3"/>
+                                <include reference="VEO-Nn-m3G"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="G3K-9j-EOU"/>
+                                <include reference="sPd-pB-6k5"/>
+                                <include reference="Lov-oA-lDK"/>
+                                <include reference="qri-2F-ADP"/>
+                                <include reference="fiU-XL-UdI"/>
+                                <include reference="sR3-8h-bEh"/>
                                 <exclude reference="9N2-x6-aav"/>
                                 <include reference="I24-mm-bl6"/>
                                 <include reference="WYp-NZ-ahn"/>
                                 <include reference="bFZ-Ru-i4V"/>
-                                <include reference="Lov-oA-lDK"/>
-                                <include reference="qri-2F-ADP"/>
-                                <include reference="1VI-Rl-UFK"/>
-                                <include reference="42O-sB-6NH"/>
-                                <include reference="Uak-dy-8Ei"/>
-                                <include reference="Yir-D1-Xuw"/>
-                                <include reference="4Rl-Sq-oHH"/>
-                                <include reference="W4s-TX-Lph"/>
                                 <include reference="Xx4-9I-Vc1"/>
                                 <include reference="ZtT-Nw-zYz"/>
-                                <include reference="fiU-XL-UdI"/>
-                                <include reference="sR3-8h-bEh"/>
                                 <include reference="Bfs-40-KOE"/>
                                 <include reference="aqi-Ro-BJj"/>
-                                <include reference="5nC-k0-L8q"/>
-                                <include reference="RoE-2G-XJH"/>
-                                <include reference="Iuh-Hc-wF8"/>
-                                <include reference="omJ-6S-hrE"/>
-                                <include reference="Ibm-kI-Rla"/>
-                                <include reference="Wae-18-7HZ"/>
                                 <include reference="JoN-Ou-eSw"/>
                                 <include reference="iO2-4a-Qoe"/>
+                                <include reference="1VI-Rl-UFK"/>
+                                <include reference="42O-sB-6NH"/>
+                                <include reference="WEx-KX-zDt"/>
+                                <include reference="5nC-k0-L8q"/>
+                                <include reference="RoE-2G-XJH"/>
+                                <include reference="Ibm-kI-Rla"/>
+                                <include reference="Wae-18-7HZ"/>
+                                <include reference="4Rl-Sq-oHH"/>
+                                <include reference="W4s-TX-Lph"/>
+                                <include reference="Uak-dy-8Ei"/>
+                                <include reference="Yir-D1-Xuw"/>
+                                <include reference="Iuh-Hc-wF8"/>
+                                <include reference="omJ-6S-hrE"/>
                                 <include reference="ELU-ZY-m85"/>
                                 <exclude reference="w9W-Xg-Pj0"/>
-                                <include reference="WEx-KX-zDt"/>
-                                <include reference="G3K-9j-EOU"/>
-                                <include reference="sPd-pB-6k5"/>
                             </mask>
                         </variation>
                     </view>
