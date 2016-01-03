@@ -157,6 +157,18 @@
                                     <action selector="touchDealButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cfh-zX-FwS"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vfk-vl-l10">
+                                <rect key="frame" x="-60" y="-14" width="121" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="2-card-match mode"/>
+                                    <segment title="3-card-match mode"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="340" width="280" height="29"/>
+                                </variation>
+                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEO-Nn-m3G">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -219,6 +231,7 @@
                                 <exclude reference="HMf-Cs-oNd"/>
                                 <exclude reference="WXC-fL-ia3"/>
                                 <exclude reference="hhW-m4-hd3"/>
+                                <exclude reference="Vfk-vl-l10"/>
                                 <exclude reference="VEO-Nn-m3G"/>
                             </mask>
                             <mask key="constraints">
@@ -270,6 +283,7 @@
                                 <include reference="HMf-Cs-oNd"/>
                                 <include reference="WXC-fL-ia3"/>
                                 <include reference="hhW-m4-hd3"/>
+                                <include reference="Vfk-vl-l10"/>
                                 <include reference="VEO-Nn-m3G"/>
                             </mask>
                             <mask key="constraints">
