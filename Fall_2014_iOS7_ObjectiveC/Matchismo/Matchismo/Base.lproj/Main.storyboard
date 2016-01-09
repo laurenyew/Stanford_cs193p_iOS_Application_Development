@@ -157,6 +157,16 @@
                                     <action selector="touchDealButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cfh-zX-FwS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEO-Nn-m3G">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" backgroundImage="cardBack">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AVd-I6-ord"/>
+                                </connections>
+                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vfk-vl-l10">
                                 <rect key="frame" x="-60" y="-14" width="121" height="29"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -168,17 +178,10 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="340" width="280" height="29"/>
                                 </variation>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEO-Nn-m3G">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" backgroundImage="cardBack">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
                                 <connections>
-                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AVd-I6-ord"/>
+                                    <action selector="toggleCardMatchModeControl:forEvent:" destination="BYZ-38-t0r" eventType="valueChanged" id="U4a-9x-jvr"/>
                                 </connections>
-                            </button>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -231,8 +234,8 @@
                                 <exclude reference="HMf-Cs-oNd"/>
                                 <exclude reference="WXC-fL-ia3"/>
                                 <exclude reference="hhW-m4-hd3"/>
-                                <exclude reference="Vfk-vl-l10"/>
                                 <exclude reference="VEO-Nn-m3G"/>
+                                <exclude reference="Vfk-vl-l10"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="G3K-9j-EOU"/>
@@ -283,8 +286,8 @@
                                 <include reference="HMf-Cs-oNd"/>
                                 <include reference="WXC-fL-ia3"/>
                                 <include reference="hhW-m4-hd3"/>
-                                <include reference="Vfk-vl-l10"/>
                                 <include reference="VEO-Nn-m3G"/>
+                                <include reference="Vfk-vl-l10"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="G3K-9j-EOU"/>

@@ -34,16 +34,26 @@
 {
     return [[PlayingCardDeck  alloc]init];
 }
+
 #pragma Game Buttons
 
 - (IBAction)touchDealButton {
+    NSLog(@"Re-deal the deck");
     self.game = nil;
     [self updateUI];
 }
 
+- (IBAction)toggleCardMatchModeControl:(UISegmentedControl *)sender
+                              forEvent:(UIEvent *)event
+{
+    NSLog(@"Toggle Card Match Mode Control to: %@", [sender titleForSegmentAtIndex:[sender selectedSegmentIndex]]);
+}
+
+
 #pragma Card Buttons
+
 - (IBAction)touchCardButton:(UIButton *)sender {
-    
+    NSLog(@"Touch Card Button");
     NSUInteger chosenButtonIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:chosenButtonIndex];
     [self updateUI];
