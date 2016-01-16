@@ -10,6 +10,7 @@
 
 @implementation PlayingCard
 
+//TODO: Make this generic so it can match several cards
 - (int)match:(NSArray *)otherCards
 {
     int score = 0;
@@ -21,7 +22,14 @@
         } else if ([otherCard.suit isEqualToString:self.suit]){
             score = 1;
         }
+        
+        if (score > 0)
+        {
+            NSLog(@"Matched %@ and %@. Score is %d", self.contents, otherCard, score);
+        }
     }
+    
+    
     return score;
 }
 

@@ -13,7 +13,7 @@
 
 @property (nonatomic, readonly) NSInteger score;
 //Set by the card match mode
-@property (nonatomic, readwrite) NSInteger maxCardsToMatch;
+@property (nonatomic, readwrite) NSInteger maxCardsToStartMatch;
 
 //designated initializer
 - (instancetype)initWithCardCount:(NSUInteger)count

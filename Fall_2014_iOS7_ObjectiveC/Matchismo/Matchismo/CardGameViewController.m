@@ -48,7 +48,7 @@
 
     NSString *cardMatchMode =[sender titleForSegmentAtIndex:[sender selectedSegmentIndex]];
     NSLog(@"Toggle Card Match Mode Control to: %@", cardMatchMode);
-    self.game.maxCardsToMatch = [cardMatchMode integerValue];
+    self.game.maxCardsToStartMatch = [cardMatchMode integerValue];
 }
 
 
