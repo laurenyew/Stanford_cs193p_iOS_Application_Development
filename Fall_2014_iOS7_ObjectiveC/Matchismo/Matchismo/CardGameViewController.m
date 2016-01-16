@@ -35,6 +35,7 @@
     return [[PlayingCardDeck  alloc]init];
 }
 
+
 #pragma Game Buttons
 
 - (IBAction)touchDealButton {
@@ -43,10 +44,11 @@
     [self updateUI];
 }
 
-- (IBAction)toggleCardMatchModeControl:(UISegmentedControl *)sender
-                              forEvent:(UIEvent *)event
-{
-    NSLog(@"Toggle Card Match Mode Control to: %@", [sender titleForSegmentAtIndex:[sender selectedSegmentIndex]]);
+- (IBAction)setCardMatchModeControl:(UISegmentedControl *)sender {
+
+    NSString *cardMatchMode =[sender titleForSegmentAtIndex:[sender selectedSegmentIndex]];
+    NSLog(@"Toggle Card Match Mode Control to: %@", cardMatchMode);
+    self.game.maxCardsToMatch = [cardMatchMode integerValue];
 }
 
 

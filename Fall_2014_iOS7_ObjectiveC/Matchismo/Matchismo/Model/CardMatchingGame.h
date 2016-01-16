@@ -12,6 +12,8 @@
 @interface CardMatchingGame : NSObject
 
 @property (nonatomic, readonly) NSInteger score;
+//Set by the card match mode
+@property (nonatomic, readwrite) NSInteger maxCardsToMatch;
 
 //designated initializer
 - (instancetype)initWithCardCount:(NSUInteger)count

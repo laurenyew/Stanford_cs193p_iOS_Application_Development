@@ -24,7 +24,7 @@
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" ambiguous="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="92" y="28" width="64" height="96"/>
                                 </variation>
                                 <connections>
@@ -37,7 +37,7 @@
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" ambiguous="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="164" y="28" width="64" height="96"/>
                                 </variation>
                                 <connections>
@@ -50,7 +50,7 @@
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" ambiguous="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="236" y="28" width="64" height="96"/>
                                 </variation>
                                 <connections>
@@ -73,7 +73,7 @@
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" ambiguous="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="92" y="132" width="64" height="96"/>
                                 </variation>
                                 <connections>
@@ -86,7 +86,7 @@
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" ambiguous="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="164" y="132" width="64" height="96"/>
                                 </variation>
                                 <connections>
@@ -99,7 +99,7 @@
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" ambiguous="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="236" y="132" width="64" height="96"/>
                                 </variation>
                                 <connections>
@@ -122,7 +122,7 @@
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" ambiguous="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="92" y="236" width="64" height="96"/>
                                 </variation>
                                 <connections>
@@ -135,7 +135,7 @@
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" ambiguous="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="164" y="236" width="64" height="96"/>
                                 </variation>
                                 <connections>
@@ -148,7 +148,7 @@
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" ambiguous="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="20" y="28" width="64" height="96"/>
                                 </variation>
                                 <connections>
@@ -175,8 +175,7 @@
                                         <exclude reference="PDH-hQ-3CS"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="236" y="550" width="64" height="30"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="PDH-hQ-3CS"/>
                                     </mask>
@@ -205,11 +204,8 @@
                                     <segment title="3"/>
                                 </segments>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="113" y="552" width="79" height="29"/>
-                                </variation>
                                 <connections>
-                                    <action selector="toggleCardMatchModeControl:forEvent:" destination="BYZ-38-t0r" eventType="valueChanged" id="U4a-9x-jvr"/>
+                                    <action selector="setCardMatchModeControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="WZr-s1-G36"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
@@ -271,40 +267,40 @@
                                 <exclude reference="Vfk-vl-l10"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="27L-fn-szq"/>
+                                <exclude reference="G3K-9j-EOU"/>
+                                <exclude reference="sPd-pB-6k5"/>
+                                <exclude reference="Lov-oA-lDK"/>
+                                <exclude reference="qri-2F-ADP"/>
+                                <exclude reference="fiU-XL-UdI"/>
+                                <exclude reference="sR3-8h-bEh"/>
                                 <exclude reference="9N2-x6-aav"/>
                                 <exclude reference="I24-mm-bl6"/>
                                 <exclude reference="WYp-NZ-ahn"/>
                                 <exclude reference="bFZ-Ru-i4V"/>
-                                <exclude reference="Lov-oA-lDK"/>
-                                <exclude reference="qri-2F-ADP"/>
-                                <exclude reference="1VI-Rl-UFK"/>
-                                <exclude reference="42O-sB-6NH"/>
-                                <exclude reference="Uak-dy-8Ei"/>
-                                <exclude reference="Yir-D1-Xuw"/>
-                                <exclude reference="4Rl-Sq-oHH"/>
-                                <exclude reference="W4s-TX-Lph"/>
                                 <exclude reference="Xx4-9I-Vc1"/>
                                 <exclude reference="ZtT-Nw-zYz"/>
-                                <exclude reference="fiU-XL-UdI"/>
-                                <exclude reference="sR3-8h-bEh"/>
                                 <exclude reference="Bfs-40-KOE"/>
                                 <exclude reference="aqi-Ro-BJj"/>
-                                <exclude reference="5nC-k0-L8q"/>
-                                <exclude reference="RoE-2G-XJH"/>
-                                <exclude reference="Iuh-Hc-wF8"/>
-                                <exclude reference="omJ-6S-hrE"/>
-                                <exclude reference="Ibm-kI-Rla"/>
-                                <exclude reference="Wae-18-7HZ"/>
                                 <exclude reference="JoN-Ou-eSw"/>
                                 <exclude reference="iO2-4a-Qoe"/>
+                                <exclude reference="1VI-Rl-UFK"/>
+                                <exclude reference="42O-sB-6NH"/>
+                                <exclude reference="7oQ-9u-DtI"/>
+                                <exclude reference="WEx-KX-zDt"/>
+                                <exclude reference="5nC-k0-L8q"/>
+                                <exclude reference="RoE-2G-XJH"/>
+                                <exclude reference="Ibm-kI-Rla"/>
+                                <exclude reference="Wae-18-7HZ"/>
+                                <exclude reference="4Rl-Sq-oHH"/>
+                                <exclude reference="W4s-TX-Lph"/>
+                                <exclude reference="Uak-dy-8Ei"/>
+                                <exclude reference="Yir-D1-Xuw"/>
+                                <exclude reference="Iuh-Hc-wF8"/>
+                                <exclude reference="omJ-6S-hrE"/>
                                 <exclude reference="ELU-ZY-m85"/>
                                 <exclude reference="w9W-Xg-Pj0"/>
                                 <exclude reference="ock-HN-yE6"/>
-                                <exclude reference="7oQ-9u-DtI"/>
-                                <exclude reference="WEx-KX-zDt"/>
-                                <exclude reference="27L-fn-szq"/>
-                                <exclude reference="G3K-9j-EOU"/>
-                                <exclude reference="sPd-pB-6k5"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -326,40 +322,40 @@
                                 <include reference="Vfk-vl-l10"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="27L-fn-szq"/>
+                                <include reference="G3K-9j-EOU"/>
+                                <include reference="sPd-pB-6k5"/>
+                                <include reference="Lov-oA-lDK"/>
+                                <include reference="qri-2F-ADP"/>
+                                <include reference="fiU-XL-UdI"/>
+                                <include reference="sR3-8h-bEh"/>
                                 <exclude reference="9N2-x6-aav"/>
                                 <include reference="I24-mm-bl6"/>
                                 <include reference="WYp-NZ-ahn"/>
                                 <include reference="bFZ-Ru-i4V"/>
-                                <include reference="Lov-oA-lDK"/>
-                                <include reference="qri-2F-ADP"/>
-                                <include reference="1VI-Rl-UFK"/>
-                                <include reference="42O-sB-6NH"/>
-                                <include reference="Uak-dy-8Ei"/>
-                                <include reference="Yir-D1-Xuw"/>
-                                <include reference="4Rl-Sq-oHH"/>
-                                <include reference="W4s-TX-Lph"/>
                                 <include reference="Xx4-9I-Vc1"/>
                                 <include reference="ZtT-Nw-zYz"/>
-                                <include reference="fiU-XL-UdI"/>
-                                <include reference="sR3-8h-bEh"/>
                                 <include reference="Bfs-40-KOE"/>
                                 <include reference="aqi-Ro-BJj"/>
-                                <include reference="5nC-k0-L8q"/>
-                                <include reference="RoE-2G-XJH"/>
-                                <include reference="Iuh-Hc-wF8"/>
-                                <include reference="omJ-6S-hrE"/>
-                                <include reference="Ibm-kI-Rla"/>
-                                <include reference="Wae-18-7HZ"/>
                                 <include reference="JoN-Ou-eSw"/>
                                 <include reference="iO2-4a-Qoe"/>
+                                <include reference="1VI-Rl-UFK"/>
+                                <include reference="42O-sB-6NH"/>
+                                <include reference="7oQ-9u-DtI"/>
+                                <include reference="WEx-KX-zDt"/>
+                                <include reference="5nC-k0-L8q"/>
+                                <include reference="RoE-2G-XJH"/>
+                                <include reference="Ibm-kI-Rla"/>
+                                <include reference="Wae-18-7HZ"/>
+                                <include reference="4Rl-Sq-oHH"/>
+                                <include reference="W4s-TX-Lph"/>
+                                <include reference="Uak-dy-8Ei"/>
+                                <include reference="Yir-D1-Xuw"/>
+                                <include reference="Iuh-Hc-wF8"/>
+                                <include reference="omJ-6S-hrE"/>
                                 <include reference="ELU-ZY-m85"/>
                                 <exclude reference="w9W-Xg-Pj0"/>
                                 <include reference="ock-HN-yE6"/>
-                                <include reference="7oQ-9u-DtI"/>
-                                <include reference="WEx-KX-zDt"/>
-                                <include reference="27L-fn-szq"/>
-                                <include reference="G3K-9j-EOU"/>
-                                <include reference="sPd-pB-6k5"/>
                             </mask>
                         </variation>
                     </view>

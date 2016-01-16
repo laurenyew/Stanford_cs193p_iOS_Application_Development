@@ -15,6 +15,17 @@
 
 @implementation CardMatchingGame
 
+
+- (NSInteger)maxCardsToMatch
+{
+    //You need at least 2 cards to have a match
+    //This also protects from a negative number
+    if (_maxCardsToMatch < 2) {
+        _maxCardsToMatch = 2;
+    }
+    return _maxCardsToMatch;
+}
+
 - (NSMutableArray *)cards
 {
     if(!_cards)
