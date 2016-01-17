@@ -205,7 +205,7 @@
                                 </segments>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <action selector="setCardMatchModeControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="WZr-s1-G36"/>
+                                    <action selector="setCardMatchModeControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="l0I-wB-apy"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
@@ -360,6 +360,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="cardMatchModeControl" destination="Vfk-vl-l10" id="wpt-Dx-Zof"/>
                         <outlet property="scoreLabel" destination="WXC-fL-ia3" id="Na6-Uw-nD6"/>
                         <outletCollection property="cardButtons" destination="HMf-Cs-oNd" id="sMB-yN-fjg"/>
                         <outletCollection property="cardButtons" destination="pfQ-yZ-1oz" id="sEQ-Fg-Xyb"/>

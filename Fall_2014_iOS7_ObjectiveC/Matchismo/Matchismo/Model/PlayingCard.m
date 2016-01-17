@@ -10,7 +10,7 @@
 
 @implementation PlayingCard
 
-//TODO: Make this generic so it can match several cards
+//Calculate match score for this PlayCard matched against an array of other PlayingCards
 - (int)match:(NSArray *)otherCards
 {
     int score = 0;
@@ -27,6 +27,12 @@
         {
             NSLog(@"Matched %@ and %@. Score is %d", self.contents, otherCard, score);
         }
+    }
+    //Recursive call to add up matching score for all cards
+    else
+    {
+        NSArray *restOfOtherCards = [otherCards subarrayWithRange:NSMakeRange(1, [otherCards count] - 1)];
+        score = score + [self match:restOfOtherCards];
     }
     
     

@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *cardMatchModeControl;
 @property (strong, nonatomic) CardMatchingGame *game;
 @end
 
@@ -26,6 +27,7 @@
     if (!_game) {
         _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                                   usingDeck:[self createDeck]];
+        [self setCardMatchModeControl:self.cardMatchModeControl];
     }
     return _game;
 }
@@ -45,8 +47,8 @@
 }
 
 - (IBAction)setCardMatchModeControl:(UISegmentedControl *)sender {
-
-    NSString *cardMatchMode =[sender titleForSegmentAtIndex:[sender selectedSegmentIndex]];
+    NSLog(@"Selected index: %ld", sender.selectedSegmentIndex);
+    NSString *cardMatchMode =[sender titleForSegmentAtIndex:sender.selectedSegmentIndex];
     NSLog(@"Toggle Card Match Mode Control to: %@", cardMatchMode);
     self.game.maxCardsToStartMatch = [cardMatchMode integerValue];
 }
