@@ -21,13 +21,13 @@
 
 @implementation CardGameViewController
 
+
 #pragma Setup
 - (CardMatchingGame *)game
 {
     if (!_game) {
         _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                                   usingDeck:[self createDeck]];
-        [self setCardMatchModeControl:self.cardMatchModeControl];
     }
     return _game;
 }

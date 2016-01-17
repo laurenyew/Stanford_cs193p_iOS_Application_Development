@@ -68,6 +68,7 @@ static const int COST_TO_CHOOSE = 1;
 - (void)chooseCardAtIndex:(NSUInteger)index
 {
     Card *card = [self cardAtIndex:index];
+    NSLog(@"Chose card: %@. Card Match Mode: Matching %ld cards.", card.contents, self.maxCardsToStartMatch);
     
     //cards only allowed to be matched once
     if (!card.matched) {
@@ -119,31 +120,6 @@ static const int COST_TO_CHOOSE = 1;
                 }
             }
             
-            
-//            //try to match the card against other cards
-//            int numCardsMatched = 0;
-//            for (Card *othercard in self.cards) {
-//                if(othercard.isChosen && !othercard.isMatched)
-//                {
-//                    //calculate if the cards match
-//                    int matchScore = [card match:@[othercard]];
-//                    if (matchScore > 0) {
-//                        self.score += matchScore * MATCH_BONUS;
-//                        othercard.matched = YES;
-//                        card.matched = YES;
-//                        numCardsMatched++;
-//                    } else {
-//                        self.score -= MISMATCH_PENALTY;
-//                        othercard.chosen = NO;
-//                    }
-//                    
-//                    //only matching 2 cards at a time for now.
-//                    if (numCardsMatched == self.maxCardsToMatch) {
-//                        NSLog(@"Matched %d cards in a row.", numCardsMatched);
-//                        break;
-//                    }
-//                }
-//            }
             
             self.score -= COST_TO_CHOOSE;
             card.chosen = YES;
