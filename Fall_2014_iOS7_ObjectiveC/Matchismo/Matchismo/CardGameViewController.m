@@ -14,6 +14,7 @@
 @interface CardGameViewController ()
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *gameMatchModeControl;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) CardMatchingGame *game;
 @end
@@ -27,6 +28,7 @@
     if (!_game) {
         _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                                   usingDeck:[self createDeck]];
+        [self setCardMatchModeControl:self.gameMatchModeControl];
     }
     return _game;
 }
@@ -41,7 +43,13 @@
 
 - (IBAction)touchDealButton {
     NSLog(@"Re-deal the deck");
+    
+    //re-enable the card match mode control
+    self.gameMatchModeControl.enabled = YES;
+    
+    //reset the game
     self.game = nil;
+    
     [self updateUI];
 }
 
@@ -57,6 +65,11 @@
 
 - (IBAction)touchCardButton:(UIButton *)sender {
     NSLog(@"Touch Card Button");
+    
+    //Disable game play mode control
+    self.gameMatchModeControl.enabled = NO;
+    
+    //Logic for choosing a card and updating game/UI
     NSUInteger chosenButtonIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:chosenButtonIndex];
     [self updateUI];
