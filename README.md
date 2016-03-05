@@ -2,7 +2,7 @@
 
 **Stanford CS193p iOS Application Development iTunesU**
 
-**Stanford iTunesU Objective C iOS7** (2015-2016). Making progress through Stanford coursework for developing iOS apps.
+**Stanford iTunesU Objective C iOS7** (2015-2016). Making progress through Stanford coursework for developing iOS apps. Also working on the Swift course. Plans to create a proof of concept app.
 
 ==
 
