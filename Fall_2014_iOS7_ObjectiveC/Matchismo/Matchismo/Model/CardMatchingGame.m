@@ -10,6 +10,7 @@
 
 @interface CardMatchingGame()
 @property (nonatomic, readwrite) NSInteger score;
+@property (nonatomic, readwrite) NSString *summary;
 @property (nonatomic, strong) NSMutableArray *cards; //of Card
 @end
 
@@ -33,6 +34,15 @@
         _cards = [[NSMutableArray alloc]init];
     }
     return _cards;
+}
+
+- (NSString *)summary
+{
+    if(!_summary)
+    {
+        _summary = @"";
+    }
+    return _summary;
 }
 
 - (instancetype)initWithCardCount:(NSUInteger)count
@@ -72,15 +82,15 @@ static const int COST_TO_CHOOSE = 1;
     
     //cards only allowed to be matched once
     if (!card.matched) {
-        //allow the card to be flipped
+        //allow the card to be flipped back over (reset)
         if(card.isChosen)
         {
             card.chosen = NO;
         }
+        //Chose a card
         else
         {
             //Tried to make generic to deal with any number of matches.
-            
             // Step 1) Find all chosen unmatched cards for this matching session
             NSMutableArray *otherChosenCards = [[NSMutableArray alloc] init];
             for (Card *otherCard in self.cards) {
@@ -99,25 +109,52 @@ static const int COST_TO_CHOOSE = 1;
                     int addToScore = matchScore * MATCH_BONUS;
                     self.score += addToScore;
                     
-                    NSLog(@"Matched %ld cards: Bonus: %d, Current Score: %ld", self.maxCardsToStartMatch, addToScore, self.score);
-                    
                     //The cards are now matched and can no longer be rematched.
                     card.matched = YES;
+                    
+                    NSLog(@"Matched %ld cards: Bonus: %d, Current Score: %ld", self.maxCardsToStartMatch, addToScore, self.score);
+                    NSMutableString *matchedCardsSummary = [NSMutableString stringWithFormat:@"Matched %@ ", card.contents];
                     for (Card *otherCard in otherChosenCards) {
                         otherCard.matched = YES;
+                        [matchedCardsSummary appendFormat:@"%@ ", otherCard.contents];
                     }
+                    
+                    //Update the summary
+                    [matchedCardsSummary appendFormat:@"for %d %@", matchScore, [self pointString:matchScore]];
+                    self.summary = matchedCardsSummary.copy;
                     
                 }
                 else{
                     //Add up score penalty for chosen cards
                     //and reset the other cards' chosen state
+                    NSMutableString *misMatchedCardsSummary = [NSMutableString stringWithFormat:@"%@ ", card.contents];
+                    int subtractFromScore = 0;
                     for(Card *otherCard in otherChosenCards)
                     {
-                        self.score -= MISMATCH_PENALTY;
+                        subtractFromScore += MISMATCH_PENALTY;
                         otherCard.chosen = NO;
+                        [misMatchedCardsSummary appendFormat:@"%@ ", otherCard.contents];
                     }
+                    self.score -= subtractFromScore;
                     NSLog(@"Cards did not match. Incurred penalty. Current Score: %ld", self.score);
+                    
+                    //update the summary
+                    [misMatchedCardsSummary appendFormat:@"don't match! %d %@ penalty!",
+                        subtractFromScore,
+                        [self pointString:subtractFromScore]];
+                    self.summary = misMatchedCardsSummary.copy;
                 }
+            }
+            //Haven't hit limit where card matching is checked
+            else{
+                
+                //Update summary to show card(s) chosen
+                NSMutableString *cardsChosenSummary = [NSMutableString stringWithFormat:@"%@ ", card.contents];
+                for(Card *otherCard in otherChosenCards)
+                {
+                    [cardsChosenSummary appendFormat:@"%@ ", otherCard.contents];
+                }
+                self.summary = cardsChosenSummary.copy;
             }
             
             
@@ -125,6 +162,15 @@ static const int COST_TO_CHOOSE = 1;
             card.chosen = YES;
         }
     }
+}
+
+//Helper method to handle grammer 'point' vs. 'points' string
+- (NSString *)pointString:(NSInteger)value
+{
+    if(value > 1)
+        return @"points";
+    else
+        return @"point";
 }
 
 

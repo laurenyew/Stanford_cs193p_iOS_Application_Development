@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *gameMatchModeControl;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
 @property (strong, nonatomic) CardMatchingGame *game;
 @end
 
@@ -87,6 +88,7 @@
         //disable matched cards
         cardButton.enabled = !card.isMatched;
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", (int) self.game.score];
+        self.summaryLabel.text = self.game.summary;
     }
 }
 
