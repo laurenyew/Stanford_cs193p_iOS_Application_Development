@@ -12,7 +12,8 @@
 - [x] 4. Foundation and Attributed Strings
 - [x] 5. View Controller Lifecycle
 - [x] 6. Polymorphism with Controllers, UINavigation, etc.
-- [ ] 7. Views and Gestures
+- [x] 7. Views and Gestures
+- [ ] 8. Protocols, Blocks, and Animation
 
 **Assignments**
 - [x] 1. Matchismo (Card Matching game)
