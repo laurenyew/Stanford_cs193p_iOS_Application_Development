@@ -66,7 +66,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="o2v-RO-iW3"/>
                                     <constraint firstAttribute="height" constant="60" id="vRR-fS-NXA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -99,7 +99,7 @@
                                     <constraint firstAttribute="height" constant="60" id="K8g-4b-tc9"/>
                                     <constraint firstAttribute="width" constant="40" id="ff2-4m-V6h"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -128,7 +128,7 @@
                                     <constraint firstAttribute="width" constant="40" id="Dbf-nn-0F5"/>
                                     <constraint firstAttribute="height" constant="60" id="PuZ-Mh-kAW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -157,7 +157,7 @@
                                     <constraint firstAttribute="height" constant="60" id="5jd-OC-XYS"/>
                                     <constraint firstAttribute="width" constant="40" id="Ugb-xK-rTH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -186,7 +186,7 @@
                                     <constraint firstAttribute="height" constant="60" id="2b2-Bd-pZc"/>
                                     <constraint firstAttribute="width" constant="40" id="RcW-PJ-3HE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -224,7 +224,7 @@
                                     <constraint firstAttribute="width" constant="40" id="5m9-on-Fqb"/>
                                     <constraint firstAttribute="height" constant="60" id="6ss-Ij-2lJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -250,7 +250,7 @@
                                     <constraint firstAttribute="height" constant="60" id="Gkp-Il-tAn"/>
                                     <constraint firstAttribute="width" constant="40" id="pjh-n5-xdy"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -276,7 +276,7 @@
                                     <constraint firstAttribute="height" constant="60" id="KwI-CM-9Z0"/>
                                     <constraint firstAttribute="width" constant="40" id="xvo-5j-LV0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -302,7 +302,7 @@
                                     <constraint firstAttribute="height" constant="60" id="ZDv-Bt-Zv0"/>
                                     <constraint firstAttribute="width" constant="40" id="fCV-PM-ESP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -328,7 +328,7 @@
                                     <constraint firstAttribute="width" constant="40" id="Q8P-Zz-9bA"/>
                                     <constraint firstAttribute="height" constant="60" id="uuE-0s-HqM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -354,7 +354,7 @@
                                     <constraint firstAttribute="width" constant="40" id="0I4-4n-xP6"/>
                                     <constraint firstAttribute="height" constant="60" id="OeH-Hi-we5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -380,7 +380,7 @@
                                     <constraint firstAttribute="height" constant="60" id="1hx-mh-oCM"/>
                                     <constraint firstAttribute="width" constant="40" id="yRk-JJ-9pq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -406,7 +406,7 @@
                                     <constraint firstAttribute="width" constant="40" id="kbU-fp-UlJ"/>
                                     <constraint firstAttribute="height" constant="60" id="lWx-aE-xJp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -432,7 +432,7 @@
                                     <constraint firstAttribute="width" constant="40" id="El1-Ew-cqO"/>
                                     <constraint firstAttribute="height" constant="60" id="dYt-GO-hF1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -458,7 +458,7 @@
                                     <constraint firstAttribute="width" constant="40" id="TiU-R6-2UU"/>
                                     <constraint firstAttribute="height" constant="60" id="o50-yK-Auc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -484,7 +484,7 @@
                                     <constraint firstAttribute="width" constant="40" id="KmA-BY-kCX"/>
                                     <constraint firstAttribute="height" constant="60" id="SSa-Wr-aA8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -510,7 +510,7 @@
                                     <constraint firstAttribute="height" constant="60" id="F7l-uA-Xe4"/>
                                     <constraint firstAttribute="width" constant="40" id="cDE-eh-P4B"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -536,7 +536,7 @@
                                     <constraint firstAttribute="width" constant="40" id="C8b-nu-CcR"/>
                                     <constraint firstAttribute="height" constant="60" id="WwN-VM-0zG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -562,7 +562,7 @@
                                     <constraint firstAttribute="height" constant="60" id="A6m-xf-sDD"/>
                                     <constraint firstAttribute="width" constant="40" id="iqy-Hv-nxr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -588,7 +588,7 @@
                                     <constraint firstAttribute="width" constant="40" id="UVp-Sy-ZQS"/>
                                     <constraint firstAttribute="height" constant="60" id="coS-vV-9DE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -614,7 +614,7 @@
                                     <constraint firstAttribute="height" constant="60" id="0ic-KH-BIO"/>
                                     <constraint firstAttribute="width" constant="40" id="qIR-qv-3TP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -640,7 +640,7 @@
                                     <constraint firstAttribute="width" constant="40" id="7EO-FR-e0I"/>
                                     <constraint firstAttribute="height" constant="60" id="sYZ-y2-ygZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -666,7 +666,7 @@
                                     <constraint firstAttribute="height" constant="60" id="NZx-kV-OWx"/>
                                     <constraint firstAttribute="width" constant="40" id="zqA-og-hYh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -692,7 +692,7 @@
                                     <constraint firstAttribute="width" constant="40" id="0Qu-He-gIe"/>
                                     <constraint firstAttribute="height" constant="60" id="0ww-ab-wse"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -718,7 +718,7 @@
                                     <constraint firstAttribute="height" constant="60" id="Uwg-uy-Yn5"/>
                                     <constraint firstAttribute="width" constant="40" id="p2H-ej-aWz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -744,7 +744,7 @@
                                     <constraint firstAttribute="height" constant="60" id="6Kr-Pn-1KE"/>
                                     <constraint firstAttribute="width" constant="40" id="F8h-Z8-DRj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -770,7 +770,7 @@
                                     <constraint firstAttribute="width" constant="40" id="7MJ-SZ-GCb"/>
                                     <constraint firstAttribute="height" constant="60" id="wUR-0Q-hlu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -796,7 +796,7 @@
                                     <constraint firstAttribute="height" constant="60" id="VUA-Uu-kB2"/>
                                     <constraint firstAttribute="width" constant="40" id="rvS-a7-RbW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -822,7 +822,7 @@
                                     <constraint firstAttribute="width" constant="40" id="Hi2-WC-LVI"/>
                                     <constraint firstAttribute="height" constant="60" id="jwR-Gy-UpN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -848,7 +848,7 @@
                                     <constraint firstAttribute="width" constant="40" id="b2y-xF-xba"/>
                                     <constraint firstAttribute="height" constant="60" id="nFO-w2-tC0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -878,9 +878,6 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="200" y="509" width="0.0" height="0.0"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="684" width="360" height="31"/>
                                 </variation>
                             </label>
                         </subviews>
