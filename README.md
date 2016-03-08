@@ -17,8 +17,9 @@
 
 **Assignments**
 - [x] 1. Matchismo (Card Matching game)
-- [ ] 2. Matchismo 2 (Extended Card Matching Game with Dynamic UI) -- WIP
- 
+- [x] 2. Matchismo 2 (Extended Card Matching Game with Dynamic UI) 
+- [ ] 2.1 Bonus:  UI Slider summary history -- WIP
+- [ ] 2.2 Bonus: Change image on back of cards
 ####  Fall 2015 iOS8 Swift (All Assignments + Bonus)
 
 Assignments created by Paul Hegarty of Stanford University
