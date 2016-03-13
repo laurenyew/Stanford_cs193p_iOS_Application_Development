@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *gameMatchModeControl;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UISlider *historySlider;
 @property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
 @property (strong, nonatomic) CardMatchingGame *game;
 @end
@@ -87,9 +88,15 @@
                               forState:UIControlStateNormal];
         //disable matched cards
         cardButton.enabled = !card.isMatched;
-        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", (int) self.game.score];
-        self.summaryLabel.text = self.game.summary;
+        
     }
+    //Update history slider for new move
+    self.historySlider.maximumValue = self.game.summaryItemCount;
+    [self.historySlider setValue:self.historySlider.maximumValue animated:YES];
+
+    //Update summary labels
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", (int) self.game.score];
+    self.summaryLabel.text = [self.game summaryAtIndex: (NSUInteger) self.historySlider.value];
 }
 
 - (NSString *)titleForCard:(Card *)card

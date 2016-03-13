@@ -12,7 +12,6 @@
 @interface CardMatchingGame : NSObject
 
 @property (nonatomic, readonly) NSInteger score;
-@property (nonatomic, readonly) NSString *summary;
 //Set by the card match mode
 @property (nonatomic, readwrite) NSInteger maxCardsToStartMatch;
 
@@ -24,5 +23,9 @@
 
 - (void)chooseCardAtIndex:(NSUInteger)index;
 - (Card *)cardAtIndex:(NSUInteger)index;
+
+//Summary
+- (NSString *)summaryAtIndex:(NSUInteger)index;
+- (NSUInteger)summaryItemCount;
 
 @end

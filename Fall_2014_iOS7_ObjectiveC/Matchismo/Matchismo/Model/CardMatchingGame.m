@@ -10,7 +10,7 @@
 
 @interface CardMatchingGame()
 @property (nonatomic, readwrite) NSInteger score;
-@property (nonatomic, readwrite) NSString *summary;
+@property (nonatomic, readwrite) NSMutableArray *summaryHistory;
 @property (nonatomic, strong) NSMutableArray *cards; //of Card
 @end
 
@@ -36,14 +36,32 @@
     return _cards;
 }
 
-- (NSString *)summary
+- (NSMutableArray *)summaryHistory
 {
-    if(!_summary)
+    if(!_summaryHistory)
     {
-        _summary = @"";
+        _summaryHistory = [[NSMutableArray alloc] initWithArray:@[@""]];
     }
-    return _summary;
+    return _summaryHistory;
 }
+
+- (NSUInteger)summaryItemCount
+{
+    return self.summaryHistory.count;
+}
+
+- (NSString *)summaryAtIndex:(NSUInteger)index
+{
+    //protect against bad index
+    if(index > self.summaryHistory.count)
+    {
+        index = self.summaryHistory.count - 1;
+    }
+    
+    return (NSString *) [self.summaryHistory objectAtIndex:index];
+}
+
+
 
 - (instancetype)initWithCardCount:(NSUInteger)count
                         usingDeck:(Deck *)deck
@@ -121,8 +139,7 @@ static const int COST_TO_CHOOSE = 1;
                     
                     //Update the summary
                     [matchedCardsSummary appendFormat:@"for %d %@", matchScore, [self pointString:matchScore]];
-                    self.summary = matchedCardsSummary.copy;
-                    
+                    [self.summaryHistory addObject:matchedCardsSummary.copy];
                 }
                 else{
                     //Add up score penalty for chosen cards
@@ -142,7 +159,7 @@ static const int COST_TO_CHOOSE = 1;
                     [misMatchedCardsSummary appendFormat:@"don't match! %d %@ penalty!",
                         subtractFromScore,
                         [self pointString:subtractFromScore]];
-                    self.summary = misMatchedCardsSummary.copy;
+                    [self.summaryHistory addObject:misMatchedCardsSummary.copy];
                 }
             }
             //Haven't hit limit where card matching is checked
@@ -154,7 +171,7 @@ static const int COST_TO_CHOOSE = 1;
                 {
                     [cardsChosenSummary appendFormat:@"%@ ", otherCard.contents];
                 }
-                self.summary = cardsChosenSummary.copy;
+                [self.summaryHistory addObject:cardsChosenSummary.copy];
             }
             
             
