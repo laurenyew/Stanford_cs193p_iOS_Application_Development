@@ -882,6 +882,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="uGN-Nq-K3Y">
                                 <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                <connections>
+                                    <action selector="slideGameSummaryHistorySlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="uaY-7Y-aPn"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>

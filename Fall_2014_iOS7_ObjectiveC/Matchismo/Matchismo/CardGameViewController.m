@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UISlider *historySlider;
 @property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
 @property (strong, nonatomic) CardMatchingGame *game;
+@property (nonatomic) NSUInteger historyIndex;
 @end
 
 @implementation CardGameViewController
@@ -63,6 +64,18 @@
 }
 
 
+- (IBAction)slideGameSummaryHistorySlider:(UISlider *)sender {
+    NSUInteger index =(NSUInteger) sender.value;
+    if(index != self.historyIndex)
+    {
+        NSLog(@"Slid game summary history slider to index: %lu" , index);
+        self.historyIndex = index;
+        [self updateSummaryUI];
+    }
+}
+
+
+
 #pragma Card Buttons
 
 - (IBAction)touchCardButton:(UIButton *)sender {
@@ -90,13 +103,22 @@
         cardButton.enabled = !card.isMatched;
         
     }
-    //Update history slider for new move
-    self.historySlider.maximumValue = self.game.summaryItemCount;
-    [self.historySlider setValue:self.historySlider.maximumValue animated:YES];
-
-    //Update summary labels
+    
+    //Update score label
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", (int) self.game.score];
-    self.summaryLabel.text = [self.game summaryAtIndex: (NSUInteger) self.historySlider.value];
+ 
+    //reset the history slider to be at the most recent value
+    self.historyIndex = self.game.summaryItemCount;
+    [self.historySlider setMaximumValue:self.historyIndex];
+    [self.historySlider setValue:self.historyIndex animated:YES];
+    
+    //Update history summary for new move
+    [self updateSummaryUI];
+}
+
+- (void)updateSummaryUI
+{
+     self.summaryLabel.text = [self.game summaryAtIndex: self.historyIndex];
 }
 
 - (NSString *)titleForCard:(Card *)card
