@@ -40,7 +40,7 @@
 {
     if(!_summaryHistory)
     {
-        _summaryHistory = [[NSMutableArray alloc] initWithArray:@[@""]];
+        _summaryHistory = [[NSMutableArray alloc] init];
     }
     return _summaryHistory;
 }
@@ -53,7 +53,7 @@
 - (NSString *)summaryAtIndex:(NSUInteger)index
 {
     //protect against bad index
-    if(index > self.summaryHistory.count)
+    if(index >= self.summaryHistory.count)
     {
         index = self.summaryHistory.count - 1;
     }
