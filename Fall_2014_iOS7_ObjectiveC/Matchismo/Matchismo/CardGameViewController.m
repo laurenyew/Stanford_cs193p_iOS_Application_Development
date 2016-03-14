@@ -116,9 +116,20 @@
     [self updateSummaryUI];
 }
 
+static const float CURRENT_EVENT_ALPHA = 1.0;
+static const float PAST_EVENT_ALPHA = 0.3;
+
 - (void)updateSummaryUI
 {
-     self.summaryLabel.text = [self.game summaryAtIndex: self.historyIndex];
+    self.summaryLabel.text = [self.game summaryAtIndex: self.historyIndex];
+    
+    //Summaries from the past should be grayed out
+    if (self.historyIndex == self.historySlider.maximumValue) {
+        [self.summaryLabel setAlpha:CURRENT_EVENT_ALPHA];
+    }
+    else{
+        [self.summaryLabel setAlpha:PAST_EVENT_ALPHA];
+    }
 }
 
 - (NSString *)titleForCard:(Card *)card
