@@ -13,7 +13,8 @@
 - [x] 5. View Controller Lifecycle
 - [x] 6. Polymorphism with Controllers, UINavigation, etc.
 - [x] 7. Views and Gestures
-- [ ] 8. Protocols, Blocks, and Animation
+- [x] 8. Protocols, Blocks, and Animation
+- [ ] 9. Animations and Autolayouts
 
 **Assignments**
 - [x] 1. Matchismo (Card Matching game)
