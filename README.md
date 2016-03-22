@@ -14,7 +14,8 @@
 - [x] 6. Polymorphism with Controllers, UINavigation, etc.
 - [x] 7. Views and Gestures
 - [x] 8. Protocols, Blocks, and Animation
-- [ ] 9. Animations and Autolayouts
+- [x] 9. Animations and Autolayouts
+- [ ] 10. Multithreading, Scroll
 
 **Assignments**
 - [x] 1. Matchismo (Card Matching game)
