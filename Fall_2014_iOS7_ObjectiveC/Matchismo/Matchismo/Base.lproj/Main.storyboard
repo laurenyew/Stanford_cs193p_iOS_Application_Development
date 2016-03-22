@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQd-d8-nqA">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQd-d8-nqA">
                                 <rect key="frame" x="20" y="28" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -63,14 +63,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="aG1-5O-eoN">
-                                <rect key="frame" x="18" y="439" width="564" height="31"/>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="slideGameSummaryHistorySlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="6cH-eN-6Dv"/>
-                                </connections>
-                            </slider>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcJ-sW-LY9">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcJ-sW-LY9">
                                 <rect key="frame" x="20" y="113" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -79,7 +72,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nv5-JL-UW7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJn-6U-Tm3">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJn-6U-Tm3">
                                 <rect key="frame" x="20" y="198" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -88,7 +81,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WqM-m6-8WM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3V-vR-VuQ">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3V-vR-VuQ">
                                 <rect key="frame" x="20" y="283" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -97,7 +90,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VA3-qn-qCg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9M-Et-VoW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9M-Et-VoW">
                                 <rect key="frame" x="20" y="283" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -106,7 +99,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1sI-PR-MMu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rO-KW-zCp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rO-KW-zCp">
                                 <rect key="frame" x="20" y="28" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -115,7 +108,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MrJ-Yd-Tnl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIh-pE-RpL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIh-pE-RpL">
                                 <rect key="frame" x="20" y="113" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -124,7 +117,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Df-eG-oQ1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttj-uh-LpC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttj-uh-LpC">
                                 <rect key="frame" x="20" y="198" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -133,7 +126,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E7F-Yt-MWq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOz-KK-PGF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOz-KK-PGF">
                                 <rect key="frame" x="20" y="283" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -142,7 +135,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rLm-Hx-FfR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1td-YZ-dSc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1td-YZ-dSc">
                                 <rect key="frame" x="20" y="283" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -151,7 +144,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BIA-V5-ykY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gt-vM-RXY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gt-vM-RXY">
                                 <rect key="frame" x="20" y="28" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -160,7 +153,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tnd-Fa-jUM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13X-4s-Jhz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13X-4s-Jhz">
                                 <rect key="frame" x="20" y="113" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -169,7 +162,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Hm-HZ-tqn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YZ-vU-D1s">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YZ-vU-D1s">
                                 <rect key="frame" x="20" y="198" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -178,7 +171,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zlw-Mr-8dm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09N-Yl-4At">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09N-Yl-4At">
                                 <rect key="frame" x="20" y="283" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -187,7 +180,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6S6-2w-ZRS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qj-Mc-3ka">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qj-Mc-3ka">
                                 <rect key="frame" x="20" y="28" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -196,7 +189,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fb7-SE-o9T"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfL-77-IlG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfL-77-IlG">
                                 <rect key="frame" x="20" y="113" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -205,7 +198,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P2F-2R-Iad"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BD-oQ-PXh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BD-oQ-PXh">
                                 <rect key="frame" x="20" y="198" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -214,7 +207,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hyx-E9-b0b"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIN-IO-xCi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIN-IO-xCi">
                                 <rect key="frame" x="20" y="283" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -223,7 +216,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WMC-gK-3Rs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcn-33-0n0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcn-33-0n0">
                                 <rect key="frame" x="20" y="283" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -232,7 +225,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hAg-Cw-f4q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Py-dd-Sfw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Py-dd-Sfw">
                                 <rect key="frame" x="20" y="28" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -241,7 +234,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kVl-Vl-aTk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dl-bq-SDE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dl-bq-SDE">
                                 <rect key="frame" x="20" y="113" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -250,7 +243,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fOT-sO-c6H"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xab-gF-vVL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xab-gF-vVL">
                                 <rect key="frame" x="20" y="198" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -259,7 +252,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iCk-2Y-xxd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSI-KJ-0g8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSI-KJ-0g8">
                                 <rect key="frame" x="20" y="283" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -268,7 +261,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MAh-iN-Zy6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhy-Rs-dsQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhy-Rs-dsQ">
                                 <rect key="frame" x="20" y="283" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -277,7 +270,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bmf-cs-PaS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhU-xN-WIZ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhU-xN-WIZ">
                                 <rect key="frame" x="20" y="283" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -286,7 +279,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sWh-iR-H8c"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIa-4p-whl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIa-4p-whl">
                                 <rect key="frame" x="20" y="283" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -295,7 +288,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rqa-S3-5fK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOm-pW-eEP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOm-pW-eEP">
                                 <rect key="frame" x="20" y="283" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -304,7 +297,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YfW-lP-cT9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nN-d4-avV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nN-d4-avV">
                                 <rect key="frame" x="20" y="283" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -313,7 +306,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j3t-YM-VA1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-ZY-axz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-ZY-axz">
                                 <rect key="frame" x="20" y="283" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -322,7 +315,7 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="efv-KY-R1I"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnw-Vb-AkO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnw-Vb-AkO">
                                 <rect key="frame" x="20" y="283" width="58" height="77"/>
                                 <state key="normal" backgroundImage="cardBack">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -343,6 +336,16 @@
                                     <action selector="setCardMatchModeControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="NV4-Ic-D1P"/>
                                 </connections>
                             </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="aG1-5O-eoN">
+                                <rect key="frame" x="18" y="439" width="564" height="31"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="18" y="639" width="564" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="slideGameSummaryHistorySlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="6cH-eN-6Dv"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -432,6 +435,7 @@
                             <constraint firstItem="YgW-6G-IcZ" firstAttribute="top" secondItem="aG1-5O-eoN" secondAttribute="bottom" constant="26" id="cd5-rd-qSe"/>
                             <constraint firstItem="Hcn-33-0n0" firstAttribute="leading" secondItem="1qj-Mc-3ka" secondAttribute="leading" id="d3l-j8-g4W"/>
                             <constraint firstItem="13X-4s-Jhz" firstAttribute="width" secondItem="VQd-d8-nqA" secondAttribute="width" id="d81-th-POh"/>
+                            <constraint firstItem="aG1-5O-eoN" firstAttribute="top" secondItem="bIa-4p-whl" secondAttribute="bottom" constant="10" id="dNI-uq-Fbd"/>
                             <constraint firstItem="1qj-Mc-3ka" firstAttribute="height" secondItem="VQd-d8-nqA" secondAttribute="height" id="drt-od-Xzt"/>
                             <constraint firstItem="kSI-KJ-0g8" firstAttribute="leading" secondItem="9Py-dd-Sfw" secondAttribute="leading" id="eVm-u2-ph2"/>
                             <constraint firstItem="ttj-uh-LpC" firstAttribute="leading" secondItem="8rO-KW-zCp" secondAttribute="leading" id="eps-47-LlK"/>
@@ -538,14 +542,14 @@
                                 <exclude reference="Qtj-Q7-RCf"/>
                                 <exclude reference="SEe-aU-3xa"/>
                                 <exclude reference="fa2-bX-EOI"/>
-                                <exclude reference="KAR-g7-ctb"/>
-                                <exclude reference="adg-fo-2Bl"/>
-                                <exclude reference="d81-th-POh"/>
-                                <exclude reference="geE-Jk-Qsj"/>
                                 <exclude reference="AhR-sg-nqb"/>
                                 <exclude reference="Sp3-S8-toB"/>
                                 <exclude reference="hAu-Qm-cAL"/>
                                 <exclude reference="vtj-5j-t6B"/>
+                                <exclude reference="KAR-g7-ctb"/>
+                                <exclude reference="adg-fo-2Bl"/>
+                                <exclude reference="d81-th-POh"/>
+                                <exclude reference="geE-Jk-Qsj"/>
                                 <exclude reference="4B4-3F-TeN"/>
                                 <exclude reference="Mg3-Zs-T5C"/>
                                 <exclude reference="NDF-ud-R7c"/>
@@ -555,10 +559,6 @@
                                 <exclude reference="drt-od-Xzt"/>
                                 <exclude reference="gw3-RI-HQv"/>
                                 <exclude reference="jNm-Zf-eGc"/>
-                                <exclude reference="24D-xo-Iig"/>
-                                <exclude reference="SLq-ge-lBq"/>
-                                <exclude reference="XIg-EH-vfH"/>
-                                <exclude reference="b4U-fR-NHa"/>
                                 <exclude reference="HIV-cj-adp"/>
                                 <exclude reference="UoR-gy-mkr"/>
                                 <exclude reference="Y0f-rO-lTg"/>
@@ -567,46 +567,54 @@
                                 <exclude reference="Vof-J0-t6o"/>
                                 <exclude reference="b3n-x1-Mdl"/>
                                 <exclude reference="tcE-Io-Xcm"/>
-                                <exclude reference="BIl-Ce-gDv"/>
-                                <exclude reference="HTd-dH-ENI"/>
-                                <exclude reference="Lmv-QG-eKQ"/>
-                                <exclude reference="Sr2-lo-PKf"/>
-                                <exclude reference="3jP-6a-X74"/>
-                                <exclude reference="p3W-Gk-xxQ"/>
-                                <exclude reference="qEU-Pp-pH2"/>
-                                <exclude reference="t9r-UD-P8i"/>
+                                <exclude reference="24D-xo-Iig"/>
+                                <exclude reference="SLq-ge-lBq"/>
+                                <exclude reference="XIg-EH-vfH"/>
+                                <exclude reference="b4U-fR-NHa"/>
                                 <exclude reference="JWX-w6-dXn"/>
                                 <exclude reference="RCt-Jv-Gdv"/>
                                 <exclude reference="WxU-5T-0EP"/>
                                 <exclude reference="gjD-m3-Gbe"/>
-                                <exclude reference="H4d-FY-krY"/>
-                                <exclude reference="Yj0-58-kMW"/>
-                                <exclude reference="tod-1S-iUk"/>
-                                <exclude reference="x4w-kQ-P2Z"/>
+                                <exclude reference="3jP-6a-X74"/>
+                                <exclude reference="p3W-Gk-xxQ"/>
+                                <exclude reference="qEU-Pp-pH2"/>
+                                <exclude reference="t9r-UD-P8i"/>
                                 <exclude reference="1cm-eU-zzl"/>
                                 <exclude reference="6pg-XE-fMB"/>
                                 <exclude reference="AsC-A4-6Nz"/>
                                 <exclude reference="XPB-Cz-HWU"/>
-                                <exclude reference="TuI-ZG-g2v"/>
-                                <exclude reference="ho6-74-uOk"/>
-                                <exclude reference="uKY-Ih-vNP"/>
-                                <exclude reference="z0E-wr-lgU"/>
-                                <exclude reference="gOD-it-SbS"/>
-                                <exclude reference="gxr-hG-a1S"/>
-                                <exclude reference="hPf-E1-MJG"/>
-                                <exclude reference="qhG-gn-LsX"/>
+                                <exclude reference="BIl-Ce-gDv"/>
+                                <exclude reference="HTd-dH-ENI"/>
+                                <exclude reference="Lmv-QG-eKQ"/>
+                                <exclude reference="Sr2-lo-PKf"/>
                                 <exclude reference="3Ic-Yq-kZU"/>
                                 <exclude reference="KOS-3a-Bsk"/>
                                 <exclude reference="hEq-2I-Wg2"/>
                                 <exclude reference="rHX-wt-EC4"/>
+                                <exclude reference="H4d-FY-krY"/>
+                                <exclude reference="Yj0-58-kMW"/>
+                                <exclude reference="tod-1S-iUk"/>
+                                <exclude reference="x4w-kQ-P2Z"/>
                                 <exclude reference="29z-rH-hM7"/>
                                 <exclude reference="Amf-dV-NnF"/>
                                 <exclude reference="TXS-H2-Xpg"/>
                                 <exclude reference="akc-8E-7vf"/>
+                                <exclude reference="gOD-it-SbS"/>
+                                <exclude reference="gxr-hG-a1S"/>
+                                <exclude reference="hPf-E1-MJG"/>
+                                <exclude reference="qhG-gn-LsX"/>
+                                <exclude reference="TuI-ZG-g2v"/>
+                                <exclude reference="ho6-74-uOk"/>
+                                <exclude reference="uKY-Ih-vNP"/>
+                                <exclude reference="z0E-wr-lgU"/>
                                 <exclude reference="1Uf-nc-a4V"/>
                                 <exclude reference="W9r-pH-3m3"/>
                                 <exclude reference="mOU-Qo-XWA"/>
                                 <exclude reference="t2b-hX-fta"/>
+                                <exclude reference="97g-dL-09M"/>
+                                <exclude reference="Qpk-rT-hyR"/>
+                                <exclude reference="jf1-n0-gDg"/>
+                                <exclude reference="vE9-BB-FGv"/>
                                 <exclude reference="eVm-u2-ph2"/>
                                 <exclude reference="gNg-Nr-dV0"/>
                                 <exclude reference="vU7-n0-pbj"/>
@@ -615,22 +623,18 @@
                                 <exclude reference="9Il-jn-DSO"/>
                                 <exclude reference="d3l-j8-g4W"/>
                                 <exclude reference="goL-hZ-sgE"/>
-                                <exclude reference="97g-dL-09M"/>
-                                <exclude reference="Qpk-rT-hyR"/>
-                                <exclude reference="jf1-n0-gDg"/>
-                                <exclude reference="vE9-BB-FGv"/>
                                 <exclude reference="2fz-s9-4G6"/>
                                 <exclude reference="OvF-C6-cWw"/>
                                 <exclude reference="Soi-qX-NYM"/>
                                 <exclude reference="YdO-45-dtY"/>
-                                <exclude reference="6Ll-Hv-sNj"/>
-                                <exclude reference="85J-vR-PEg"/>
-                                <exclude reference="YdK-my-g0w"/>
-                                <exclude reference="mfr-lm-zSG"/>
                                 <exclude reference="R7u-aZ-fzA"/>
                                 <exclude reference="Vck-Ky-aOP"/>
                                 <exclude reference="gr1-Td-5kP"/>
                                 <exclude reference="yBs-0t-mSc"/>
+                                <exclude reference="6Ll-Hv-sNj"/>
+                                <exclude reference="85J-vR-PEg"/>
+                                <exclude reference="YdK-my-g0w"/>
+                                <exclude reference="mfr-lm-zSG"/>
                                 <exclude reference="8sn-Qd-05A"/>
                                 <exclude reference="9gp-MF-mcZ"/>
                                 <exclude reference="a9j-vM-Bll"/>
@@ -640,6 +644,7 @@
                                 <exclude reference="qpu-KL-fEi"/>
                                 <exclude reference="uVt-a0-e6B"/>
                                 <exclude reference="8a4-oT-a2c"/>
+                                <exclude reference="dNI-uq-Fbd"/>
                                 <exclude reference="pK4-8y-cjd"/>
                                 <exclude reference="8VW-HE-sK7"/>
                                 <exclude reference="Gwx-rE-vI3"/>
@@ -701,14 +706,14 @@
                                 <include reference="Qtj-Q7-RCf"/>
                                 <include reference="SEe-aU-3xa"/>
                                 <include reference="fa2-bX-EOI"/>
-                                <include reference="KAR-g7-ctb"/>
-                                <include reference="adg-fo-2Bl"/>
-                                <include reference="d81-th-POh"/>
-                                <include reference="geE-Jk-Qsj"/>
                                 <include reference="AhR-sg-nqb"/>
                                 <include reference="Sp3-S8-toB"/>
                                 <include reference="hAu-Qm-cAL"/>
                                 <include reference="vtj-5j-t6B"/>
+                                <include reference="KAR-g7-ctb"/>
+                                <include reference="adg-fo-2Bl"/>
+                                <include reference="d81-th-POh"/>
+                                <include reference="geE-Jk-Qsj"/>
                                 <include reference="4B4-3F-TeN"/>
                                 <include reference="Mg3-Zs-T5C"/>
                                 <include reference="NDF-ud-R7c"/>
@@ -718,10 +723,6 @@
                                 <include reference="drt-od-Xzt"/>
                                 <include reference="gw3-RI-HQv"/>
                                 <include reference="jNm-Zf-eGc"/>
-                                <include reference="24D-xo-Iig"/>
-                                <include reference="SLq-ge-lBq"/>
-                                <include reference="XIg-EH-vfH"/>
-                                <include reference="b4U-fR-NHa"/>
                                 <include reference="HIV-cj-adp"/>
                                 <include reference="UoR-gy-mkr"/>
                                 <include reference="Y0f-rO-lTg"/>
@@ -730,46 +731,54 @@
                                 <include reference="Vof-J0-t6o"/>
                                 <include reference="b3n-x1-Mdl"/>
                                 <include reference="tcE-Io-Xcm"/>
-                                <include reference="BIl-Ce-gDv"/>
-                                <include reference="HTd-dH-ENI"/>
-                                <include reference="Lmv-QG-eKQ"/>
-                                <include reference="Sr2-lo-PKf"/>
-                                <include reference="3jP-6a-X74"/>
-                                <include reference="p3W-Gk-xxQ"/>
-                                <include reference="qEU-Pp-pH2"/>
-                                <include reference="t9r-UD-P8i"/>
+                                <include reference="24D-xo-Iig"/>
+                                <include reference="SLq-ge-lBq"/>
+                                <include reference="XIg-EH-vfH"/>
+                                <include reference="b4U-fR-NHa"/>
                                 <include reference="JWX-w6-dXn"/>
                                 <include reference="RCt-Jv-Gdv"/>
                                 <include reference="WxU-5T-0EP"/>
                                 <include reference="gjD-m3-Gbe"/>
-                                <include reference="H4d-FY-krY"/>
-                                <include reference="Yj0-58-kMW"/>
-                                <include reference="tod-1S-iUk"/>
-                                <include reference="x4w-kQ-P2Z"/>
+                                <include reference="3jP-6a-X74"/>
+                                <include reference="p3W-Gk-xxQ"/>
+                                <include reference="qEU-Pp-pH2"/>
+                                <include reference="t9r-UD-P8i"/>
                                 <include reference="1cm-eU-zzl"/>
                                 <include reference="6pg-XE-fMB"/>
                                 <include reference="AsC-A4-6Nz"/>
                                 <include reference="XPB-Cz-HWU"/>
-                                <include reference="TuI-ZG-g2v"/>
-                                <include reference="ho6-74-uOk"/>
-                                <include reference="uKY-Ih-vNP"/>
-                                <include reference="z0E-wr-lgU"/>
-                                <include reference="gOD-it-SbS"/>
-                                <include reference="gxr-hG-a1S"/>
-                                <include reference="hPf-E1-MJG"/>
-                                <include reference="qhG-gn-LsX"/>
+                                <include reference="BIl-Ce-gDv"/>
+                                <include reference="HTd-dH-ENI"/>
+                                <include reference="Lmv-QG-eKQ"/>
+                                <include reference="Sr2-lo-PKf"/>
                                 <include reference="3Ic-Yq-kZU"/>
                                 <include reference="KOS-3a-Bsk"/>
                                 <include reference="hEq-2I-Wg2"/>
                                 <include reference="rHX-wt-EC4"/>
+                                <include reference="H4d-FY-krY"/>
+                                <include reference="Yj0-58-kMW"/>
+                                <include reference="tod-1S-iUk"/>
+                                <include reference="x4w-kQ-P2Z"/>
                                 <include reference="29z-rH-hM7"/>
                                 <include reference="Amf-dV-NnF"/>
                                 <include reference="TXS-H2-Xpg"/>
                                 <include reference="akc-8E-7vf"/>
+                                <include reference="gOD-it-SbS"/>
+                                <include reference="gxr-hG-a1S"/>
+                                <include reference="hPf-E1-MJG"/>
+                                <include reference="qhG-gn-LsX"/>
+                                <include reference="TuI-ZG-g2v"/>
+                                <include reference="ho6-74-uOk"/>
+                                <include reference="uKY-Ih-vNP"/>
+                                <include reference="z0E-wr-lgU"/>
                                 <include reference="1Uf-nc-a4V"/>
                                 <include reference="W9r-pH-3m3"/>
                                 <include reference="mOU-Qo-XWA"/>
                                 <include reference="t2b-hX-fta"/>
+                                <include reference="97g-dL-09M"/>
+                                <include reference="Qpk-rT-hyR"/>
+                                <include reference="jf1-n0-gDg"/>
+                                <include reference="vE9-BB-FGv"/>
                                 <include reference="eVm-u2-ph2"/>
                                 <include reference="gNg-Nr-dV0"/>
                                 <include reference="vU7-n0-pbj"/>
@@ -778,22 +787,18 @@
                                 <include reference="9Il-jn-DSO"/>
                                 <include reference="d3l-j8-g4W"/>
                                 <include reference="goL-hZ-sgE"/>
-                                <include reference="97g-dL-09M"/>
-                                <include reference="Qpk-rT-hyR"/>
-                                <include reference="jf1-n0-gDg"/>
-                                <include reference="vE9-BB-FGv"/>
                                 <include reference="2fz-s9-4G6"/>
                                 <include reference="OvF-C6-cWw"/>
                                 <include reference="Soi-qX-NYM"/>
                                 <include reference="YdO-45-dtY"/>
-                                <include reference="6Ll-Hv-sNj"/>
-                                <include reference="85J-vR-PEg"/>
-                                <include reference="YdK-my-g0w"/>
-                                <include reference="mfr-lm-zSG"/>
                                 <include reference="R7u-aZ-fzA"/>
                                 <include reference="Vck-Ky-aOP"/>
                                 <include reference="gr1-Td-5kP"/>
                                 <include reference="yBs-0t-mSc"/>
+                                <include reference="6Ll-Hv-sNj"/>
+                                <include reference="85J-vR-PEg"/>
+                                <include reference="YdK-my-g0w"/>
+                                <include reference="mfr-lm-zSG"/>
                                 <include reference="8sn-Qd-05A"/>
                                 <include reference="9gp-MF-mcZ"/>
                                 <include reference="a9j-vM-Bll"/>
@@ -804,6 +809,7 @@
                                 <include reference="uVt-a0-e6B"/>
                                 <include reference="8a4-oT-a2c"/>
                                 <exclude reference="ZFF-PT-rZW"/>
+                                <include reference="dNI-uq-Fbd"/>
                                 <include reference="pK4-8y-cjd"/>
                                 <exclude reference="z3o-Nk-Efc"/>
                                 <include reference="8VW-HE-sK7"/>
