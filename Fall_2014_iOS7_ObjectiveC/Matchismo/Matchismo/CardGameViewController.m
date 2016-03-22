@@ -99,6 +99,8 @@
                     forState:UIControlStateNormal];
         [cardButton setBackgroundImage:[self backgroundImageForCard:card]
                               forState:UIControlStateNormal];
+        cardButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        //cardButton.imageView.frame = CGRectMake(0, 0, 70, 70);
         //disable matched cards
         cardButton.enabled = !card.isMatched;
         
