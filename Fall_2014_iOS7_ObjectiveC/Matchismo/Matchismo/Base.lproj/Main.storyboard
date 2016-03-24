@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Match-->
+        <!--Playing Card Matching Game-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CardGameViewController" sceneMemberID="viewController">
+                <viewController title="Playing Card Matching Game" id="BYZ-38-t0r" customClass="CardGameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -877,6 +877,7 @@
         <!--Stanford CS193p-->
         <scene sceneID="FgM-m8-5K0">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L4Y-zv-yFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController title="Stanford CS193p" automaticallyAdjustsScrollViewInsets="NO" id="gSX-MF-Z5G" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="bPI-3h-k9i">
@@ -885,17 +886,17 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="mIc-Ch-dZ9"/>
+                        <segue destination="3Z1-KT-Tba" kind="relationship" relationship="viewControllers" id="m8s-RD-n0u"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L4Y-zv-yFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="159" y="862.5"/>
         </scene>
-        <!--Match-->
+        <!--Set Game-->
         <scene sceneID="DTb-l2-kpA">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mHW-qQ-4tQ" sceneMemberID="firstResponder"/>
-                <viewController id="3Z1-KT-Tba" customClass="CardGameViewController" sceneMemberID="viewController">
+                <viewController title="Set Game" id="3Z1-KT-Tba" customClass="CardGameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y9A-rj-NaL"/>
                         <viewControllerLayoutGuide type="bottom" id="DnR-Ko-3oa"/>
@@ -1731,7 +1732,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Match" id="qvw-nf-oz7"/>
+                    <tabBarItem key="tabBarItem" title="Set" id="qvw-nf-oz7"/>
                     <connections>
                         <outlet property="gameMatchModeControl" destination="LKa-nv-Uvl" id="IhG-qj-TUM"/>
                         <outlet property="historySlider" destination="BaD-TB-gTI" id="vmN-MN-zO6"/>
