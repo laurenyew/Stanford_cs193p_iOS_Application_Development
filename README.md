@@ -15,7 +15,7 @@
 - [x] 7. Views and Gestures
 - [x] 8. Protocols, Blocks, and Animation
 - [x] 9. Animations and Autolayouts
-- [ ] 10. Multithreading, Scroll
+- [ ] 10. Multithreading, Scroll -- WIP
 
 **Assignments**
 - [x] 1. Matchismo (Card Matching game)

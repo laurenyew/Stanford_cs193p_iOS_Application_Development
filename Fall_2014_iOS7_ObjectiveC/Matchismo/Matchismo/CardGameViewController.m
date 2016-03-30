@@ -31,7 +31,7 @@
     if (!_game) {
         _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                                   usingDeck:[self createDeck]];
-        [self setCardMatchModeControl:self.gameMatchModeControl];
+//        [self setCardMatchModeControl:self.gameMatchModeControl];
     }
     return _game;
 }
@@ -56,12 +56,13 @@
     [self updateUI];
 }
 
-- (IBAction)setCardMatchModeControl:(UISegmentedControl *)sender {
-    NSLog(@"Selected index: %ld", sender.selectedSegmentIndex);
-    NSString *cardMatchMode =[sender titleForSegmentAtIndex:sender.selectedSegmentIndex];
-    NSLog(@"Toggle Card Match Mode Control to: %@", cardMatchMode);
-    self.game.maxCardsToStartMatch = [cardMatchMode integerValue];
-}
+// Assignment 3: Set -- As per Assignment, the Card Match Mode Control is no longer needed. Leaving code for legacy sake.
+//- (IBAction)setCardMatchModeControl:(UISegmentedControl *)sender {
+//    NSLog(@"Selected index: %ld", sender.selectedSegmentIndex);
+//    NSString *cardMatchMode =[sender titleForSegmentAtIndex:sender.selectedSegmentIndex];
+//    NSLog(@"Toggle Card Match Mode Control to: %@", cardMatchMode);
+//    self.game.maxCardsToStartMatch = [cardMatchMode integerValue];
+//}
 
 
 - (IBAction)slideGameSummaryHistorySlider:(UISlider *)sender {
