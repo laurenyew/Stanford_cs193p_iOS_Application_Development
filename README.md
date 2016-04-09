@@ -26,5 +26,10 @@
 - [ ] 3. Set: Add a second cord matching game, Set. Use navigation controller to show history of matches and mismatches. -- WIP
 
 ####  Fall 2015 iOS8 Swift (All Assignments + Bonus)
+**Lectures**
+- [ ] 1. Logistics, iOS 8 Overview -- WIP
+
+**Assignments**
+- [ ] 1. Calculator (Intro to Swift and MVC) -- WIP
 
 Assignments created by Paul Hegarty of Stanford University
