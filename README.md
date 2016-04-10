@@ -27,7 +27,8 @@
 
 ####  Fall 2015 iOS8 Swift (All Assignments + Bonus)
 **Lectures**
-- [ ] 1. Logistics, iOS 8 Overview -- WIP
+- [x] 1. Logistics, iOS 8 Overview
+- [ ] 2. More Xode and Swift, MVC -- WIP
 
 **Assignments**
 - [ ] 1. Calculator (Intro to Swift and MVC) -- WIP
