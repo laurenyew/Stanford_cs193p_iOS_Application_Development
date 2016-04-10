@@ -14,6 +14,23 @@ class ViewController: UIViewController
 
     var userIsInTheMiddleOfTypingANumber: Bool = false
     
+    //Can also be:
+    //var operandStack2 : [Double] = []
+    var operandStack = Array<Double>()
+    
+    var displayValue: Double
+    {
+        //When get out, take display value out of label
+        get{
+            return NSNumberFormatter().numberFromString(display.text!)!.doubleValue
+        }
+        //When set value as a double, want label to update
+        set{
+           display.text = "\(newValue)"
+        }
+    }
+    
+    
     @IBAction func appendDigit(sender: UIButton) {
         let digit = sender.currentTitle!
         print("digit = \(digit)")
@@ -27,5 +44,13 @@ class ViewController: UIViewController
         }
     }
     
+    
+    @IBAction func touchEnter() {
+        print("Selected Enter Button")
+        operandStack.append(displayValue)
+        userIsInTheMiddleOfTypingANumber = false
+        
+        print("Operand Stack: \(operandStack)")
+    }
 }
 
