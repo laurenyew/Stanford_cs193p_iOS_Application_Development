@@ -52,5 +52,24 @@ class ViewController: UIViewController
         
         print("Operand Stack: \(operandStack)")
     }
+    
+    
+    @IBAction func touchOperand(sender: UIButton) {
+        let operand = sender.currentTitle!
+        print("Selected Operand: \(operand)")
+    
+        switch(operand)
+        {
+            case "÷": break
+            case "×": break
+            case "-": break
+            case "+": break
+            default: break
+        }
+        
+    }
+    
+    
+    
 }
 
