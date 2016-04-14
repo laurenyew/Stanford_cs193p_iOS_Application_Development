@@ -55,7 +55,7 @@
     //protect against bad index
     if(index >= self.summaryHistory.count)
     {
-        index = self.summaryHistory.count - 1;
+        return nil;
     }
     
     return (NSString *) [self.summaryHistory objectAtIndex:index];

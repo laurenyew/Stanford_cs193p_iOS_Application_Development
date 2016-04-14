@@ -138,18 +138,6 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jKn-rd-Omi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOb-Z4-dx8">
-                                <rect key="frame" x="333" y="252" width="50" height="50"/>
-                                <state key="normal" backgroundImage="cardBack">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="193" y="115" width="114" height="159"/>
-                                </variation>
-                                <connections>
-                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MjK-ej-lwf"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKY-6o-xxT">
                                 <rect key="frame" x="333" y="310" width="50" height="50"/>
                                 <state key="normal" backgroundImage="cardBack">
@@ -389,7 +377,16 @@
                                 <state key="normal" title="Deal">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="touchDealButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="CO4-ol-xOU"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIb-MS-J6t">
+                                <rect key="frame" x="20" y="548" width="461.5" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Summary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Sf-S0-aYx">
                                 <rect key="frame" x="20" y="416" width="560" height="19.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -398,13 +395,22 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="1Lw-hU-lhL">
                                 <rect key="frame" x="18" y="378" width="564" height="31"/>
+                                <connections>
+                                    <action selector="slideGameSummaryHistorySlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="txK-FJ-c2k"/>
+                                </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIb-MS-J6t">
-                                <rect key="frame" x="20" y="548" width="461.5" height="32"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOb-Z4-dx8">
+                                <rect key="frame" x="333" y="252" width="50" height="50"/>
+                                <state key="normal" backgroundImage="cardBack">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="193" y="115" width="114" height="159"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MjK-ej-lwf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -488,6 +494,41 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Match" id="A2Q-ci-0a5"/>
+                    <connections>
+                        <outlet property="historySlider" destination="1Lw-hU-lhL" id="kyL-pY-XPW"/>
+                        <outlet property="scoreLabel" destination="hIb-MS-J6t" id="1gi-7l-pn3"/>
+                        <outlet property="summaryLabel" destination="2Sf-S0-aYx" id="njE-av-2Ve"/>
+                        <outletCollection property="cardButtons" destination="dIB-gF-xEo" id="7t3-TQ-6fF"/>
+                        <outletCollection property="cardButtons" destination="lhN-mR-ccY" id="YpK-Ff-U2X"/>
+                        <outletCollection property="cardButtons" destination="BaQ-lU-ALh" id="lv2-3q-QfL"/>
+                        <outletCollection property="cardButtons" destination="QAn-5v-9pg" id="IZB-5Q-Hsg"/>
+                        <outletCollection property="cardButtons" destination="zv9-og-68b" id="Njl-Rd-HQP"/>
+                        <outletCollection property="cardButtons" destination="LIv-NZ-49n" id="Mbh-Uw-opm"/>
+                        <outletCollection property="cardButtons" destination="ddj-76-SYk" id="p8E-CV-mj9"/>
+                        <outletCollection property="cardButtons" destination="4pt-XP-r1Z" id="HH2-Qw-5xm"/>
+                        <outletCollection property="cardButtons" destination="8y3-rK-1XK" id="BmY-Qq-SH1"/>
+                        <outletCollection property="cardButtons" destination="Gqs-Q7-u54" id="Enc-AO-9S3"/>
+                        <outletCollection property="cardButtons" destination="Dd9-ah-4bv" id="vEX-lF-fgt"/>
+                        <outletCollection property="cardButtons" destination="xj9-t1-GfQ" id="fxX-sB-orB"/>
+                        <outletCollection property="cardButtons" destination="8Q3-EX-7TH" id="vFo-un-OFY"/>
+                        <outletCollection property="cardButtons" destination="6I7-FD-x7f" id="aQh-0I-07g"/>
+                        <outletCollection property="cardButtons" destination="jTh-Df-YfP" id="5YT-41-e5y"/>
+                        <outletCollection property="cardButtons" destination="Jgf-Yo-qPZ" id="WLf-tB-OYn"/>
+                        <outletCollection property="cardButtons" destination="wcn-OL-dVY" id="l92-Yq-rUi"/>
+                        <outletCollection property="cardButtons" destination="Xjk-Rn-jya" id="aon-Df-h1B"/>
+                        <outletCollection property="cardButtons" destination="kZc-Hn-Ier" id="vd6-k4-s8b"/>
+                        <outletCollection property="cardButtons" destination="4OW-4T-4Xy" id="irY-vC-2Kz"/>
+                        <outletCollection property="cardButtons" destination="FRe-oF-NbP" id="6ye-g4-eY5"/>
+                        <outletCollection property="cardButtons" destination="lwE-fM-Igj" id="Xfz-q2-7cD"/>
+                        <outletCollection property="cardButtons" destination="1ht-Al-Hdn" id="thc-Fn-H25"/>
+                        <outletCollection property="cardButtons" destination="iOb-Z4-dx8" id="qaK-S3-QZW"/>
+                        <outletCollection property="cardButtons" destination="auD-Uq-0sv" id="ZAg-2H-Nh4"/>
+                        <outletCollection property="cardButtons" destination="Kno-V2-Onk" id="xCE-BR-MGY"/>
+                        <outletCollection property="cardButtons" destination="gru-uI-gcc" id="WSy-T2-Phi"/>
+                        <outletCollection property="cardButtons" destination="bWx-In-Aex" id="xVl-8u-Pop"/>
+                        <outletCollection property="cardButtons" destination="cKY-6o-xxT" id="yyj-9G-0Qp"/>
+                        <outletCollection property="cardButtons" destination="ECu-Ik-EEp" id="6Dc-E5-YKm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
