@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -378,19 +378,20 @@
                                     <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pJl-O4-D2P"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpD-ce-4Fa">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpD-ce-4Fa">
                                 <rect key="frame" x="501" y="548" width="78.5" height="32"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dpD-ce-4Fa" secondAttribute="height" multiplier="39:16" id="SM8-UJ-Hxv"/>
+                                    <constraint firstAttribute="height" constant="32" id="SUx-Et-bBb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Deal">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIb-MS-J6t">
-                                <rect key="frame" x="20" y="548" width="461.5" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Summary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Sf-S0-aYx">
+                                <rect key="frame" x="20" y="416" width="560" height="19.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -398,8 +399,8 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="1Lw-hU-lhL">
                                 <rect key="frame" x="18" y="378" width="564" height="31"/>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Summary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Sf-S0-aYx">
-                                <rect key="frame" x="20" y="416" width="560" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIb-MS-J6t">
+                                <rect key="frame" x="20" y="548" width="461.5" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -424,6 +425,7 @@
                             <constraint firstItem="8Q3-EX-7TH" firstAttribute="leading" secondItem="xj9-t1-GfQ" secondAttribute="trailing" constant="8" id="8WQ-op-2Fa"/>
                             <constraint firstItem="1ht-Al-Hdn" firstAttribute="top" secondItem="Xjk-Rn-jya" secondAttribute="bottom" constant="8" id="A7w-DB-MhG"/>
                             <constraint firstAttribute="leadingMargin" secondItem="2Sf-S0-aYx" secondAttribute="leading" id="As9-39-hkI"/>
+                            <constraint firstItem="2Sf-S0-aYx" firstAttribute="top" secondItem="1Lw-hU-lhL" secondAttribute="bottom" constant="8" id="Asz-rq-wKi"/>
                             <constraint firstItem="2Sf-S0-aYx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bea-uL-5hT"/>
                             <constraint firstItem="gru-uI-gcc" firstAttribute="top" secondItem="Kno-V2-Onk" secondAttribute="top" id="Br1-pI-QIH"/>
                             <constraint firstItem="4OW-4T-4Xy" firstAttribute="top" secondItem="Jgf-Yo-qPZ" secondAttribute="top" id="BwL-4d-pHw"/>
@@ -441,6 +443,7 @@
                             <constraint firstItem="cKY-6o-xxT" firstAttribute="top" secondItem="Kno-V2-Onk" secondAttribute="top" id="H8h-8l-iaO"/>
                             <constraint firstItem="8Q3-EX-7TH" firstAttribute="top" secondItem="4pt-XP-r1Z" secondAttribute="bottom" constant="8" id="IIc-Z1-lQ6"/>
                             <constraint firstItem="BaQ-lU-ALh" firstAttribute="leading" secondItem="lhN-mR-ccY" secondAttribute="trailing" constant="8" id="Jmx-Ex-a2c"/>
+                            <constraint firstItem="dpD-ce-4Fa" firstAttribute="height" secondItem="hIb-MS-J6t" secondAttribute="height" id="LG9-yO-hdF"/>
                             <constraint firstItem="zv9-og-68b" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LLQ-7A-zhT"/>
                             <constraint firstItem="6I7-FD-x7f" firstAttribute="top" secondItem="Dd9-ah-4bv" secondAttribute="top" id="MFW-tM-eRO"/>
                             <constraint firstItem="xj9-t1-GfQ" firstAttribute="leading" secondItem="Dd9-ah-4bv" secondAttribute="trailing" constant="8" id="MgQ-6S-XjA"/>
@@ -467,7 +470,6 @@
                             <constraint firstItem="4pt-XP-r1Z" firstAttribute="top" secondItem="LIv-NZ-49n" secondAttribute="top" id="jbw-46-5jg"/>
                             <constraint firstItem="jTh-Df-YfP" firstAttribute="top" secondItem="Dd9-ah-4bv" secondAttribute="top" id="kx6-4I-h9X"/>
                             <constraint firstItem="dpD-ce-4Fa" firstAttribute="leading" secondItem="hIb-MS-J6t" secondAttribute="trailing" constant="19.5" id="l5q-vr-k3B"/>
-                            <constraint firstItem="hIb-MS-J6t" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2Sf-S0-aYx" secondAttribute="bottom" constant="16" id="oFM-dB-yBU"/>
                             <constraint firstItem="BaQ-lU-ALh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oKB-Z9-sOi"/>
                             <constraint firstItem="dIB-gF-xEo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pBv-i9-g8z"/>
                             <constraint firstItem="1Lw-hU-lhL" firstAttribute="top" secondItem="bWx-In-Aex" secondAttribute="bottom" constant="18" id="qaI-44-tJZ"/>
@@ -480,7 +482,6 @@
                             <constraint firstItem="4pt-XP-r1Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v54-WX-XfA"/>
                             <constraint firstItem="jTh-Df-YfP" firstAttribute="leading" secondItem="6I7-FD-x7f" secondAttribute="trailing" constant="8" id="vmN-ye-Ep7"/>
                             <constraint firstItem="lhN-mR-ccY" firstAttribute="leading" secondItem="dIB-gF-xEo" secondAttribute="trailing" constant="8" id="w2W-1g-tMS"/>
-                            <constraint firstItem="2Sf-S0-aYx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1Lw-hU-lhL" secondAttribute="bottom" constant="8" id="weD-Is-WaG"/>
                             <constraint firstItem="Xjk-Rn-jya" firstAttribute="top" secondItem="8Q3-EX-7TH" secondAttribute="bottom" constant="8" id="xMm-mk-ggD"/>
                             <constraint firstItem="Gqs-Q7-u54" firstAttribute="top" secondItem="LIv-NZ-49n" secondAttribute="top" id="yKy-Lv-Uwa"/>
                             <constraint firstItem="auD-Uq-0sv" firstAttribute="top" secondItem="FRe-oF-NbP" secondAttribute="top" id="zkX-PM-qcT"/>
