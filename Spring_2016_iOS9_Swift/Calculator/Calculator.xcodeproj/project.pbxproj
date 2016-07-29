@@ -12,6 +12,7 @@
 		B995FCF91D43BDC900CA934C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B995FCF71D43BDC900CA934C /* Main.storyboard */; };
 		B995FCFB1D43BDC900CA934C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B995FCFA1D43BDC900CA934C /* Assets.xcassets */; };
 		B995FCFE1D43BDC900CA934C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B995FCFC1D43BDC900CA934C /* LaunchScreen.storyboard */; };
+		B9C8C7581D4ADD58005B1238 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C8C7571D4ADD58005B1238 /* CalculatorBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		B995FCFA1D43BDC900CA934C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B995FCFD1D43BDC900CA934C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B995FCFF1D43BDC900CA934C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9C8C7571D4ADD58005B1238 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				B995FCF51D43BDC900CA934C /* ViewController.swift */,
+				B9C8C7571D4ADD58005B1238 /* CalculatorBrain.swift */,
 				B995FCF71D43BDC900CA934C /* Main.storyboard */,
 				B995FD051D43BE1C00CA934C /* Supporting Files */,
 			);
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9C8C7581D4ADD58005B1238 /* CalculatorBrain.swift in Sources */,
 				B995FCF61D43BDC900CA934C /* ViewController.swift in Sources */,
 				B995FCF41D43BDC900CA934C /* AppDelegate.swift in Sources */,
 			);
@@ -297,6 +301,7 @@
 				B995FD041D43BDC900CA934C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
