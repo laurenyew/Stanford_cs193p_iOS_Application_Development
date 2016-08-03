@@ -9,6 +9,29 @@
 import Foundation
 
 class CalculatorBrain {
-    private var result = 0.0;
+    
+    //accumulate result of calculator
+    private var accumulator = 0.0
+    
+    //reset accumulator to be operand
+    func setOperand(operand: Double){
+        accumulator = operand
+    }
+    
+    func performOperation(symbol: String){
+        switch symbol {
+        case "π": accumulator = M_PI
+        case "√": accumulator = sqrt(accumulator)
+        default: break
+        }
+    }
+    
+    var result: Double {
+        get {
+            return accumulator
+        }
+    }
+    
+    
     
 }

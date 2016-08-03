@@ -26,14 +26,34 @@ class ViewController: UIViewController {
         
         userIsInTheMiddleOfTyping = true
     }
+    
+    //UI Label display value
+    private var displayValue: Double {
+        get{
+            return Double(display.text!)!
+        }
+        set {
+            display.text = String(newValue)
+        }
+    }
+    
+    //CalculatorBrain
+    private var brain = CalculatorBrain()
 
     @IBAction private func performOperation(sender: UIButton) {
-        userIsInTheMiddleOfTyping = false
-        if let mathmaticalOperation = sender.currentTitle {
-            if mathmaticalOperation == "π" {
-                display.text = String(M_PI)
-            }
+        //Have typed numbers -- put in operand
+        if(userIsInTheMiddleOfTyping) {
+            brain.setOperand(displayValue)
+            userIsInTheMiddleOfTyping = false
         }
+        
+        //Perform operation on symbol
+        if let mathematicalSymbol = sender.currentTitle {
+            brain.performOperation(mathematicalSymbol)
+        }
+        
+        //Return result from brain model
+        displayValue = brain.result
     }
 
 }
