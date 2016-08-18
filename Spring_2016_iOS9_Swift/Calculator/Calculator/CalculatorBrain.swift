@@ -18,9 +18,10 @@ class CalculatorBrain {
         accumulator = operand
     }
     
-    var operations: Dictionary<String,Operation> = [
+    private var operations: Dictionary<String,Operation> = [
         "π" : Operation.Constant(M_PI),
         "e" : Operation.Constant(M_E),
+        "±" : Operation.UnaryOperation({ -$0 }),
         "√" : Operation.UnaryOperation(sqrt),
         "cos" : Operation.UnaryOperation(cos),
         "+" : Operation.BinaryOperation({ $0 + $1 }),
@@ -30,7 +31,7 @@ class CalculatorBrain {
         "=" : Operation.Equals
     ]
     
-    enum Operation{
+    private enum Operation{
         case Constant(Double)
         case UnaryOperation((Double) -> Double)
         case BinaryOperation((Double, Double) -> Double)
@@ -39,7 +40,7 @@ class CalculatorBrain {
     
     private var pending: PendingBinaryOperation?
     
-    struct PendingBinaryOperation{
+    private struct PendingBinaryOperation{
         var binaryFunction : (Double, Double) -> Double
         var firstOperand : Double
     }
