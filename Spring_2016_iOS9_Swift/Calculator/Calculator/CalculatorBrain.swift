@@ -8,19 +8,6 @@
 
 import Foundation
 
-func add(op1: Double, op2: Double) -> Double {
-    return op1 + op2
-}
-func subtract(op1: Double, op2: Double) -> Double {
-    return op1 - op2
-}
-func multiply(op1: Double, op2: Double) -> Double {
-    return op1 * op2
-}
-func divide(op1: Double, op2: Double) -> Double {
-    return op1 / op2
-}
-
 class CalculatorBrain {
     
     //accumulate result of calculator
@@ -36,10 +23,10 @@ class CalculatorBrain {
         "e" : Operation.Constant(M_E),
         "√" : Operation.UnaryOperation(sqrt),
         "cos" : Operation.UnaryOperation(cos),
-        "+" : Operation.BinaryOperation(add),
-        "-" : Operation.BinaryOperation(subtract),
-        "x" : Operation.BinaryOperation(multiply),
-        "÷" : Operation.BinaryOperation(divide),
+        "+" : Operation.BinaryOperation({ $0 + $1 }),
+        "-" : Operation.BinaryOperation({ $0 - $1 }),
+        "x" : Operation.BinaryOperation({ $0 * $1 }),
+        "÷" : Operation.BinaryOperation({ $0 / $1 }),
         "=" : Operation.Equals
     ]
     
@@ -60,15 +47,23 @@ class CalculatorBrain {
     func performOperation(symbol: String){
         if let operation = operations[symbol] {
             switch operation {
-                case .Constant(let value): accumulator = value
-                case .UnaryOperation(let function): accumulator = function(accumulator)
-                case .BinaryOperation(let function): pending = PendingBinaryOperation(binaryFunction: function,         firstOperand: accumulator)
+                case .Constant(let value):
+                    accumulator = value
+                case .UnaryOperation(let function):
+                    accumulator = function(accumulator)
+                case .BinaryOperation(let function):
+                    executePendingBinaryOperation()
+                    pending = PendingBinaryOperation(binaryFunction: function, firstOperand: accumulator)
                 case .Equals:
-                    if(pending != nil){
-                        accumulator = pending!.binaryFunction(pending!.firstOperand, accumulator)
-                        pending = nil
-                }
+                    executePendingBinaryOperation()
             }
+        }
+    }
+    
+    private func executePendingBinaryOperation(){
+        if(pending != nil){
+            accumulator = pending!.binaryFunction(pending!.firstOperand, accumulator)
+            pending = nil
         }
     }
     
