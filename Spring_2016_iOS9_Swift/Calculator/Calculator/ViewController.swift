@@ -16,10 +16,11 @@ class ViewController: UIViewController {
     
     @IBAction private func touchDigit(sender: UIButton) {
         let digit = sender.currentTitle!
+        
         let textCurrentlyInDisplay = display.text!
         
         if userIsInTheMiddleOfTyping {
-            display.text = textCurrentlyInDisplay + digit
+                display.text = textCurrentlyInDisplay + digit
         } else {
             display.text = digit
         }

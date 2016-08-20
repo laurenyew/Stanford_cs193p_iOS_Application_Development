@@ -8,6 +8,15 @@
 
 import Foundation
 
+private func backspace(displayValue: Double) -> Double {
+    //Implement backspace function
+    return 0
+}
+
+private func clear(displayValue: Double) -> Double {
+    //Implement clear function
+    return 0
+}
 class CalculatorBrain {
     
     //accumulate result of calculator
@@ -23,13 +32,19 @@ class CalculatorBrain {
         "e" : Operation.Constant(M_E),
         "±" : Operation.UnaryOperation({ -$0 }),
         "√" : Operation.UnaryOperation(sqrt),
+        "sin" : Operation.UnaryOperation(sin),
         "cos" : Operation.UnaryOperation(cos),
+        "tan" : Operation.UnaryOperation(tan),
         "+" : Operation.BinaryOperation({ $0 + $1 }),
         "-" : Operation.BinaryOperation({ $0 - $1 }),
         "x" : Operation.BinaryOperation({ $0 * $1 }),
         "÷" : Operation.BinaryOperation({ $0 / $1 }),
-        "=" : Operation.Equals
+        "=" : Operation.Equals,
+        "⬅︎" : Operation.UnaryOperation(backspace),
+        "C" : Operation.UnaryOperation(clear)
     ]
+    
+    
     
     private enum Operation{
         case Constant(Double)
