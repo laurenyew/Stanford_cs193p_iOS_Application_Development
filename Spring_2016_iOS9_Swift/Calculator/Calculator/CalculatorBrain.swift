@@ -8,29 +8,29 @@
 
 import Foundation
 
-private func backspace(displayValue: Double) -> Double {
-    //Implement backspace function
-    return 0
-}
 
-private func clear(displayValue: Double) -> Double {
-    //Implement clear function
-    return 0
-}
 class CalculatorBrain {
     
     //accumulate result of calculator
-    private var accumulator = 0.0
+    private var accumulator : Double
+    private var currentOperand : Double
     
     //Description of sequence of operands/operations that lead to the result
-    private var description = ""
+    private var description : String
     
     //returns whether or not there is a binary operation pending
-    private var isPartialResult = false
+    private var isPartialResult : Bool
     
+    init() {
+        accumulator = 0.0
+        currentOperand = 0.0
+        description = ""
+        isPartialResult = false
+    }
     
     //reset accumulator to be operand
     func setOperand(operand: Double){
+        currentOperand = operand
         description += "\(operand)"
         accumulator = operand
     }
@@ -48,8 +48,8 @@ class CalculatorBrain {
         "x" : Operation.BinaryOperation({ $0 * $1 }),
         "÷" : Operation.BinaryOperation({ $0 / $1 }),
         "=" : Operation.Equals,
-        "⬅︎" : Operation.UnaryOperation(backspace),
-        "C" : Operation.UnaryOperation(clear)
+        "⬅︎" : Operation.Backspace,
+        "C" : Operation.Clear
     ]
     
     
@@ -59,6 +59,8 @@ class CalculatorBrain {
         case UnaryOperation((Double) -> Double)
         case BinaryOperation((Double, Double) -> Double)
         case Equals
+        case Clear
+        case Backspace
     }
     
     private var pending: PendingBinaryOperation?
@@ -85,13 +87,20 @@ class CalculatorBrain {
                     isPartialResult = false
                     accumulator = function(accumulator)
                 case .BinaryOperation(let function):
-                    description += "\(accumulator) \(symbol) "
+                    description += " \(symbol) "
                     isPartialResult = true
                     executePendingBinaryOperation()
                     pending = PendingBinaryOperation(binaryFunction: function, firstOperand: accumulator)
                 case .Equals:
                     isPartialResult = false
                     executePendingBinaryOperation()
+                case .Backspace:
+                    print("Backspace")
+                case .Clear:
+                    accumulator = 0.0
+                    currentOperand = 0.0
+                    description = ""
+                    isPartialResult = false
             }
         }
         print("Description: \(description) isPartialResult: \(isPartialResult)")
@@ -107,6 +116,17 @@ class CalculatorBrain {
     var result: Double {
         get {
             return accumulator
+        }
+    }
+    
+    var history: String {
+        get {
+            if description.isEmpty{
+                return " "
+            }else{
+                let historyEnd = isPartialResult ? "..." : "="
+                return "\(description) \(historyEnd)"
+            }
         }
     }
     

@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet private weak var display: UILabel!
+    @IBOutlet private weak var history: UILabel!
     
     private var userIsInTheMiddleOfTyping: Bool = false
     
@@ -57,6 +58,7 @@ class ViewController: UIViewController {
         
         //Return result from brain model
         displayValue = brain.result
+        history.text = brain.history
     }
 
 }
