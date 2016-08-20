@@ -20,7 +20,9 @@ class ViewController: UIViewController {
         let textCurrentlyInDisplay = display.text!
         
         if userIsInTheMiddleOfTyping {
+            if(digit != "." || textCurrentlyInDisplay.rangeOfString(digit) == nil){
                 display.text = textCurrentlyInDisplay + digit
+            }
         } else {
             display.text = digit
         }
