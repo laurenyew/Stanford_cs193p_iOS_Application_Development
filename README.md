@@ -7,7 +7,8 @@
 ####  Fall 2016 iOS9 Swift (All Assignments + Bonus)
 **Lectures**
 - [x] 1. Course OVerview and Introduction to iOS 9, XCode, and Swift
-- [x] 2. Applying MVC -- WIP
+- [x] 2. Applying MVC
+- [ ] 3. More Swift and Foundation Framework -- WIP
 
 **Assignments**
 - [ ] 1. Calculator (Intro to Swift and MVC) -- WIP
