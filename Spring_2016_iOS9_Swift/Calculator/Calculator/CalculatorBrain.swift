@@ -12,26 +12,17 @@ import Foundation
 class CalculatorBrain {
     
     //accumulate result of calculator
-    private var accumulator : Double
-    private var currentOperand : Double
+    private var accumulator = 0.0
     
     //Description of sequence of operands/operations that lead to the result
-    private var description : String
+    private var description = ""
     
     //returns whether or not there is a binary operation pending
-    private var isPartialResult : Bool
+    private var isPartialResult = false
     
-    init() {
-        accumulator = 0.0
-        currentOperand = 0.0
-        description = ""
-        isPartialResult = false
-    }
     
     //reset accumulator to be operand
     func setOperand(operand: Double){
-        currentOperand = operand
-        description += "\(operand)"
         accumulator = operand
     }
     
@@ -78,27 +69,22 @@ class CalculatorBrain {
                     isPartialResult = false
                     accumulator = value
                 case .UnaryOperation(let function):
-                    if symbol == "C" {
-                        description = ""
-                    }
-                    else if symbol != "⬅︎" {
-                        description = "\(symbol)(\(description))"
-                    }
-                    isPartialResult = false
+                    description += "\(symbol)(\(description))"
+                    isPartialResult = true
                     accumulator = function(accumulator)
                 case .BinaryOperation(let function):
-                    description += " \(symbol) "
+                    description += "\(accumulator) \(symbol) "
                     isPartialResult = true
                     executePendingBinaryOperation()
                     pending = PendingBinaryOperation(binaryFunction: function, firstOperand: accumulator)
                 case .Equals:
                     isPartialResult = false
+                    description += "\(accumulator)"
                     executePendingBinaryOperation()
                 case .Backspace:
                     print("Backspace")
                 case .Clear:
                     accumulator = 0.0
-                    currentOperand = 0.0
                     description = ""
                     isPartialResult = false
             }
