@@ -12,78 +12,78 @@ import Foundation
 class CalculatorBrain {
     
     //accumulate result of calculator
-    private var accumulator = 0.0
+    fileprivate var accumulator = 0.0
     
     //Description of sequence of operands/operations that lead to the result
-    private var description = ""
+    fileprivate var description = ""
     
     //returns whether or not there is a binary operation pending
-    private var isPartialResult = false
+    fileprivate var isPartialResult = false
     
     
     //reset accumulator to be operand
-    func setOperand(operand: Double){
+    func setOperand(_ operand: Double){
         accumulator = operand
     }
     
-    private var operations: Dictionary<String,Operation> = [
-        "π" : Operation.Constant(M_PI),
-        "e" : Operation.Constant(M_E),
-        "±" : Operation.UnaryOperation({ -$0 }),
-        "√" : Operation.UnaryOperation(sqrt),
-        "sin" : Operation.UnaryOperation(sin),
-        "cos" : Operation.UnaryOperation(cos),
-        "tan" : Operation.UnaryOperation(tan),
-        "+" : Operation.BinaryOperation({ $0 + $1 }),
-        "-" : Operation.BinaryOperation({ $0 - $1 }),
-        "x" : Operation.BinaryOperation({ $0 * $1 }),
-        "÷" : Operation.BinaryOperation({ $0 / $1 }),
-        "=" : Operation.Equals,
-        "⬅︎" : Operation.Backspace,
-        "C" : Operation.Clear
+    fileprivate var operations: Dictionary<String,Operation> = [
+        "π" : Operation.constant(M_PI),
+        "e" : Operation.constant(M_E),
+        "±" : Operation.unaryOperation({ -$0 }),
+        "√" : Operation.unaryOperation(sqrt),
+        "sin" : Operation.unaryOperation(sin),
+        "cos" : Operation.unaryOperation(cos),
+        "tan" : Operation.unaryOperation(tan),
+        "+" : Operation.binaryOperation({ $0 + $1 }),
+        "-" : Operation.binaryOperation({ $0 - $1 }),
+        "x" : Operation.binaryOperation({ $0 * $1 }),
+        "÷" : Operation.binaryOperation({ $0 / $1 }),
+        "=" : Operation.equals,
+        "⬅︎" : Operation.backspace,
+        "C" : Operation.clear
     ]
     
     
     
-    private enum Operation{
-        case Constant(Double)
-        case UnaryOperation((Double) -> Double)
-        case BinaryOperation((Double, Double) -> Double)
-        case Equals
-        case Clear
-        case Backspace
+    fileprivate enum Operation{
+        case constant(Double)
+        case unaryOperation((Double) -> Double)
+        case binaryOperation((Double, Double) -> Double)
+        case equals
+        case clear
+        case backspace
     }
     
-    private var pending: PendingBinaryOperation?
+    fileprivate var pending: PendingBinaryOperation?
     
-    private struct PendingBinaryOperation{
+    fileprivate struct PendingBinaryOperation{
         var binaryFunction : (Double, Double) -> Double
         var firstOperand : Double
     }
     
-    func performOperation(symbol: String){
+    func performOperation(_ symbol: String){
         if let operation = operations[symbol] {
             switch operation {
-                case .Constant(let value):
+                case .constant(let value):
                     description = symbol
                     isPartialResult = false
                     accumulator = value
-                case .UnaryOperation(let function):
+                case .unaryOperation(let function):
                     description += "\(symbol)(\(description))"
                     isPartialResult = true
                     accumulator = function(accumulator)
-                case .BinaryOperation(let function):
+                case .binaryOperation(let function):
                     description += "\(accumulator) \(symbol) "
                     isPartialResult = true
                     executePendingBinaryOperation()
                     pending = PendingBinaryOperation(binaryFunction: function, firstOperand: accumulator)
-                case .Equals:
+                case .equals:
                     isPartialResult = false
                     description += "\(accumulator)"
                     executePendingBinaryOperation()
-                case .Backspace:
+                case .backspace:
                     print("Backspace")
-                case .Clear:
+                case .clear:
                     accumulator = 0.0
                     description = ""
                     isPartialResult = false
@@ -92,7 +92,7 @@ class CalculatorBrain {
         print("Description: \(description) isPartialResult: \(isPartialResult)")
     }
     
-    private func executePendingBinaryOperation(){
+    fileprivate func executePendingBinaryOperation(){
         if pending != nil {
             accumulator = pending!.binaryFunction(pending!.firstOperand, accumulator)
             pending = nil

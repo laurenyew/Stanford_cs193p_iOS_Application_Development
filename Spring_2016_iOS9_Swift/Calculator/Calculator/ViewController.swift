@@ -10,18 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet private weak var display: UILabel!
-    @IBOutlet private weak var history: UILabel!
+    @IBOutlet fileprivate weak var display: UILabel!
+    @IBOutlet fileprivate weak var history: UILabel!
     
-    private var userIsInTheMiddleOfTyping: Bool = false
+    fileprivate var userIsInTheMiddleOfTyping: Bool = false
     
-    @IBAction private func touchDigit(sender: UIButton) {
+    @IBAction fileprivate func touchDigit(_ sender: UIButton) {
         let digit = sender.currentTitle!
         
         let textCurrentlyInDisplay = display.text!
         
         if userIsInTheMiddleOfTyping {
-            if(digit != "." || textCurrentlyInDisplay.rangeOfString(digit) == nil){
+            if(digit != "." || textCurrentlyInDisplay.range(of: digit) == nil){
                 display.text = textCurrentlyInDisplay + digit
             }
         } else {
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     }
     
     //UI Label display value
-    private var displayValue: Double {
+    fileprivate var displayValue: Double {
         get{
             return Double(display.text!)!
         }
@@ -42,9 +42,9 @@ class ViewController: UIViewController {
     }
     
     //CalculatorBrain
-    private var brain = CalculatorBrain()
+    fileprivate var brain = CalculatorBrain()
 
-    @IBAction private func performOperation(sender: UIButton) {
+    @IBAction fileprivate func performOperation(_ sender: UIButton) {
         //Have typed numbers -- put in operand
         if(userIsInTheMiddleOfTyping) {
             brain.setOperand(displayValue)
