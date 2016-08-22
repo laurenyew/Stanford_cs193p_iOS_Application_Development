@@ -38,6 +38,7 @@ class ViewController: UIViewController {
         }
         set {
             display.text = String(newValue)
+            history.text = brain.description + brain.isPartialResult ? " ... " : " = "
         }
     }
     
@@ -58,7 +59,6 @@ class ViewController: UIViewController {
         
         //Return result from brain model
         displayValue = brain.result
-        history.text = brain.history
     }
 
 }
