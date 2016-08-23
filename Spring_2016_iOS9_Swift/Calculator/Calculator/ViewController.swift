@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         }
         set {
             display.text = String(newValue)
-            history.text = brain.description + brain.isPartialResult ? " ... " : " = "
+            history.text = brain.description + (brain.isPartialResult ? " ... " : " = ")
         }
     }
     

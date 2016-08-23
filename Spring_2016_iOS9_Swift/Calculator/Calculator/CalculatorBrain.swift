@@ -9,7 +9,7 @@
 import Foundation
 
 
-class CalculatorBrain {
+public class CalculatorBrain {
     
     //accumulate result of calculator
     fileprivate var accumulator = 0.0
@@ -29,6 +29,7 @@ class CalculatorBrain {
                 return descriptionAccumulator
             }else {
                 //TODO Handle pending descriptions
+                return ""
             }
         }
     }
@@ -84,18 +85,18 @@ class CalculatorBrain {
         if let operation = operations[symbol] {
             switch operation {
                 case .constant(let value):
-                    description = symbol
+                    descriptionAccumulator = symbol
                     accumulator = value
                 case .unaryOperation(let function):
                     if isPartialResult {
-                       description += "\(symbol)(\(accumulator))"
+                       descriptionAccumulator += "\(symbol)(\(accumulator))"
                     }else{
-                        description = "\(symbol)(\(description))"
+                        descriptionAccumulator = "\(symbol)(\(description))"
                     }
                     accumulator = function(accumulator)
                 case .binaryOperation(let function):
                     executePendingBinaryOperation()
-                    description += "\(accumulator) \(symbol) "
+                    descriptionAccumulator += "\(accumulator) \(symbol) "
                     pending = PendingBinaryOperation(binaryFunction: function, firstOperand: accumulator)
                 case .equals:
                     executePendingBinaryOperation()
@@ -103,7 +104,7 @@ class CalculatorBrain {
                     print("Backspace")
                 case .clear:
                     accumulator = 0.0
-                    description = ""
+                    descriptionAccumulator = ""
             }
         }
         print("Description: \(description) isPartialResult: \(isPartialResult)")

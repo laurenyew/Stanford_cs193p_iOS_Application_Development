@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import CalculatorBrain
 
 /**
  This set of tests tests the CalculatorBrain
@@ -16,6 +17,12 @@ class CalculatorTests: XCTestCase {
     
     func testResult(){
         // 7 + --> 7
+        let brain = CalculatorBrain()
+        brain.setOperand(7)
+        brain.performOperation("+")
+        XCTAssertEqual(brain.description, "7 + ")
+        XCTAssertTrue(brain.isPartialResult)
+        XCTAssertEqual(brain.result, 7.0)
         // 7 + 9 --> 9
         // 7 + 9 = --> 16
         // 7 + 9 = √ --> 4
@@ -31,6 +38,12 @@ class CalculatorTests: XCTestCase {
     
     func testIsPartialResult() {
         // 7 + --> true
+        let brain = CalculatorBrain()
+        brain.setOperand(7)
+        brain.performOperation("+")
+        XCTAssertEqual(brain.description, "7 + ")
+        XCTAssertTrue(brain.isPartialResult)
+        XCTAssertEqual(brain.result, 7.0)
         // 7 + 9 --> true
         // 7 + 9 = --> false
         // 7 + 9 = √ --> false
@@ -46,6 +59,12 @@ class CalculatorTests: XCTestCase {
     
     func testDescription(){
         // 7 + --> "7 + "
+        let brain = CalculatorBrain()
+        brain.setOperand(7)
+        brain.performOperation("+")
+        XCTAssertEqual(brain.description, "7 + ")
+        XCTAssertTrue(brain.isPartialResult)
+        XCTAssertEqual(brain.result, 7.0)
         // 7 + 9 --> "7 + "
         // 7 + 9 = --> "7 + 9 "
         // 7 + 9 = √ --> "√(7 + 9) "

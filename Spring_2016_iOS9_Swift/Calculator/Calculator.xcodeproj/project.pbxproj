@@ -376,6 +376,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M534J7BM7R;
 				INFOPLIST_FILE = CalculatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -394,6 +395,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = M534J7BM7R;
 				INFOPLIST_FILE = CalculatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -433,6 +435,7 @@
 				B9B726AD1D6AAF4E00C31D7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
