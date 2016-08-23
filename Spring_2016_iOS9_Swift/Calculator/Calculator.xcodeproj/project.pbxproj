@@ -14,6 +14,7 @@
 		B995FCFE1D43BDC900CA934C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B995FCFC1D43BDC900CA934C /* LaunchScreen.storyboard */; };
 		B9B726A71D6AAF4E00C31D7B /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B726A61D6AAF4E00C31D7B /* CalculatorTests.swift */; };
 		B9C8C7581D4ADD58005B1238 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C8C7571D4ADD58005B1238 /* CalculatorBrain.swift */; };
+		B9D2E1FD1D6CE35800DE77AE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9B726A81D6AAF4E00C31D7B /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D2E1FD1D6CE35800DE77AE /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +378,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = M534J7BM7R;
 				INFOPLIST_FILE = CalculatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -395,7 +397,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = M534J7BM7R;
 				INFOPLIST_FILE = CalculatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
