@@ -85,18 +85,11 @@ public class CalculatorBrain {
         if let operation = operations[symbol] {
             switch operation {
                 case .constant(let value):
-                    descriptionAccumulator = symbol
                     accumulator = value
                 case .unaryOperation(let function):
-                    if isPartialResult {
-                       descriptionAccumulator += "\(symbol)(\(accumulator))"
-                    }else{
-                        descriptionAccumulator = "\(symbol)(\(description))"
-                    }
                     accumulator = function(accumulator)
                 case .binaryOperation(let function):
                     executePendingBinaryOperation()
-                    descriptionAccumulator += "\(accumulator) \(symbol) "
                     pending = PendingBinaryOperation(binaryFunction: function, firstOperand: accumulator)
                 case .equals:
                     executePendingBinaryOperation()
@@ -104,6 +97,7 @@ public class CalculatorBrain {
                     print("Backspace")
                 case .clear:
                     accumulator = 0.0
+                    pending = nil
                     descriptionAccumulator = ""
             }
         }

@@ -34,14 +34,14 @@ class CalculatorTests: XCTestCase {
         XCTAssertTrue(brain.isPartialResult)
         XCTAssertEqual(brain.description, "7 + ")
         
-        // 7 + 9 = --> 16, true, "7 + 9 "
+        // 7 + 9 = --> 16, false, "7 + 9 "
         brain.performOperation("C")
         brain.setOperand(7)
         brain.performOperation("+")
         brain.setOperand(9)
         brain.performOperation("=")
         XCTAssertEqual(brain.result, 16.0)
-        XCTAssertTrue(brain.isPartialResult)
+        XCTAssertFalse(brain.isPartialResult)
         XCTAssertEqual(brain.description, "7 + 9 ")
         
         // 7 + 9 = √ --> 4, false, "√(7 + 9) "
@@ -133,7 +133,7 @@ class CalculatorTests: XCTestCase {
         brain.performOperation("x")
         brain.performOperation("π")
         brain.performOperation("=")
-        XCTAssertEqual(brain.result, 12.5663706143592)
+        XCTAssertEqual(brain.result, (4 * M_PI))
         XCTAssertFalse(brain.isPartialResult)
         XCTAssertEqual(brain.description, "4 + π ")
         
