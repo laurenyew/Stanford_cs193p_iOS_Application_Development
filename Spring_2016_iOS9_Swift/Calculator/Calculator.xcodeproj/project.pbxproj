@@ -380,7 +380,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = M534J7BM7R;
-				INFOPLIST_FILE = CalculatorTests/Info.plist;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stanford.training.CalculatorTests;
@@ -399,7 +399,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = M534J7BM7R;
-				INFOPLIST_FILE = CalculatorTests/Info.plist;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = stanford.training.CalculatorTests;

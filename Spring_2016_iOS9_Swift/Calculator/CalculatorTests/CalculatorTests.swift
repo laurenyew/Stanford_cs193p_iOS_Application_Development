@@ -146,6 +146,8 @@ class CalculatorTests: XCTestCase {
         brain.setOperand(3)
         brain.performOperation("=")
         XCTAssertEqual(brain.result, 27.0)
+        XCTAssertFalse(brain.isPartialResult)
+        XCTAssertEqual(brain.description, "4 + 5 x 3 ")
     }
     
 }
