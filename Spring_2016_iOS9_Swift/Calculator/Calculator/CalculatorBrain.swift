@@ -28,8 +28,10 @@ public class CalculatorBrain {
             if pending == nil{
                 return descriptionAccumulator
             }else {
-                //TODO Handle pending descriptions
-                return ""
+                return pending!.binaryFunctionDescription(
+                        pending!.firstOperandDescription,
+                        pending!.firstOperandDescription != descriptionAccumulator ?
+                            descriptionAccumulator : "")
             }
         }
     }
@@ -44,6 +46,7 @@ public class CalculatorBrain {
     //reset accumulator to be operand
     func setOperand(_ operand: Double){
         accumulator = operand
+        descriptionAccumulator = String(format:"%g", operand)
     }
     
     fileprivate var operations: Dictionary<String,Operation> = [
@@ -54,10 +57,10 @@ public class CalculatorBrain {
         "sin" : Operation.unaryOperation(sin, {"sin(" + $0 + ")"}),
         "cos" : Operation.unaryOperation(cos, {"cos(" + $0 + ")"}),
         "tan" : Operation.unaryOperation(tan, {"tan(" + $0 + ")"}),
-        "+" : Operation.binaryOperation({ $0 + $1 }),
-        "-" : Operation.binaryOperation({ $0 - $1 }),
-        "x" : Operation.binaryOperation({ $0 * $1 }),
-        "÷" : Operation.binaryOperation({ $0 / $1 }),
+        "+" : Operation.binaryOperation(+, { $0 + " + " + $1 }),
+        "-" : Operation.binaryOperation(-, { $0 + " - " + $1 }),
+        "x" : Operation.binaryOperation(*, { $0 + " x " + $1 }),
+        "÷" : Operation.binaryOperation(/, { $0 + " ÷ " + $1 }),
         "=" : Operation.equals,
         "⬅︎" : Operation.backspace,
         "C" : Operation.clear
@@ -68,7 +71,7 @@ public class CalculatorBrain {
     fileprivate enum Operation{
         case constant(Double)
         case unaryOperation((Double) -> Double, (String) -> String)
-        case binaryOperation((Double, Double) -> Double)
+        case binaryOperation((Double, Double) -> Double, (String, String) -> String)
         case equals
         case clear
         case backspace
@@ -79,6 +82,8 @@ public class CalculatorBrain {
     fileprivate struct PendingBinaryOperation{
         var binaryFunction : (Double, Double) -> Double
         var firstOperand : Double
+        var binaryFunctionDescription: (String,String) -> String
+        var firstOperandDescription: String
     }
     
     func performOperation(_ symbol: String){
@@ -86,12 +91,15 @@ public class CalculatorBrain {
             switch operation {
                 case .constant(let value):
                     accumulator = value
-                case .unaryOperation(let function, let functionDescription):
+                case .unaryOperation(let function, let descriptionFunction):
                     accumulator = function(accumulator)
-                    descriptionAccumulator = functionDescription(descriptionAccumulator)
-                case .binaryOperation(let function):
+                    descriptionAccumulator = descriptionFunction(descriptionAccumulator)
+                case .binaryOperation(let function, let functionDescription):
                     executePendingBinaryOperation()
-                    pending = PendingBinaryOperation(binaryFunction: function, firstOperand: accumulator)
+                    pending = PendingBinaryOperation(binaryFunction: function,
+                                                     firstOperand: accumulator,
+                                                     binaryFunctionDescription: functionDescription,
+                                                     firstOperandDescription:descriptionAccumulator)
                 case .equals:
                     executePendingBinaryOperation()
                 case .backspace:
@@ -102,12 +110,12 @@ public class CalculatorBrain {
                     descriptionAccumulator = ""
             }
         }
-        print("Description: \(description) isPartialResult: \(isPartialResult)")
     }
     
     fileprivate func executePendingBinaryOperation(){
         if pending != nil {
             accumulator = pending!.binaryFunction(pending!.firstOperand, accumulator)
+            descriptionAccumulator = pending!.binaryFunctionDescription(pending!.firstOperandDescription, descriptionAccumulator)
             pending = nil
         }
     }

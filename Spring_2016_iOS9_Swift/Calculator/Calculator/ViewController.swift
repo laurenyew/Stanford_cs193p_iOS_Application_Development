@@ -38,7 +38,11 @@ class ViewController: UIViewController {
         }
         set {
             display.text = String(newValue)
-            history.text = brain.description + (brain.isPartialResult ? " ... " : " = ")
+            if !brain.description.isEmpty{
+                history.text = brain.description + (brain.isPartialResult ? " ... " : " = ")
+            }else{
+                history.text = " "
+            }
         }
     }
     
