@@ -49,11 +49,11 @@ public class CalculatorBrain {
     fileprivate var operations: Dictionary<String,Operation> = [
         "π" : Operation.constant(M_PI),
         "e" : Operation.constant(M_E),
-        "±" : Operation.unaryOperation({ -$0 }),
-        "√" : Operation.unaryOperation(sqrt),
-        "sin" : Operation.unaryOperation(sin),
-        "cos" : Operation.unaryOperation(cos),
-        "tan" : Operation.unaryOperation(tan),
+        "±" : Operation.unaryOperation({ -$0 }, {"-(" + $0 + ")"}),
+        "√" : Operation.unaryOperation(sqrt, {"√(" + $0 + ")"}),
+        "sin" : Operation.unaryOperation(sin, {"sin(" + $0 + ")"}),
+        "cos" : Operation.unaryOperation(cos, {"cos(" + $0 + ")"}),
+        "tan" : Operation.unaryOperation(tan, {"tan(" + $0 + ")"}),
         "+" : Operation.binaryOperation({ $0 + $1 }),
         "-" : Operation.binaryOperation({ $0 - $1 }),
         "x" : Operation.binaryOperation({ $0 * $1 }),
@@ -67,7 +67,7 @@ public class CalculatorBrain {
     
     fileprivate enum Operation{
         case constant(Double)
-        case unaryOperation((Double) -> Double)
+        case unaryOperation((Double) -> Double, (String) -> String)
         case binaryOperation((Double, Double) -> Double)
         case equals
         case clear
@@ -86,8 +86,9 @@ public class CalculatorBrain {
             switch operation {
                 case .constant(let value):
                     accumulator = value
-                case .unaryOperation(let function):
+                case .unaryOperation(let function, let functionDescription):
                     accumulator = function(accumulator)
+                    descriptionAccumulator = functionDescription(descriptionAccumulator)
                 case .binaryOperation(let function):
                     executePendingBinaryOperation()
                     pending = PendingBinaryOperation(binaryFunction: function, firstOperand: accumulator)
