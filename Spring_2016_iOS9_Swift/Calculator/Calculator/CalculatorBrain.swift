@@ -62,7 +62,6 @@ public class CalculatorBrain {
         "x" : Operation.binaryOperation(*, { $0 + " x " + $1 }),
         "÷" : Operation.binaryOperation(/, { $0 + " ÷ " + $1 }),
         "=" : Operation.equals,
-        "⬅︎" : Operation.backspace,
         "C" : Operation.clear
     ]
     
@@ -74,7 +73,6 @@ public class CalculatorBrain {
         case binaryOperation((Double, Double) -> Double, (String, String) -> String)
         case equals
         case clear
-        case backspace
     }
     
     fileprivate var pending: PendingBinaryOperation?
@@ -103,8 +101,6 @@ public class CalculatorBrain {
                                                      firstOperandDescription:descriptionAccumulator)
                 case .equals:
                     executePendingBinaryOperation()
-                case .backspace:
-                    print("Backspace")
                 case .clear:
                     accumulator = 0.0
                     pending = nil

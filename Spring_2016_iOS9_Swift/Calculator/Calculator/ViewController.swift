@@ -37,11 +37,23 @@ class ViewController: UIViewController {
             return Double(display.text!)!
         }
         set {
-            display.text = String(newValue)
+            display.text = String(format:"%g", newValue)
             if !brain.description.isEmpty{
                 history.text = brain.description + (brain.isPartialResult ? " ... " : " = ")
             }else{
                 history.text = " "
+            }
+        }
+    }
+    
+    fileprivate func performBackSpace(){
+        if displayValue != 0.0{
+            var displayText = display.text!
+            if displayText.characters.count != 1{
+                let endIndex = displayText.index(displayText.endIndex, offsetBy: -1)
+                displayText = displayText.substring(to: endIndex)
+            }else{
+                displayText = "0.0"
             }
         }
     }
@@ -58,7 +70,12 @@ class ViewController: UIViewController {
         
         //Perform operation on symbol
         if let mathematicalSymbol = sender.currentTitle {
-            brain.performOperation(mathematicalSymbol)
+            
+            if mathematicalSymbol == "⬅︎"{
+                performBackSpace()
+            }else{
+                brain.performOperation(mathematicalSymbol)
+            }
         }
         
         //Return result from brain model
