@@ -91,6 +91,7 @@ public class CalculatorBrain {
             switch operation {
                 case .constant(let value):
                     accumulator = value
+                    descriptionAccumulator = symbol
                 case .unaryOperation(let function, let descriptionFunction):
                     accumulator = function(accumulator)
                     descriptionAccumulator = descriptionFunction(descriptionAccumulator)
