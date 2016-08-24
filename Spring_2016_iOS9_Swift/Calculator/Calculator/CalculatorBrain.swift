@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+//Model class (Business Logic for Calculator)
 public class CalculatorBrain {
     
     //accumulate result of calculator
@@ -21,7 +21,9 @@ public class CalculatorBrain {
         }
     }
     
+    //Description of history
     fileprivate var descriptionAccumulator = ""
+    
     //Description of sequence of operands/operations that lead to the result
     var description : String {
         get{
@@ -43,10 +45,13 @@ public class CalculatorBrain {
         }
     }
     
-    //reset accumulator to be operand
-    func setOperand(_ operand: Double){
-        accumulator = operand
-        descriptionAccumulator = String(format:"%g", operand)
+    //Operation enum (helps simplify code around Operation functions)
+    fileprivate enum Operation{
+        case constant(Double)
+        case unaryOperation((Double) -> Double, (String) -> String)
+        case binaryOperation((Double, Double) -> Double, (String, String) -> String)
+        case equals
+        case clear
     }
     
     fileprivate var operations: Dictionary<String,Operation> = [
@@ -65,18 +70,7 @@ public class CalculatorBrain {
         "C" : Operation.clear
     ]
     
-    
-    
-    fileprivate enum Operation{
-        case constant(Double)
-        case unaryOperation((Double) -> Double, (String) -> String)
-        case binaryOperation((Double, Double) -> Double, (String, String) -> String)
-        case equals
-        case clear
-    }
-    
-    fileprivate var pending: PendingBinaryOperation?
-    
+    //Enum for Pending Binary Operation
     fileprivate struct PendingBinaryOperation{
         var binaryFunction : (Double, Double) -> Double
         var firstOperand : Double
@@ -84,7 +78,17 @@ public class CalculatorBrain {
         var firstOperandDescription: String
     }
     
-    func performOperation(_ symbol: String){
+    //Current pending binary operation
+    fileprivate var pending: PendingBinaryOperation?
+    
+    //Used by View Controller to reset accumulator to be operand
+    func setOperand(_ operand: Double){
+        accumulator = operand
+        descriptionAccumulator = String(format:"%g", operand)
+    }
+    
+   //Used by View Controller to perform a given operation
+   func performOperation(_ symbol: String){
         if let operation = operations[symbol] {
             switch operation {
                 case .constant(let value):
@@ -109,6 +113,7 @@ public class CalculatorBrain {
         }
     }
     
+    //Helper method: if there is a pending binary operation, run it
     fileprivate func executePendingBinaryOperation(){
         if pending != nil {
             accumulator = pending!.binaryFunction(pending!.firstOperand, accumulator)
@@ -116,7 +121,4 @@ public class CalculatorBrain {
             pending = nil
         }
     }
-    
-   
-    
 }

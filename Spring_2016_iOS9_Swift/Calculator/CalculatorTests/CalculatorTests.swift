@@ -16,6 +16,7 @@ import XCTest
 class CalculatorTests: XCTestCase {
     let brain = CalculatorBrain()
     
+    //Tests for Assignment 1
     func testCalculatorBrain(){
         
         // 7 + --> 7, true, "7 + "

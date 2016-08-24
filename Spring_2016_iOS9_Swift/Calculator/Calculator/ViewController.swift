@@ -15,21 +15,8 @@ class ViewController: UIViewController {
     
     fileprivate var userIsInTheMiddleOfTyping: Bool = false
     
-    @IBAction fileprivate func touchDigit(_ sender: UIButton) {
-        let digit = sender.currentTitle!
-        
-        let textCurrentlyInDisplay = display.text!
-        
-        if userIsInTheMiddleOfTyping {
-            if(digit != "." || textCurrentlyInDisplay.range(of: digit) == nil){
-                display.text = textCurrentlyInDisplay + digit
-            }
-        } else {
-            display.text = digit
-        }
-        
-        userIsInTheMiddleOfTyping = true
-    }
+    //CalculatorBrain
+    fileprivate var brain = CalculatorBrain()
     
     //UI Label display value
     fileprivate var displayValue: Double {
@@ -46,23 +33,24 @@ class ViewController: UIViewController {
         }
     }
     
-    fileprivate func performBackSpace(){
-        if displayValue != 0.0{
-            var displayText = display.text!
-            if displayText.characters.count != 1{
-                let endIndex = displayText.index(displayText.endIndex, offsetBy: -1)
-                displayText = displayText.substring(to: endIndex)
-            }else{
-                displayText = "0"
+    //User has touched a digit button
+    @IBAction fileprivate func touchDigit(_ sender: UIButton) {
+        let digit = sender.currentTitle!
+        
+        let textCurrentlyInDisplay = display.text!
+        
+        if userIsInTheMiddleOfTyping {
+            if(digit != "." || textCurrentlyInDisplay.range(of: digit) == nil){
+                display.text = textCurrentlyInDisplay + digit
             }
-            display.text = displayText
-            brain.setOperand(displayValue)
+        } else {
+            display.text = digit
         }
+        
+        userIsInTheMiddleOfTyping = true
     }
-    
-    //CalculatorBrain
-    fileprivate var brain = CalculatorBrain()
 
+    //User has touched an operation button
     @IBAction fileprivate func performOperation(_ sender: UIButton) {
         //Have typed numbers -- put in operand
         if(userIsInTheMiddleOfTyping) {
@@ -88,5 +76,19 @@ class ViewController: UIViewController {
         
     }
 
+    //Helper method to perform backspace
+    fileprivate func performBackSpace(){
+        if displayValue != 0.0{
+            var displayText = display.text!
+            if displayText.characters.count != 1{
+                let endIndex = displayText.index(displayText.endIndex, offsetBy: -1)
+                displayText = displayText.substring(to: endIndex)
+            }else{
+                displayText = "0"
+            }
+            display.text = displayText
+            brain.setOperand(displayValue)
+        }
+    }
 }
 
