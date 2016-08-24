@@ -53,8 +53,10 @@ class ViewController: UIViewController {
                 let endIndex = displayText.index(displayText.endIndex, offsetBy: -1)
                 displayText = displayText.substring(to: endIndex)
             }else{
-                displayText = "0.0"
+                displayText = "0"
             }
+            display.text = displayText
+            brain.setOperand(displayValue)
         }
     }
     
@@ -75,11 +77,15 @@ class ViewController: UIViewController {
                 performBackSpace()
             }else{
                 brain.performOperation(mathematicalSymbol)
+                //Return result from brain model
+                displayValue = brain.result
             }
+        }else{
+            //Return result from brain model
+            displayValue = brain.result
         }
         
-        //Return result from brain model
-        displayValue = brain.result
+        
     }
 
 }
