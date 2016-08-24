@@ -11,7 +11,8 @@
 - [ ] 3. More Swift and Foundation Framework -- WIP
 
 **Assignments**
-- [ ] 1. Calculator (Intro to Swift and MVC) -- WIP
+- [x] 1. Calculator (Intro to Swift and MVC)
+- [ ] 1.1 Extra: Backspace button -- WIP
 
 #### Fall 2014 iOS7 Objective C (All Assignments + Bonus)
 **Lectures**
