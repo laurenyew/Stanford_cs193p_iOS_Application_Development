@@ -8,7 +8,8 @@
 **Lectures**
 - [x] 1. Course OVerview and Introduction to iOS 9, XCode, and Swift
 - [x] 2. Applying MVC
-- [ ] 3. More Swift and Foundation Framework -- WIP
+- [x] 3. More Swift and Foundation Framework
+- [ ] 4. Views -- WIP
 
 **Assignments**
 - [x] 1. Calculator (Intro to Swift and MVC)
