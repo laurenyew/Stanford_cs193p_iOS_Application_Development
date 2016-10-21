@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     //UI Label display value
     fileprivate var displayValue: Double {
         get{
-            return Double(display.text!)
+            return Double(display.text!)!
         }
         set {
             display.text = String(format:"%g", newValue)
