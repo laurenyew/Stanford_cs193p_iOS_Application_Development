@@ -19,15 +19,21 @@ class ViewController: UIViewController {
     fileprivate var brain = CalculatorBrain()
     
     //UI Label display value
-    fileprivate var displayValue: Double {
+    fileprivate var displayValue: Double? {
         get{
-            return Double(display.text!)!
+            if let text = display.text, let value = Double(text){
+                return value
+            }else{
+                return nil
+            }
         }
         set {
-            display.text = String(format:"%g", newValue)
-            if !brain.description.isEmpty{
-                history.text = brain.description + (brain.isPartialResult ? " ... " : " = ")
+            if let value = newValue {
+                display.text = String(value)
+                history.text = brain.description +
+                                (brain.isPartialResult ? " ... " : " = ")
             }else{
+                display.text = "0"
                 history.text = " "
             }
         }
@@ -54,7 +60,7 @@ class ViewController: UIViewController {
     @IBAction fileprivate func performOperation(_ sender: UIButton) {
         //Have typed numbers -- put in operand
         if(userIsInTheMiddleOfTyping) {
-            brain.setOperand(displayValue)
+            brain.setOperand(displayValue!)
             userIsInTheMiddleOfTyping = false
         }
         
@@ -87,7 +93,7 @@ class ViewController: UIViewController {
                 displayText = "0"
             }
             display.text = displayText
-            brain.setOperand(displayValue)
+            brain.setOperand(displayValue!)
         }
     }
 }
