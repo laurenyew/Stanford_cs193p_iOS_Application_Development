@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    fileprivate struct Constants{
+        static let NumDecimalDigits = 6
+    }
 
     @IBOutlet fileprivate weak var display: UILabel!
     @IBOutlet fileprivate weak var history: UILabel!
@@ -16,7 +20,7 @@ class ViewController: UIViewController {
     fileprivate var userIsInTheMiddleOfTyping: Bool = false
     
     //CalculatorBrain
-    fileprivate var brain = CalculatorBrain()
+    fileprivate var brain = CalculatorBrain(decimalDigits: Constants.NumDecimalDigits)
     
     //UI Label display value
     fileprivate var displayValue: Double? {
@@ -28,8 +32,11 @@ class ViewController: UIViewController {
             }
         }
         set {
-            if let value = newValue {
-                display.text = String(value)
+            if let doubleValue = newValue {
+                let formatter = NumberFormatter()
+                formatter.numberStyle = .decimal
+                formatter.maximumFractionDigits = Constants.NumDecimalDigits
+                display.text = formatter.string(from: NSNumber(value: doubleValue))
                 history.text = brain.description +
                                 (brain.isPartialResult ? " ... " : " = ")
             }else{

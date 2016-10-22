@@ -14,7 +14,7 @@
 **Assignments**
 - [x] 1. Calculator (Intro to Swift and MVC)
 - [x] 1.1 Extra: Backspace button
-- [ ] 1.2 Extra: Change displayValue to be an optional double
+- [x] 1.2 Extra: Change displayValue to be an optional double
 - [ ] 1.3 Extra: Use NSNumberFormatter to format the display for 6 digits only
 - [ ] 1.4 Extra: Make a button generate random nmber between 0 and 1
 

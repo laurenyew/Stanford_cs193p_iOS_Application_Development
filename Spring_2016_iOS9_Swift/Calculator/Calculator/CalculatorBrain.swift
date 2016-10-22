@@ -13,6 +13,11 @@ public class CalculatorBrain {
     
     //accumulate result of calculator
     fileprivate var accumulator = 0.0
+    fileprivate var decimalDigits: Int
+    
+    init(decimalDigits: Int) {
+        self.decimalDigits = decimalDigits
+    }
     
     //Result to display
     var result: Double {
@@ -27,13 +32,13 @@ public class CalculatorBrain {
     //Description of sequence of operands/operations that lead to the result
     var description : String {
         get{
-            if pending == nil{
+            if let pendingDesc = pending {
+                return pendingDesc.binaryFunctionDescription(
+                                        pendingDesc.firstOperandDescription,
+                                        pendingDesc.firstOperandDescription != descriptionAccumulator ?
+                                            descriptionAccumulator : "")
+            }else{
                 return descriptionAccumulator
-            }else {
-                return pending!.binaryFunctionDescription(
-                        pending!.firstOperandDescription,
-                        pending!.firstOperandDescription != descriptionAccumulator ?
-                            descriptionAccumulator : "")
             }
         }
     }
@@ -84,7 +89,12 @@ public class CalculatorBrain {
     //Used by View Controller to reset accumulator to be operand
     func setOperand(_ operand: Double){
         accumulator = operand
-        descriptionAccumulator = String(format:"%g", operand)
+        
+        //Format description
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = decimalDigits
+        descriptionAccumulator = formatter.string(from: NSNumber(value: operand))!
     }
     
    //Used by View Controller to perform a given operation
