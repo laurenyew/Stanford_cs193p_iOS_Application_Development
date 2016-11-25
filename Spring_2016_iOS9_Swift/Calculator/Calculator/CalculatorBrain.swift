@@ -53,6 +53,7 @@ public class CalculatorBrain {
     //Operation enum (helps simplify code around Operation functions)
     fileprivate enum Operation{
         case constant(Double)
+        case emptyOperation(() -> Double, String)
         case unaryOperation((Double) -> Double, (String) -> String)
         case binaryOperation((Double, Double) -> Double, (String, String) -> String)
         case equals
@@ -72,7 +73,8 @@ public class CalculatorBrain {
         "x" : Operation.binaryOperation(*, { $0 + " x " + $1 }),
         "÷" : Operation.binaryOperation(/, { $0 + " ÷ " + $1 }),
         "=" : Operation.equals,
-        "C" : Operation.clear
+        "C" : Operation.clear,
+        "rand" : Operation.emptyOperation({ drand48() }, "rand()")
     ]
     
     //Enum for Pending Binary Operation
@@ -104,6 +106,9 @@ public class CalculatorBrain {
                 case .constant(let value):
                     accumulator = value
                     descriptionAccumulator = symbol
+                case .emptyOperation(let function, let description):
+                    accumulator = function()
+                    descriptionAccumulator = description
                 case .unaryOperation(let function, let descriptionFunction):
                     accumulator = function(accumulator)
                     descriptionAccumulator = descriptionFunction(descriptionAccumulator)

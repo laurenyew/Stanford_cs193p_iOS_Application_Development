@@ -16,7 +16,8 @@
 - [x] 1.1 Extra: Backspace button
 - [x] 1.2 Extra: Change displayValue to be an optional double
 - [x] 1.3 Extra: Use NSNumberFormatter to format the display for 6 digits only
-- [ ] 1.4 Extra: Make a button generate random nmber between 0 and 1
+- [x] 1.4 Extra: Make a button generate random nmber between 0 and 1
+- [ ] 2. Calculator Brain (Property Lists and Settings) -- WIP
 
 #### Fall 2014 iOS7 Objective C (All Assignments + Bonus)
 **Lectures**
