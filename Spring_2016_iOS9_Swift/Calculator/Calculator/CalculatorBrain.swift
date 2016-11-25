@@ -14,9 +14,38 @@ public class CalculatorBrain {
     //accumulate result of calculator
     fileprivate var accumulator = 0.0
     fileprivate var decimalDigits: Int
+    //internal program of property list items (Double if operand, String if operation)
+    fileprivate var internalProgram = [AnyObject]()
     
     init(decimalDigits: Int) {
         self.decimalDigits = decimalDigits
+    }
+    
+    //Get/Set Internal Program for the calculator to use
+    typealias PropertyList = AnyObject
+    var program: PropertyList{
+        get{
+            return internalProgram as PropertyList
+        }set{
+            clear()
+            if let arrayOfOps = newValue as? [AnyObject]{
+                for op in arrayOfOps{
+                    if let operand = op as? Double{
+                        setOperand(operand)
+                    }else if let operation = op as? String{
+                        performOperation(operation)
+                    }
+                }
+            }
+        }
+    }
+    
+    //Clear out the calculator
+    fileprivate func clear(){
+        accumulator = 0.0
+        pending = nil
+        descriptionAccumulator = ""
+        internalProgram.removeAll()
     }
     
     //Result to display
@@ -90,6 +119,7 @@ public class CalculatorBrain {
     
     //Used by View Controller to reset accumulator to be operand
     func setOperand(_ operand: Double){
+        internalProgram.append(operand as AnyObject)
         accumulator = operand
         
         //Format description
@@ -101,6 +131,7 @@ public class CalculatorBrain {
     
    //Used by View Controller to perform a given operation
    func performOperation(_ symbol: String){
+        internalProgram.append(symbol as AnyObject)
         if let operation = operations[symbol] {
             switch operation {
                 case .constant(let value):
@@ -121,9 +152,7 @@ public class CalculatorBrain {
                 case .equals:
                     executePendingBinaryOperation()
                 case .clear:
-                    accumulator = 0.0
-                    pending = nil
-                    descriptionAccumulator = ""
+                    clear()
             }
         }
     }

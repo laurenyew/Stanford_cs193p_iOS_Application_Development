@@ -62,7 +62,23 @@ class ViewController: UIViewController {
         
         userIsInTheMiddleOfTyping = true
     }
-
+    
+    var savedProgram: CalculatorBrain.PropertyList?
+    
+    //Save the current program
+    @IBAction func save() {
+        savedProgram = brain.program
+    }
+    
+    //Restore the last saved program
+    @IBAction func restore() {
+        if savedProgram != nil{
+            brain.program = savedProgram!
+            displayValue = brain.result
+        }
+    }
+    
+    
     //User has touched an operation button
     @IBAction fileprivate func performOperation(_ sender: UIButton) {
         //Have typed numbers -- put in operand
