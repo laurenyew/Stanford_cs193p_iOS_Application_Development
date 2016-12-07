@@ -72,9 +72,14 @@ public class CalculatorBrain {
             if let arrayOfOps = newValue as? [AnyObject]{
                 for op in arrayOfOps{
                     if let operand = op as? Double{
-                        setOperand(operand)
+                        setOperand(operand: operand)
                     }else if let operation = op as? String{
-                        performOperation(operation)
+                        //Operation can either be a variable name or an operation
+                        if (operations[operation] != nil) {
+                            performOperation(operation)
+                        }else{
+                            setOperand(variableName: operation)
+                        }
                     }
                 }
             }
@@ -119,8 +124,15 @@ public class CalculatorBrain {
     }
     
     // MARK: Operations
+    //Update the variableValues dictionary. The variableName is mapped to the current accumulator value.
+    func setOperand(variableName: String){
+        internalProgram.append(variableName as AnyObject)
+        variableValues[variableName] = accumulator
+        
+    }
+    
     //Used by View Controller to reset accumulator to be operand
-    func setOperand(_ operand: Double){
+    func setOperand(operand: Double){
         internalProgram.append(operand as AnyObject)
         accumulator = operand
         
