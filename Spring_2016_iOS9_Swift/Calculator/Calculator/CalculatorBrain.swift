@@ -10,12 +10,53 @@ import Foundation
 
 //Model class (Business Logic for Calculator)
 public class CalculatorBrain {
-    
     //accumulate result of calculator
     fileprivate var accumulator = 0.0
+    //max number of decimal digits that can be shown
     fileprivate var decimalDigits: Int
+    //Description of history
+    fileprivate var descriptionAccumulator = ""
     //internal program of property list items (Double if operand, String if operation)
     fileprivate var internalProgram = [AnyObject]()
+    //Keep values associated to given variables
+    fileprivate var variableValues : [String : Double] = [:]
+    //Current pending binary operation
+    fileprivate var pending: PendingBinaryOperation?
+    
+    //Operation enum (helps simplify code around Operation functions)
+    fileprivate enum Operation{
+        case constant(Double)
+        case emptyOperation(() -> Double, String)
+        case unaryOperation((Double) -> Double, (String) -> String)
+        case binaryOperation((Double, Double) -> Double, (String, String) -> String)
+        case equals
+        case clear
+    }
+    
+    fileprivate var operations: Dictionary<String,Operation> = [
+        "π" : Operation.constant(M_PI),
+        "e" : Operation.constant(M_E),
+        "±" : Operation.unaryOperation({ -$0 }, {"-(" + $0 + ")"}),
+        "√" : Operation.unaryOperation(sqrt, {"√(" + $0 + ")"}),
+        "sin" : Operation.unaryOperation(sin, {"sin(" + $0 + ")"}),
+        "cos" : Operation.unaryOperation(cos, {"cos(" + $0 + ")"}),
+        "tan" : Operation.unaryOperation(tan, {"tan(" + $0 + ")"}),
+        "+" : Operation.binaryOperation(+, { $0 + " + " + $1 }),
+        "-" : Operation.binaryOperation(-, { $0 + " - " + $1 }),
+        "x" : Operation.binaryOperation(*, { $0 + " x " + $1 }),
+        "÷" : Operation.binaryOperation(/, { $0 + " ÷ " + $1 }),
+        "=" : Operation.equals,
+        "C" : Operation.clear,
+        "rand" : Operation.emptyOperation({ drand48() }, "rand()")
+    ]
+    
+    //Enum for Pending Binary Operation
+    fileprivate struct PendingBinaryOperation{
+        var binaryFunction : (Double, Double) -> Double
+        var firstOperand : Double
+        var binaryFunctionDescription: (String,String) -> String
+        var firstOperandDescription: String
+    }
     
     init(decimalDigits: Int) {
         self.decimalDigits = decimalDigits
@@ -55,9 +96,7 @@ public class CalculatorBrain {
         }
     }
     
-    //Description of history
-    fileprivate var descriptionAccumulator = ""
-    
+    // MARK: Description
     //Description of sequence of operands/operations that lead to the result
     var description : String {
         get{
@@ -79,44 +118,7 @@ public class CalculatorBrain {
         }
     }
     
-    //Operation enum (helps simplify code around Operation functions)
-    fileprivate enum Operation{
-        case constant(Double)
-        case emptyOperation(() -> Double, String)
-        case unaryOperation((Double) -> Double, (String) -> String)
-        case binaryOperation((Double, Double) -> Double, (String, String) -> String)
-        case equals
-        case clear
-    }
-    
-    fileprivate var operations: Dictionary<String,Operation> = [
-        "π" : Operation.constant(M_PI),
-        "e" : Operation.constant(M_E),
-        "±" : Operation.unaryOperation({ -$0 }, {"-(" + $0 + ")"}),
-        "√" : Operation.unaryOperation(sqrt, {"√(" + $0 + ")"}),
-        "sin" : Operation.unaryOperation(sin, {"sin(" + $0 + ")"}),
-        "cos" : Operation.unaryOperation(cos, {"cos(" + $0 + ")"}),
-        "tan" : Operation.unaryOperation(tan, {"tan(" + $0 + ")"}),
-        "+" : Operation.binaryOperation(+, { $0 + " + " + $1 }),
-        "-" : Operation.binaryOperation(-, { $0 + " - " + $1 }),
-        "x" : Operation.binaryOperation(*, { $0 + " x " + $1 }),
-        "÷" : Operation.binaryOperation(/, { $0 + " ÷ " + $1 }),
-        "=" : Operation.equals,
-        "C" : Operation.clear,
-        "rand" : Operation.emptyOperation({ drand48() }, "rand()")
-    ]
-    
-    //Enum for Pending Binary Operation
-    fileprivate struct PendingBinaryOperation{
-        var binaryFunction : (Double, Double) -> Double
-        var firstOperand : Double
-        var binaryFunctionDescription: (String,String) -> String
-        var firstOperandDescription: String
-    }
-    
-    //Current pending binary operation
-    fileprivate var pending: PendingBinaryOperation?
-    
+    // MARK: Operations
     //Used by View Controller to reset accumulator to be operand
     func setOperand(_ operand: Double){
         internalProgram.append(operand as AnyObject)
@@ -165,4 +167,5 @@ public class CalculatorBrain {
             pending = nil
         }
     }
+    
 }
