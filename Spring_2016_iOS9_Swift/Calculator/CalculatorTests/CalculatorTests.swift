@@ -14,11 +14,11 @@ import XCTest
  result, description, and isPartialResult should be passing
  */
 class CalculatorTests: XCTestCase {
-    let brain = CalculatorBrain()
+    let brain = CalculatorBrain(decimalDigits: 1)
     
     //Tests for Assignment 1
-    func testCalculatorBrain(){
-        
+    func testCalculatorBrainBasicOperands(){
+        brain.performOperation("C")
         // 7 + --> 7, true, "7 + "
         brain.setOperand(7)
         brain.performOperation("+")
@@ -153,6 +153,37 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(brain.result, 27.0)
         XCTAssertFalse(brain.isPartialResult)
         XCTAssertEqual(brain.description, "4 + 5 x 3")
+    }
+    
+    //Assignment 2 Tests: Check display values, value of M, and description
+    func testCalculatorBrainVariableSaveRestore(){
+        brain.performOperation("C")
+        
+        // 9 + M = √ --> display = 3, M = 0, desc = √(9+M)
+        brain.setOperand(9)
+        brain.performOperation("+")
+        brain.setOperand("M")
+        brain.performOperation("=")
+        brain.performOperation("√")
+        XCTAssertEqual(brain.result, 3.0)
+        //TODO: Check value of M
+        XCTAssertEqual(brain.description, "√(9+M)")
+
+        //7 →M --> display = 4, M = 7, desc = √(9+M)
+        // sets the value of 7 into M
+        brain.setOperand(7)
+        brain.performOperation("→M")
+        XCTAssertEqual(brain.result, 4.0)
+        //TODO: Check value of M
+        XCTAssertEqual(brain.description, "√(9+M)")
+        
+        // + 14 = --> display = 18, M = 7, desc ="√(9+M) + 14"
+        brain.performOperation("+")
+        brain.setOperand(14)
+        brain.performOperation("=")
+        XCTAssertEqual(brain.result, 18.0)
+        //TODO: Check value of M
+        XCTAssertEqual(brain.description, "√(9+M) + 14")
     }
     
 }

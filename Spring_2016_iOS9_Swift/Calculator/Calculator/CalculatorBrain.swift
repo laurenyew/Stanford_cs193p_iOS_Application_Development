@@ -19,7 +19,7 @@ public class CalculatorBrain {
     //internal program of property list items (Double if operand, String if operation)
     fileprivate var internalProgram = [AnyObject]()
     //Keep values associated to given variables
-    fileprivate var variableValues : [String : Double] = [:]
+    fileprivate var variableValues : Dictionary<String,Double> = [:]
     //Current pending binary operation
     fileprivate var pending: PendingBinaryOperation?
     
@@ -72,13 +72,13 @@ public class CalculatorBrain {
             if let arrayOfOps = newValue as? [AnyObject]{
                 for op in arrayOfOps{
                     if let operand = op as? Double{
-                        setOperand(operand: operand)
+                        setOperand(operand)
                     }else if let operation = op as? String{
                         //Operation can either be a variable name or an operation
                         if (operations[operation] != nil) {
                             performOperation(operation)
                         }else{
-                            setOperand(variableName: operation)
+                            setOperand(operation)
                         }
                     }
                 }
@@ -125,14 +125,13 @@ public class CalculatorBrain {
     
     // MARK: Operations
     //Update the variableValues dictionary. The variableName is mapped to the current accumulator value.
-    func setOperand(variableName: String){
+    func setOperand(_ variableName: String){
         internalProgram.append(variableName as AnyObject)
         variableValues[variableName] = accumulator
-        
     }
     
     //Used by View Controller to reset accumulator to be operand
-    func setOperand(operand: Double){
+    func setOperand(_ operand: Double){
         internalProgram.append(operand as AnyObject)
         accumulator = operand
         
