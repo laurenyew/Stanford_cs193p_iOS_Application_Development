@@ -19,6 +19,10 @@
 - [x] 1.4 Extra: Make a button generate random nmber between 0 and 1
 - [ ] 2. Calculator Brain (Property Lists and Settings) -- WIP
 
+**Reading**
+- [ ] 1. Reading Assignment 1: Intro to Swift
+- [ ] 2. Reading Assignment 2: More Swift
+- [ ] 3. Reading Assignment 3: The Rest of Swift
 #### Fall 2014 iOS7 Objective C (All Assignments + Bonus)
 **Lectures**
 - [x] 1. Overview of iOS, MVC, Objective C
