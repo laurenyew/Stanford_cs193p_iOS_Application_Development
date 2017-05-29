@@ -2,9 +2,9 @@
 
 **Stanford CS193p iOS Application Development iTunesU**
 
-**Stanford iTunesU Objective C iOS7, Swift iOS9** (2014-2016). Making progress through Stanford coursework for developing iOS apps. Working through Swift course to concentrate on new iOS9/iOS10 + xCode7/8 technology. Will complete Objective C course after.. Plans to create a proof of concept app.
+**Stanford iTunesU Objective C iOS7, Swift iOS10** (2014-2017). Making progress through Stanford coursework for developing iOS apps. Working through Swift course to concentrate on new iOS10 + xCode8 technology. Will complete Objective C course after. Plans to create a proof of concept app.
 
-####  Fall 2016 iOS9 Swift (All Assignments + Bonus)
+####  Spring 2017 iOS Swift (All Assignments + Bonus)
 **Lectures**
 - [x] 1. Course OVerview and Introduction to iOS 9, XCode, and Swift
 - [x] 2. Applying MVC
@@ -20,9 +20,10 @@
 - [ ] 2. Calculator Brain (Property Lists and Settings) -- WIP
 
 **Reading**
-- [ ] 1. Reading Assignment 1: Intro to Swift
+- [x] 1. Reading Assignment 1: Intro to Swift
 - [ ] 2. Reading Assignment 2: More Swift
 - [ ] 3. Reading Assignment 3: The Rest of Swift
+
 #### Fall 2014 iOS7 Objective C (All Assignments + Bonus)
 **Lectures**
 - [x] 1. Overview of iOS, MVC, Objective C
