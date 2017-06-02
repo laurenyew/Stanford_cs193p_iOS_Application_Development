@@ -12,25 +12,7 @@ import Foundation
 struct CalculatorBrain {
     
     //------------------------------------------------------------------
-    // MARK: Variables
-    private enum OpType{
-        case operand(Double) //value (ex: "2")
-        case operation(String) //method (ex: "cos()")
-        case variable(String) //variable (ex: "x")
-    }
-    
-    //accumulate result of calculator
-    private var accumulator = 0.0
-    //max number of decimal digits that can be shown
-    private var decimalDigits: Int
-    //Description of history
-    private var descriptionAccumulator = ""
-    //internal program of property list items (Double if operand, String if operation)
-    private var internalProgram = [OpType]()
-    //Keep values associated to given variables
-    private var variableValues : Dictionary<String,Double> = [:]
-    //Current pending binary operation
-    private var pending: PendingBinaryOperation?
+    // MARK: State
     
     //Operation enum (helps simplify code around Operation functions)
     private enum Operation{
@@ -67,139 +49,155 @@ struct CalculatorBrain {
         var firstOperandDescription: String
     }
     
-    init(decimalDigits: Int) {
-        self.decimalDigits = decimalDigits
+    //Operation Type (Save into Internal Program)
+    private enum OpType{
+        case operand(Double) //value (ex: "2")
+        case operation(String) //method (ex: "cos()")
+        case variable(String) //variable (ex: "x")
     }
+    
+    //internal program of property list items (Double if operand, String if operation)
+    private var internalProgram = [OpType]()
     
     //------------------------------------------------------------------
-    // MARK: MVP Functions
+    // MARK: Create / Update Internal Program
+    // Goal: Use these methods to save information from the view controller
+    // into the internal program. Use evaluate to then run that internal program
     
-    //Result to display
-    var result: Double {
-        get {
-            return accumulator
-        }
-    }
-    
-    //Description of sequence of operands/operations that lead to the result
-    var description : String {
-        get{
-            if let pendingDesc = pending {
-                return pendingDesc.binaryFunctionDescription(
-                    pendingDesc.firstOperandDescription,
-                    pendingDesc.firstOperandDescription != descriptionAccumulator ?
-                        descriptionAccumulator : "")
-            }else{
-                return descriptionAccumulator
-            }
-        }
-    }
-    
-    //------------------------------------------------------------------
-    // MARK: Business Logic Functions
-    
-    //Update the variableValues dictionary. The variableName is mapped to the current accumulator value.
+    //Add the variable operand to the internal program
     mutating func setOperand(variable named: String){
         internalProgram.append(OpType.variable(named))
     }
     
-    //Used by View Controller to reset accumulator to be operand
+    //Add the number operand to the internal program
     mutating func setOperand(_ operand: Double){
         internalProgram.append(OpType.operand(operand))
-
-        //TODO
-//        //Format description
-//        let formatter = NumberFormatter()
-//        formatter.numberStyle = .decimal
-//        formatter.maximumFractionDigits = decimalDigits
-//        descriptionAccumulator = formatter.string(from: NSNumber(value: operand))!
     }
     
+    //Add the operation function to the internal program
+    mutating func performOperation(_ symbol: String){
+        internalProgram.append(OpType.operation(symbol))
+    }
     
-    
-    //Clear out the calculator
+    //Clear out the internal program
     mutating private func clear(){
         internalProgram.removeAll()
     }
     
-    //Used by View Controller to perform a given operation
-    mutating func performOperation(_ symbol: String){
-        internalProgram.append(OpType.operation(symbol))
-        //TODO
-//        if let operation = operations[symbol] {
-//            switch operation {
-//            case .constant(let value):
-//                accumulator = value
-//                descriptionAccumulator = symbol
-//            case .emptyOperation(let function, let description):
-//                accumulator = function()
-//                descriptionAccumulator = description
-//            case .unaryOperation(let function, let descriptionFunction):
-//                accumulator = function(accumulator)
-//                descriptionAccumulator = descriptionFunction(descriptionAccumulator)
-//            case .binaryOperation(let function, let functionDescription):
-//                executePendingBinaryOperation()
-//                pending = PendingBinaryOperation(binaryFunction: function,
-//                                                 firstOperand: accumulator,
-//                                                 binaryFunctionDescription: functionDescription,
-//                                                 firstOperandDescription:descriptionAccumulator)
-//            case .equals:
-//                executePendingBinaryOperation()
-//            case .clear:
-//                clear()
-//            }
-//        }
-    }
-
-    
-    
-    
     //------------------------------------------------------------------
-    // MARK: Helper methods
+    // MARK: Evaluate a given Internal Program
     
-    //returns whether or not there is a binary operation pending
-    var isPartialResult : Bool {
-        get{
-            return pending != nil
+    func evaluate(using variables: Dictionary<String, Double>? = nil) -> (result: Double?, isPending: Bool, description: String){
+        
+        //Initialize variables to be used inside this function
+        var accumulator: Double?
+        var descriptionAccumulator: String?
+        var pendingBinaryOperation: PendingBinaryOperation?
+        
+        //Return the result of the internal program
+        var result: Double? {
+            get {
+                return accumulator
+            }
         }
-    }
-    
-    //Helper method: if there is a pending binary operation, run it
-    private mutating func executePendingBinaryOperation(){
-        if pending != nil {
-            accumulator = pending!.binaryFunction(pending!.firstOperand, accumulator)
-            descriptionAccumulator = pending!.binaryFunctionDescription(pending!.firstOperandDescription, descriptionAccumulator)
-            pending = nil
-        }
-    }
-    
-    //------------------------------------------------------------------
-    // MARK: Extras
-    
-    
-    //Save / Return Internal Program for the calculator to use
-    typealias PropertyList = AnyObject
-    var program: PropertyList{
-        get{
-            return internalProgram as PropertyList
-        }set{
-            clear()
-            if let arrayOfOps = newValue as? [AnyObject]{
-                for op in arrayOfOps{
-                    if let operand = op as? Double{
-                        setOperand(operand)
-                    }else if let operation = op as? String{
-                        //Operation can either be a variable name or an operation
-                        if (operations[operation] != nil) {
-                            performOperation(operation)
-                        }else{
-                            setOperand(variable: operation)
-                        }
-                    }
+        
+        //Description of sequence of operands/operations that lead to the result
+        var description : String? {
+            get{
+                //If we have a pending binary operation, show it 
+                //with the current description accumulator
+                if let pendingDesc = pendingBinaryOperation {
+                    return pendingDesc.binaryFunctionDescription(
+                        pendingDesc.firstOperandDescription,
+                        descriptionAccumulator ?? "")
+                }else{
+                    return descriptionAccumulator
                 }
             }
         }
+        
+        //returns whether or not there is a binary operation pending
+        var isPartialResult : Bool {
+            get{
+                return pendingBinaryOperation != nil
+            }
+        }
+
+        //Get the value of variable 'named' in the variables dictionary
+        //Default value is 0
+         func setOperand(variable named: String){
+            accumulator = variables?[named] ?? 0
+            descriptionAccumulator = named
+        }
+    
+        //Used by View Controller to reset accumulator to be operand
+        func setOperand(_ operand: Double){
+            accumulator = operand
+
+            //Format description
+            if let value = accumulator {
+                descriptionAccumulator =
+                    formatter.string(from: NSNumber(value: value)) ?? ""
+            }
+        }
+        
+        //Perform the symbol operation from the internal program
+        func performOperation(_ symbol: String){
+            
+            if let operation = operations[symbol] {
+                switch operation {
+                case .constant(let value):
+                    accumulator = value
+                    descriptionAccumulator = symbol
+                case .emptyOperation(let function, let description):
+                    accumulator = function()
+                    descriptionAccumulator = description
+                case .unaryOperation(let function, var descriptionFunction):
+                    //Run the function on the accumulated values and update result
+                    if accumulator != nil {
+                        accumulator = function(accumulator!)
+                    }
+                    //Update the description
+                    descriptionAccumulator = descriptionFunction(descriptionAccumulator)
+                    
+                case .binaryOperation(let function, var descriptionFunction):
+                    executePendingBinaryOperation()
+                    
+                    if accumulator != nil{
+                        pendingBinaryOperation =
+                            PendingBinaryOperation(binaryFunction: function,                         firstOperand: accumulator,
+                                binaryFunctionDescription: descriptionFunction,
+                                firstOperandDescription:descriptionAccumulator)
+                    }
+                
+                case .equals:
+                    executePendingBinaryOperation()
+                }
+            }
+        }
+        
+        //Helper method: if there is a pending binary operation, run it
+        func executePendingBinaryOperation(){
+            if pending != nil {
+                accumulator = pending!.binaryFunction(pending!.firstOperand, accumulator)
+                descriptionAccumulator = pending!.binaryFunctionDescription(pending!.firstOperandDescription, descriptionAccumulator)
+                pending = nil
+            }
+        }
+        
+        //Evaluate business logic
+        return (result, isPending, description ?? "")
+
     }
+    
+    //Make a helper formatter variable that can be used in
+    //the description to format numbers
+    let formatter:NumberFormatter = {
+        let tempFormatter = NumberFormatter()
+        tempFormatter.numberStyle = .decimal
+        tempFormatter.maximumFractionDigits = 4
+        return tempFormatter
+    }()
 
     
 }
