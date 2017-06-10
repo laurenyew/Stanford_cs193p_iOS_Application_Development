@@ -87,6 +87,7 @@ struct CalculatorBrain {
     //------------------------------------------------------------------
     // MARK: Evaluate a given Internal Program
     
+    //Evaluate takes in variables which can default to nil
     func evaluate(using variables: Dictionary<String, Double>? = nil) -> (result: Double?, isPending: Bool, description: String){
         
         //Initialize variables to be used inside this function
@@ -158,7 +159,9 @@ struct CalculatorBrain {
                         accumulator = function(accumulator!)
                     }
                     //Update the description
-                    descriptionAccumulator = descriptionFunction(descriptionAccumulator)
+                    if descriptionAccumulator != nil{
+                        descriptionAccumulator = descriptionFunction(descriptionAccumulator!)
+                    }
                     
                 case .binaryOperation(let function, var descriptionFunction):
                     executePendingBinaryOperation()
@@ -185,7 +188,26 @@ struct CalculatorBrain {
             }
         }
         
-        //Evaluate business logic
+        //MARK: Evaluate business logic
+        //Check first if the internal program has anything in it
+        guard !(internalProgram.isEmpty) else { return (nil, false, "") }
+        //Setup the values
+        pendingBinaryOperation = nil
+        descriptionAccumulator = ""
+        accumulator = 0.0
+        
+        //Run the internal program
+        for op in internalProgram {
+            switch op{
+                case .variable(let v):
+                    setOperand(variable: v)
+                case .operand(let operand):
+                    setOperand(operand)
+                case .operation(let operation):
+                    performOperation(operation)
+            }
+        }
+        
         return (result, isPending, description ?? "")
 
     }
