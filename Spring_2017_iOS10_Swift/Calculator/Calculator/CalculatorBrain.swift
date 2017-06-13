@@ -93,7 +93,7 @@ struct CalculatorBrain {
         //Initialize variables to be used inside this function
         var accumulator: Double?
         var descriptionAccumulator: String?
-        var pendingBinaryOperation: PendingBinaryOperation?
+        var pending: PendingBinaryOperation?
         
         //Return the result of the internal program
         var result: Double? {
@@ -107,7 +107,7 @@ struct CalculatorBrain {
             get{
                 //If we have a pending binary operation, show it 
                 //with the current description accumulator
-                if let pendingDesc = pendingBinaryOperation {
+                if let pendingDesc = pending {
                     return pendingDesc.binaryFunctionDescription(
                         pendingDesc.firstOperandDescription,
                         descriptionAccumulator ?? "")
@@ -120,7 +120,7 @@ struct CalculatorBrain {
         //returns whether or not there is a binary operation pending
         var isPartialResult : Bool {
             get{
-                return pendingBinaryOperation != nil
+                return pending != nil
             }
         }
 
@@ -147,43 +147,45 @@ struct CalculatorBrain {
             
             if let operation = operations[symbol] {
                 switch operation {
-                case .constant(let value):
-                    accumulator = value
-                    descriptionAccumulator = symbol
-                case .emptyOperation(let function, let description):
-                    accumulator = function()
-                    descriptionAccumulator = description
-                case .unaryOperation(let function, var descriptionFunction):
-                    //Run the function on the accumulated values and update result
-                    if accumulator != nil {
-                        accumulator = function(accumulator!)
-                    }
-                    //Update the description
-                    if descriptionAccumulator != nil{
-                        descriptionAccumulator = descriptionFunction(descriptionAccumulator!)
-                    }
+                    case .constant(let value):
+                        accumulator = value
+                        descriptionAccumulator = symbol
+                    case .emptyOperation(let function, let description):
+                        accumulator = function()
+                        descriptionAccumulator = description
+                    case .unaryOperation(let function, let descriptionFunction):
+                        //Run the function on the accumulated values and update result
+                        if accumulator != nil {
+                            accumulator = function(accumulator!)
+                        }
+                        //Update the description
+                        if descriptionAccumulator != nil{
+                            descriptionAccumulator = descriptionFunction(descriptionAccumulator!)
+                        }
+                        
+                    case .binaryOperation(let function, let descriptionFunction):
+                        executePendingBinaryOperation()
+                        
+                        if accumulator != nil && descriptionAccumulator != nil{
+                            pending =
+                                PendingBinaryOperation(binaryFunction: function,                         firstOperand: accumulator!,
+                                    binaryFunctionDescription: descriptionFunction,
+                                    firstOperandDescription:descriptionAccumulator!)
+                        }
                     
-                case .binaryOperation(let function, var descriptionFunction):
-                    executePendingBinaryOperation()
-                    
-                    if accumulator != nil{
-                        pendingBinaryOperation =
-                            PendingBinaryOperation(binaryFunction: function,                         firstOperand: accumulator,
-                                binaryFunctionDescription: descriptionFunction,
-                                firstOperandDescription:descriptionAccumulator)
-                    }
-                
-                case .equals:
-                    executePendingBinaryOperation()
+                    case .equals:
+                        executePendingBinaryOperation()
+                        
+                    default: break
                 }
             }
         }
         
         //Helper method: if there is a pending binary operation, run it
         func executePendingBinaryOperation(){
-            if pending != nil {
-                accumulator = pending!.binaryFunction(pending!.firstOperand, accumulator)
-                descriptionAccumulator = pending!.binaryFunctionDescription(pending!.firstOperandDescription, descriptionAccumulator)
+            if pending != nil && accumulator != nil{
+                accumulator = pending!.binaryFunction(pending!.firstOperand, accumulator!)
+                descriptionAccumulator = pending!.binaryFunctionDescription(pending!.firstOperandDescription, descriptionAccumulator!)
                 pending = nil
             }
         }
@@ -192,7 +194,7 @@ struct CalculatorBrain {
         //Check first if the internal program has anything in it
         guard !(internalProgram.isEmpty) else { return (nil, false, "") }
         //Setup the values
-        pendingBinaryOperation = nil
+        pending = nil
         descriptionAccumulator = ""
         accumulator = 0.0
         
@@ -208,7 +210,7 @@ struct CalculatorBrain {
             }
         }
         
-        return (result, isPending, description ?? "")
+        return (result, isPartialResult, description ?? "")
 
     }
     
@@ -221,5 +223,25 @@ struct CalculatorBrain {
         return tempFormatter
     }()
 
+    //MARK: Deprecated values
+    @available(iOS, deprecated, message: "Deprecated in Assignment 2: Calculator Brain. Use evaluate() instead.")
+    var description: String {
+        get {
+            return evaluate().description
+        }
+    }
+    @available(iOS, deprecated, message: "Deprecated in Assignment 2: Calculator Brain. Use evaluate() instead.")
+    var result: Double? {
+        get {
+            return evaluate().result
+        }
+    }
+    
+    @available(iOS, deprecated, message: "Deprecated in Assignment 2: Calculator Brain. Use evaluate() instead.")
+    var resultIsPending: Bool {
+        get {
+            return evaluate().isPending
+        }
+    }
     
 }

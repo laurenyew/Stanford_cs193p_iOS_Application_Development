@@ -20,7 +20,11 @@ class ViewController: UIViewController {
     fileprivate var userIsInTheMiddleOfTyping: Bool = false
     
     //CalculatorBrain
-    fileprivate var brain = CalculatorBrain(decimalDigits: Constants.NumDecimalDigits)
+    fileprivate var brain = CalculatorBrain()
+    
+    //Dictionary to store variables
+    fileprivate var variableDict = [String:Double]()
+    
     
     //UI Label display value
     fileprivate var displayValue: Double? {
@@ -37,14 +41,16 @@ class ViewController: UIViewController {
                 formatter.numberStyle = .decimal
                 formatter.maximumFractionDigits = Constants.NumDecimalDigits
                 display.text = formatter.string(from: NSNumber(value: doubleValue))
-                history.text = brain.description +
-                                (brain.isPartialResult ? " ... " : " = ")
+//                history.text = brain.description +
+//                                (brain.isPartialResult ? " ... " : " = ")
             }else{
                 display.text = "0"
                 history.text = " "
             }
         }
     }
+    
+    
     
     //User has touched a digit button
     @IBAction fileprivate func touchDigit(_ sender: UIButton) {
@@ -63,21 +69,14 @@ class ViewController: UIViewController {
         userIsInTheMiddleOfTyping = true
     }
     
-    var savedProgram: CalculatorBrain.PropertyList?
-    
-    //Save the current program
-    @IBAction func save() {
-        savedProgram = brain.program
+    //(-> M) Set the variable in the dict with display value, and 
+    //evaluate current set of operations with M with it.
+    @IBAction func setVariableInDictionary(_ sender: UIButton) {
     }
     
-    //Restore the last saved program
-    @IBAction func restore() {
-        if savedProgram != nil{
-            brain.program = savedProgram!
-            displayValue = brain.result
-        }
+    //(M) Add the variable to the set of brain operations
+    @IBAction func useVariableInOperations(_ sender: UIButton) {
     }
-    
     
     //User has touched an operation button
     @IBAction fileprivate func performOperation(_ sender: UIButton) {
@@ -95,11 +94,11 @@ class ViewController: UIViewController {
             }else{
                 brain.performOperation(mathematicalSymbol)
                 //Return result from brain model
-                displayValue = brain.result
+               //TODO displayValue = brain.evaluate()
             }
         }else{
             //Return result from brain model
-            displayValue = brain.result
+            //TODO displayValue = brain.result
         }
         
         
@@ -119,5 +118,7 @@ class ViewController: UIViewController {
             brain.setOperand(displayValue!)
         }
     }
+    
+    
 }
 
