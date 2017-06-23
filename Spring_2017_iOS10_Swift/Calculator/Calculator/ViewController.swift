@@ -5,7 +5,6 @@
 //  Created by laurenyew on 7/23/16.
 //  Copyright © 2016 CS193p. All rights reserved.
 //
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -90,20 +89,17 @@ class ViewController: UIViewController {
         
         //Perform operation on symbol
         if let mathematicalSymbol = sender.currentTitle {
-            
             if mathematicalSymbol == "⬅︎"{
                 performBackSpace()
             }else{
                 brain.performOperation(mathematicalSymbol)
                 //Return result from brain model
-               //TODO displayValue = brain.evaluate()
+                let brainResult = brain.evaluate(using: variableDict)
+                displayValue = brainResult.result
+                history.text = brainResult.description +
+                    (brainResult.isPending ? " ... " : " = ")
             }
-        }else{
-            //Return result from brain model
-            //TODO displayValue = brain.result
         }
-        
-        
     }
 
     //Helper method to perform backspace
