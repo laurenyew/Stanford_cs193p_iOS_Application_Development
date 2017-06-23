@@ -80,7 +80,7 @@ struct CalculatorBrain {
     }
     
     //Clear out the internal program
-    mutating private func clear(){
+    mutating func clear(){
         internalProgram.removeAll()
     }
     

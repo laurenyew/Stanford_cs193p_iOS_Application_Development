@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     fileprivate struct Constants{
         static let NumDecimalDigits = 6
     }
-
+    
     @IBOutlet fileprivate weak var display: UILabel!
     @IBOutlet fileprivate weak var history: UILabel!
     
@@ -24,7 +24,6 @@ class ViewController: UIViewController {
     //Dictionary to store variables
     fileprivate var variableDict = [String:Double]()
     
-    //UI Label display value
     fileprivate var displayValue: Double? {
         get{
             if let text = display.text, let value = Double(text){
@@ -46,6 +45,21 @@ class ViewController: UIViewController {
         }
     }
     
+    //DisplayResult (handles updating the UI labels
+    fileprivate var displayResult: (result: Double?, isPending: Bool, description: String) = (nil, false, "") {
+        
+        //After displayResult is set, update the UI labels
+        didSet {
+            switch(displayResult){
+                case (nil, _, nil): displayValue = 0
+                case (let result, _, _ ): displayValue = result
+            }
+            history.text = displayResult.description != " " ? displayResult.description + (displayResult.isPending ? "..." : " = ") : " "
+        }
+    }
+    
+    
+    
     
     
     //User has touched a digit button
@@ -65,18 +79,16 @@ class ViewController: UIViewController {
         userIsInTheMiddleOfTyping = true
     }
     
-    //(-> M) Set the variable in the dict with display value, and 
+    //(-> M) Set the variable in the dict with display value, and
     //evaluate current set of operations with M with it.
     @IBAction func setVariableInDictionary(_ sender: UIButton) {
         variableDict.updateValue(displayValue!, forKey: "M")
+        displayResult = brain.evaluate(using: variableDict)
     }
     
     //(M) Add the variable to the set of brain operations
     @IBAction func useVariableInOperations(_ sender: UIButton) {
-        let brainResult = brain.evaluate(using: variableDict)
-        displayValue = brainResult.result
-        history.text = brainResult.description +
-            (brainResult.isPending ? " ... " : " = ")
+        brain.setOperand(variable: "M")
     }
     
     //User has touched an operation button
@@ -94,14 +106,18 @@ class ViewController: UIViewController {
             }else{
                 brain.performOperation(mathematicalSymbol)
                 //Return result from brain model
-                let brainResult = brain.evaluate(using: variableDict)
-                displayValue = brainResult.result
-                history.text = brainResult.description +
-                    (brainResult.isPending ? " ... " : " = ")
+                displayResult = brain.evaluate(using: variableDict)
             }
         }
     }
-
+    
+    //Clear the calculator brain
+    @IBAction func clear(_ sender: UIButton) {
+        brain.clear()
+        variableDict = [:]
+        displayResult = brain.evaluate(using: variableDict)
+    }
+    
     //Helper method to perform backspace
     fileprivate func performBackSpace(){
         if displayValue != 0.0{
