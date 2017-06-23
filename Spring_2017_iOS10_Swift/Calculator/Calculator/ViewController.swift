@@ -25,7 +25,6 @@ class ViewController: UIViewController {
     //Dictionary to store variables
     fileprivate var variableDict = [String:Double]()
     
-    
     //UI Label display value
     fileprivate var displayValue: Double? {
         get{
@@ -41,8 +40,6 @@ class ViewController: UIViewController {
                 formatter.numberStyle = .decimal
                 formatter.maximumFractionDigits = Constants.NumDecimalDigits
                 display.text = formatter.string(from: NSNumber(value: doubleValue))
-//                history.text = brain.description +
-//                                (brain.isPartialResult ? " ... " : " = ")
             }else{
                 display.text = "0"
                 history.text = " "
@@ -72,10 +69,15 @@ class ViewController: UIViewController {
     //(-> M) Set the variable in the dict with display value, and 
     //evaluate current set of operations with M with it.
     @IBAction func setVariableInDictionary(_ sender: UIButton) {
+        variableDict.updateValue(displayValue!, forKey: "M")
     }
     
     //(M) Add the variable to the set of brain operations
     @IBAction func useVariableInOperations(_ sender: UIButton) {
+        let brainResult = brain.evaluate(using: variableDict)
+        displayValue = brainResult.result
+        history.text = brainResult.description +
+            (brainResult.isPending ? " ... " : " = ")
     }
     
     //User has touched an operation button
