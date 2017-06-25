@@ -4,6 +4,10 @@
 //
 //  Created by laurenyew on 7/23/16.
 //  Copyright © 2016 CS193p. All rights reserved.
+//TODO: 
+//-Fix description / history
+//-Add unit tests
+//-Add ui tests
 //
 import UIKit
 
@@ -15,6 +19,7 @@ class ViewController: UIViewController {
     
     @IBOutlet fileprivate weak var display: UILabel!
     @IBOutlet fileprivate weak var history: UILabel!
+    @IBOutlet fileprivate weak var displayM: UILabel!
     
     fileprivate var userIsInTheMiddleOfTyping: Bool = false
     
@@ -38,6 +43,7 @@ class ViewController: UIViewController {
                 formatter.numberStyle = .decimal
                 formatter.maximumFractionDigits = Constants.NumDecimalDigits
                 display.text = formatter.string(from: NSNumber(value: doubleValue))
+                displayM.text = "M = " + formatter.string(from: NSNumber(value: variableDict["M"] ?? 0))!
             }else{
                 display.text = "0"
                 history.text = " "
@@ -89,6 +95,7 @@ class ViewController: UIViewController {
     //(M) Add the variable to the set of brain operations
     @IBAction func useVariableInOperations(_ sender: UIButton) {
         brain.setOperand(variable: "M")
+        displayResult = brain.evaluate(using: variableDict)
     }
     
     //User has touched an operation button
