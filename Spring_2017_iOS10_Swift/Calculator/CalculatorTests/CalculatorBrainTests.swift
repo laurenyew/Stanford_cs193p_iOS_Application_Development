@@ -19,26 +19,17 @@ class CalculatorTests: XCTestCase {
     
     //Tests for Assignment 1
     func testCalculatorBrainBasicOperands(){
-        brain.performOperation("C")
+        brain.clear()
         // 7 + --> 7, true, "7 + "
         brain.setOperand(7)
         brain.performOperation("+")
         var brainResult = brain.evaluate()
-        XCTAssertEqual(brainResult.result, 7.0)
+        XCTAssertNil(brainResult.result)
         XCTAssertTrue(brainResult.isPending)
         XCTAssertEqual(brainResult.description,  "7 + ")
         
-        // 7 + 9 --> 9, true, "7 + "
-        brain.performOperation("C")
-        brain.setOperand(7)
-        brain.performOperation("+")
-        brainResult = brain.evaluate()
-        XCTAssertEqual(brainResult.result, 7.0) //9 hasn't been entered yet
-        XCTAssertTrue(brainResult.isPending)
-        XCTAssertEqual(brainResult.description, "7 + ")
-        
         // 7 + 9 = --> 16, false, "7 + 9 "
-        brain.performOperation("C")
+        brain.clear()
         brain.setOperand(7)
         brain.performOperation("+")
         brain.setOperand(9)
@@ -49,7 +40,7 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(brainResult.description, "7 + 9")
         
         // 7 + 9 = √ --> 4, false, "√(7 + 9) "
-        brain.performOperation("C")
+        brain.clear()
         brain.setOperand(7)
         brain.performOperation("+")
         brain.setOperand(9)
@@ -61,7 +52,7 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(brainResult.description, "√(7 + 9)")
         
         // 7 + 9 √ --> 3, true, "7 + √(9) "
-        brain.performOperation("C")
+        brain.clear()
         brain.setOperand(7)
         brain.performOperation("+")
         brain.setOperand(9)
@@ -72,7 +63,7 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(brainResult.description, "7 + √(9)")
         
         // 7 + 9 √ = --> 10, false, "7 + √(9) "
-        brain.performOperation("C")
+        brain.clear()
         brain.setOperand(7)
         brain.performOperation("+")
         brain.setOperand(9)
@@ -84,7 +75,7 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(brainResult.description, "7 + √(9)")
         
         // 7 + 9 = + 6 + 3 = --> 25, false, "7 + 9 + 6 + 3 "
-        brain.performOperation("C")
+        brain.clear()
         brain.setOperand(7)
         brain.performOperation("+")
         brain.setOperand(9)
@@ -100,7 +91,7 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(brainResult.description, "7 + 9 + 6 + 3")
         
         // 7 + 9 = √ 6 + 3 = --> 9, false, "6 + 3 "
-        brain.performOperation("C")
+        brain.clear()
         brain.setOperand(7)
         brain.performOperation("+")
         brain.setOperand(9)
@@ -116,7 +107,7 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(brainResult.description, "6 + 3")
         
         // 5 + 6 = 7 3 --> 73, false, "5 + 6 "
-        brain.performOperation("C")
+        brain.clear()
         brain.setOperand(5)
         brain.performOperation("+")
         brain.setOperand(6)
@@ -133,7 +124,7 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(brainResult.description, "73")
         
         // 7 + = --> 14, false, "7 + 7 "
-        brain.performOperation("C")
+        brain.clear()
         brain.setOperand(7)
         brain.performOperation("+")
         brain.performOperation("=")
@@ -143,7 +134,7 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(brainResult.description, "7 + 7")
         
         // 4 x π = --> 12.5663706143592, false, "4 + π "
-        brain.performOperation("C")
+        brain.clear()
         brain.setOperand(4)
         brain.performOperation("x")
         brain.performOperation("π")
@@ -154,7 +145,7 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(brainResult.description, "4 x π")
         
         // 4 + 5 x 3 = --> 27, false, "4 + 5 x 3 "
-        brain.performOperation("C")
+        brain.clear()
         brain.setOperand(4)
         brain.performOperation("+")
         brain.setOperand(5)
@@ -169,7 +160,7 @@ class CalculatorTests: XCTestCase {
     
     //Assignment 2 Tests: Check display values, value of M, and description
     func testCalculatorBrainVariableSaveRestore(){
-        brain.performOperation("C")
+        brain.clear()
         
         // 9 + M = √ --> display = 3, M = 0, desc = √(9+M)
         brain.setOperand(9)

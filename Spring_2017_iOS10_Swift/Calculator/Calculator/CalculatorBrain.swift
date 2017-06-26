@@ -173,6 +173,9 @@ struct CalculatorBrain {
                                     firstOperandDescription:descriptionAccumulator!)
                         }
                     
+                        accumulator = nil
+                        descriptionAccumulator = nil
+                    
                     case .equals:
                         executePendingBinaryOperation()
                         
