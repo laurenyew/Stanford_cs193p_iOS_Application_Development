@@ -21,7 +21,6 @@ struct CalculatorBrain {
         case unaryOperation((Double) -> Double, (String) -> String)
         case binaryOperation((Double, Double) -> Double, (String, String) -> String)
         case equals
-        case clear
     }
     
     private var operations: Dictionary<String,Operation> = [
@@ -37,7 +36,6 @@ struct CalculatorBrain {
         "x" : Operation.binaryOperation(*, { $0 + " x " + $1 }),
         "÷" : Operation.binaryOperation(/, { $0 + " ÷ " + $1 }),
         "=" : Operation.equals,
-        "C" : Operation.clear,
         "rand" : Operation.emptyOperation({ drand48() }, "rand()")
     ]
     
@@ -105,7 +103,7 @@ struct CalculatorBrain {
         //Description of sequence of operands/operations that lead to the result
         var description : String? {
             get{
-                //If we have a pending binary operation, show it 
+                //If we have a pending binary operation, show it
                 //with the current description accumulator
                 if let pendingDesc = pending {
                     return pendingDesc.binaryFunctionDescription(
@@ -123,18 +121,18 @@ struct CalculatorBrain {
                 return pending != nil
             }
         }
-
+        
         //Get the value of variable 'named' in the variables dictionary
         //Default value is 0
-         func setOperand(variable named: String){
+        func setOperand(variable named: String){
             accumulator = variables?[named] ?? 0
             descriptionAccumulator = named
         }
-    
+        
         //Used by View Controller to reset accumulator to be operand
         func setOperand(_ operand: Double){
             accumulator = operand
-
+            
             //Format description
             if let value = accumulator {
                 descriptionAccumulator =
@@ -147,39 +145,41 @@ struct CalculatorBrain {
             
             if let operation = operations[symbol] {
                 switch operation {
-                    case .constant(let value):
-                        accumulator = value
-                        descriptionAccumulator = symbol
-                    case .emptyOperation(let function, let description):
-                        accumulator = function()
-                        descriptionAccumulator = description
-                    case .unaryOperation(let function, let descriptionFunction):
-                        //Run the function on the accumulated values and update result
-                        if accumulator != nil {
-                            accumulator = function(accumulator!)
-                        }
-                        //Update the description
-                        if descriptionAccumulator != nil{
-                            descriptionAccumulator = descriptionFunction(descriptionAccumulator!)
-                        }
-                        
-                    case .binaryOperation(let function, let descriptionFunction):
-                        executePendingBinaryOperation()
-                        
-                        if accumulator != nil && descriptionAccumulator != nil{
-                            pending =
-                                PendingBinaryOperation(binaryFunction: function,                         firstOperand: accumulator!,
-                                    binaryFunctionDescription: descriptionFunction,
-                                    firstOperandDescription:descriptionAccumulator!)
-                        }
+                case .constant(let value):
+                    accumulator = value
+                    descriptionAccumulator = symbol
+                case .emptyOperation(let function, let description):
+                    accumulator = function()
+                    descriptionAccumulator = description
+                case .unaryOperation(let function, let descriptionFunction):
+                    //Run the function on the accumulated values and update result
+                    if accumulator != nil {
+                        accumulator = function(accumulator!)
+                    }
+                    //Update the description
+                    if descriptionAccumulator != nil{
+                        descriptionAccumulator = descriptionFunction(descriptionAccumulator!)
+                    }
                     
+                case .binaryOperation(let function, let descriptionFunction):
+                    executePendingBinaryOperation()
+                    
+                    if accumulator != nil && descriptionAccumulator != nil{
+                        pending =
+                            PendingBinaryOperation(
+                                binaryFunction: function,
+                                firstOperand: accumulator!,
+                                binaryFunctionDescription: descriptionFunction,
+                                firstOperandDescription:descriptionAccumulator!)
                         accumulator = nil
                         descriptionAccumulator = nil
+                    }
                     
-                    case .equals:
-                        executePendingBinaryOperation()
-                        
-                    default: break
+                    
+                case .equals:
+                    executePendingBinaryOperation()
+                    
+                default: break
                 }
             }
         }
@@ -204,17 +204,17 @@ struct CalculatorBrain {
         //Run the internal program
         for op in internalProgram {
             switch op{
-                case .variable(let v):
-                    setOperand(variable: v)
-                case .operand(let operand):
-                    setOperand(operand)
-                case .operation(let operation):
-                    performOperation(operation)
+            case .variable(let v):
+                setOperand(variable: v)
+            case .operand(let operand):
+                setOperand(operand)
+            case .operation(let operation):
+                performOperation(operation)
             }
         }
         
         return (result, isPartialResult, description ?? "")
-
+        
     }
     
     //Make a helper formatter variable that can be used in
@@ -225,7 +225,7 @@ struct CalculatorBrain {
         tempFormatter.maximumFractionDigits = 4
         return tempFormatter
     }()
-
+    
     //MARK: Deprecated values
     @available(iOS, deprecated, message: "Deprecated in Assignment 2: Calculator Brain. Use evaluate() instead.")
     var description: String {

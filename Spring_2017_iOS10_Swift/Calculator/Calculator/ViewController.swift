@@ -38,20 +38,21 @@ class ViewController: UIViewController {
             }
         }
         set {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            formatter.maximumFractionDigits = Constants.NumDecimalDigits
+            
             if let doubleValue = newValue {
-                let formatter = NumberFormatter()
-                formatter.numberStyle = .decimal
-                formatter.maximumFractionDigits = Constants.NumDecimalDigits
                 display.text = formatter.string(from: NSNumber(value: doubleValue))
-                if let mValue = variableDict["M"]{
-                    displayM.text = "M = " + formatter.string(from: NSNumber(value:mValue))!
-                }else{
-                    displayM.text = "M = undefined"
-                }
             }else{
                 display.text = "0"
                 history.text = " "
-                displayM.text = "M = undefined"
+            }
+            
+            if let mValue = variableDict["M"]{
+                displayM.text = "M = " + formatter.string(from: NSNumber(value:mValue))!
+            }else{
+                displayM.text = "M = "
             }
         }
     }
