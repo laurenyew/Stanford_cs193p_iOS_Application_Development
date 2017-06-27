@@ -18,7 +18,7 @@ class CalculatorTests: XCTestCase {
     var variableDict = [String:Double]()
     
     //Tests for Assignment 1
-    func testCalculatorBrainBasicOperands(){
+    func testCalculatorBrainBasicOperandsHappyPath(){
         brain.clear()
         // 7 + --> 7, true, "7 + "
         brain.setOperand(7)
@@ -123,16 +123,6 @@ class CalculatorTests: XCTestCase {
         XCTAssertFalse(brainResult.isPending)
         XCTAssertEqual(brainResult.description, "73")
         
-        // 7 + = --> 14, false, "7 + 7 "
-        brain.clear()
-        brain.setOperand(7)
-        brain.performOperation("+")
-        brain.performOperation("=")
-        brainResult = brain.evaluate()
-        XCTAssertEqual(brainResult.result, 14.0)
-        XCTAssertFalse(brainResult.isPending)
-        XCTAssertEqual(brainResult.description, "7 + 7")
-        
         // 4 x π = --> 12.5663706143592, false, "4 + π "
         brain.clear()
         brain.setOperand(4)
@@ -171,16 +161,15 @@ class CalculatorTests: XCTestCase {
         var brainResult = brain.evaluate(using: variableDict)
         XCTAssertEqual(brainResult.result, 3.0)
         XCTAssertNil(variableDict["M"])
-        XCTAssertEqual(brainResult.description, "√(9+M)")
+        XCTAssertEqual(brainResult.description, "√(9 + M)")
 
         //7 →M --> display = 4, M = 7, desc = √(9+M)
         // sets the value of 7 into M
-        brain.setOperand(7)
         variableDict.updateValue(7, forKey:"M")
         brainResult = brain.evaluate(using: variableDict)
         XCTAssertEqual(brainResult.result, 4.0)
         XCTAssertEqual(7, variableDict["M"])
-        XCTAssertEqual(brainResult.description, "√(9+M)")
+        XCTAssertEqual(brainResult.description, "√(9 + M)")
         
         // + 14 = --> display = 18, M = 7, desc ="√(9+M) + 14"
         brain.performOperation("+")
@@ -189,7 +178,7 @@ class CalculatorTests: XCTestCase {
         brainResult = brain.evaluate(using: variableDict)
         XCTAssertEqual(brainResult.result, 18.0)
         XCTAssertEqual(7, variableDict["M"])
-        XCTAssertEqual(brainResult.description, "√(9+M) + 14")
+        XCTAssertEqual(brainResult.description, "√(9 + M) + 14")
     }
     
 }
