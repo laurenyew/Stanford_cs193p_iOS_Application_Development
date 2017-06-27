@@ -94,6 +94,7 @@ class ViewController: UIViewController {
     //(-> M) Set the variable in the dict with display value, and
     //evaluate current set of operations with M with it.
     @IBAction func setVariableInDictionary(_ sender: UIButton) {
+        userIsInTheMiddleOfTyping = false
         variableDict.updateValue(displayValue!, forKey: "M")
         displayResult = brain.evaluate(using: variableDict)
     }
@@ -126,6 +127,7 @@ class ViewController: UIViewController {
     
     //Clear the calculator brain
     @IBAction func clear(_ sender: UIButton) {
+        userIsInTheMiddleOfTyping = false
         brain.clear()
         variableDict = [:]
         displayResult = brain.evaluate(using: variableDict)

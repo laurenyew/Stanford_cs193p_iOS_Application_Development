@@ -174,12 +174,9 @@ struct CalculatorBrain {
                         accumulator = nil
                         descriptionAccumulator = nil
                     }
-                    
-                    
+
                 case .equals:
                     executePendingBinaryOperation()
-                    
-                default: break
                 }
             }
         }
