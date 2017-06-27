@@ -43,10 +43,15 @@ class ViewController: UIViewController {
                 formatter.numberStyle = .decimal
                 formatter.maximumFractionDigits = Constants.NumDecimalDigits
                 display.text = formatter.string(from: NSNumber(value: doubleValue))
-                displayM.text = "M = " + formatter.string(from: NSNumber(value: variableDict["M"] ?? 0))!
+                if let mValue = variableDict["M"]{
+                    displayM.text = "M = " + formatter.string(from: NSNumber(value:mValue))!
+                }else{
+                    displayM.text = "M = undefined"
+                }
             }else{
                 display.text = "0"
                 history.text = " "
+                displayM.text = "M = undefined"
             }
         }
     }
