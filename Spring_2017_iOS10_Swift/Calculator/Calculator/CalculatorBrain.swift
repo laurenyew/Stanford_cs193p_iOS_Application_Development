@@ -77,6 +77,10 @@ struct CalculatorBrain {
         internalProgram.append(OpType.operation(symbol))
     }
     
+    mutating func undo(){
+        internalProgram.removeLast()
+    }
+    
     //Clear out the internal program
     mutating func clear(){
         internalProgram.removeAll()

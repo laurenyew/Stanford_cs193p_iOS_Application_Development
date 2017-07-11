@@ -116,7 +116,11 @@ class ViewController: UIViewController {
         //Perform operation on symbol
         if let mathematicalSymbol = sender.currentTitle {
             if mathematicalSymbol == "⬅︎"{
-                performBackSpace()
+                if userIsInTheMiddleOfTyping {
+                    performBackSpace()
+                } else {
+                    performUndo()
+                }
             }else{
                 brain.performOperation(mathematicalSymbol)
                 //Return result from brain model
@@ -144,10 +148,14 @@ class ViewController: UIViewController {
                 displayText = "0"
             }
             display.text = displayText
-            brain.setOperand(displayValue!)
         }
     }
     
+    //Helper method to perform Undo
+    fileprivate func performUndo(){
+        brain.undo()
+        displayResult = brain.evaluate(using: variableDict)
+    }
     
 }
 
