@@ -35,8 +35,7 @@ struct CalculatorBrain {
         "+" : Operation.binaryOperation(+, { $0 + " + " + $1 }, nil),
         "-" : Operation.binaryOperation(-, { $0 + " - " + $1 }, nil),
         "x" : Operation.binaryOperation(*, { $0 + " x " + $1 }, nil),
-        "÷" : Operation.binaryOperation(/, { $0 + " ÷ " + $1 },
-                                         nil),//TODO
+        "÷" : Operation.binaryOperation(/, { $0 + " ÷ " + $1 }, { $1 == 0 ? "Error: Divide by Zero" : nil }),
         "=" : Operation.equals,
         "rand" : Operation.emptyOperation({ drand48() }, "rand()")
     ]
