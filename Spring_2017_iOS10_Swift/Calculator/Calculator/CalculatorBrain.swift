@@ -18,23 +18,25 @@ struct CalculatorBrain {
     private enum Operation{
         case constant(Double)
         case emptyOperation(() -> Double, String)
-        case unaryOperation((Double) -> Double, (String) -> String)
-        case binaryOperation((Double, Double) -> Double, (String, String) -> String)
+        case unaryOperation((Double) -> Double, (String) -> String,
+            ((Double) -> String?)?)
+        case binaryOperation((Double, Double) -> Double, (String, String) -> String, ((Double, Double) -> String?)?)
         case equals
     }
     
     private var operations: Dictionary<String,Operation> = [
         "π" : Operation.constant(Double.pi),
         "e" : Operation.constant(M_E),
-        "±" : Operation.unaryOperation({ -$0 }, {"-(" + $0 + ")"}),
-        "√" : Operation.unaryOperation(sqrt, {"√(" + $0 + ")"}),
-        "sin" : Operation.unaryOperation(sin, {"sin(" + $0 + ")"}),
-        "cos" : Operation.unaryOperation(cos, {"cos(" + $0 + ")"}),
-        "tan" : Operation.unaryOperation(tan, {"tan(" + $0 + ")"}),
-        "+" : Operation.binaryOperation(+, { $0 + " + " + $1 }),
-        "-" : Operation.binaryOperation(-, { $0 + " - " + $1 }),
-        "x" : Operation.binaryOperation(*, { $0 + " x " + $1 }),
-        "÷" : Operation.binaryOperation(/, { $0 + " ÷ " + $1 }),
+        "±" : Operation.unaryOperation({ -$0 }, {"-(" + $0 + ")"}, nil),
+        "√" : Operation.unaryOperation(sqrt, {"√(" + $0 + ")"}, nil),
+        "sin" : Operation.unaryOperation(sin, {"sin(" + $0 + ")"}, nil),
+        "cos" : Operation.unaryOperation(cos, {"cos(" + $0 + ")"}, nil),
+        "tan" : Operation.unaryOperation(tan, {"tan(" + $0 + ")"}, nil),
+        "+" : Operation.binaryOperation(+, { $0 + " + " + $1 }, nil),
+        "-" : Operation.binaryOperation(-, { $0 + " - " + $1 }, nil),
+        "x" : Operation.binaryOperation(*, { $0 + " x " + $1 }, nil),
+        "÷" : Operation.binaryOperation(/, { $0 + " ÷ " + $1 },
+                                         nil),//TODO
         "=" : Operation.equals,
         "rand" : Operation.emptyOperation({ drand48() }, "rand()")
     ]
