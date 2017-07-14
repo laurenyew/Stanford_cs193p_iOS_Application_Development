@@ -47,3 +47,4 @@
 
 
 Assignments created by Paul Hegarty of Stanford University
+Assets from https://pixabay.com/en/photos/apps/
