@@ -169,7 +169,11 @@ struct CalculatorBrain {
                         descriptionAccumulator = descriptionFunction(descriptionAccumulator!)
                     }
                     //Update functionValidator (error message)
-                    error = operationValidator!(accumulator!)
+                    if operationValidator != nil{
+                        error = operationValidator!(accumulator!)
+                    }else{
+                        error = nil
+                    }
                     
                 case .binaryOperation(let function, let descriptionFunction, let operationValidator):
                     executePendingBinaryOperation()
@@ -195,16 +199,23 @@ struct CalculatorBrain {
         //Helper method: if there is a pending binary operation, run it
         func executePendingBinaryOperation(){
             if pending != nil && accumulator != nil{
+                //Check for errors first
+                if let validator =  pending!.operationValidator {
+                    error = validator(pending!.firstOperand, accumulator!)
+                }else{
+                    error = nil
+                }
+                //Then run the operation and get the description
                 accumulator = pending!.binaryFunction(pending!.firstOperand, accumulator!)
                 descriptionAccumulator = pending!.binaryFunctionDescription(pending!.firstOperandDescription, descriptionAccumulator!)
-                error = pending!.operationValidator(pending!.firstOperand, accumulator!)
+                
                 pending = nil
             }
         }
         
         //MARK: Evaluate business logic
         //Check first if the internal program has anything in it
-        guard !(internalProgram.isEmpty) else { return (nil, false, "") }
+        guard !(internalProgram.isEmpty) else { return (nil, false, "", nil) }
         //Setup the values
         pending = nil
         descriptionAccumulator = ""

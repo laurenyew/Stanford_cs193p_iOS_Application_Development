@@ -58,13 +58,13 @@ class ViewController: UIViewController {
     }
     
     //DisplayResult (handles updating the UI labels
-    fileprivate var displayResult: (result: Double?, isPending: Bool, description: String) = (nil, false, "") {
+    fileprivate var displayResult: (result: Double?, isPending: Bool, description: String, error: String?) = (nil, false, "", nil) {
         
         //After displayResult is set, update the UI labels
         didSet {
             switch(displayResult){
-                case (nil, _, nil): displayValue = 0
-                case (let result, _, _ ): displayValue = result
+                case (nil, _, nil, _): displayValue = 0
+                case (let result, _, _ , _): displayValue = result
             }
             history.text = displayResult.description != " " ? displayResult.description + (displayResult.isPending ? "..." : " = ") : " "
         }

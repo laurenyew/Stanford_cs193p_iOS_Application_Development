@@ -130,7 +130,7 @@ class CalculatorTests: XCTestCase {
         brain.performOperation("π")
         brain.performOperation("=")
         brainResult = brain.evaluate()
-        XCTAssertEqual(brainResult.result, (4 * M_PI))
+        XCTAssertEqual(brainResult.result, (4 * Double.pi))
         XCTAssertFalse(brainResult.isPending)
         XCTAssertEqual(brainResult.description, "4 x π")
         
@@ -179,6 +179,36 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual(brainResult.result, 18.0)
         XCTAssertEqual(7, variableDict["M"])
         XCTAssertEqual(brainResult.description, "√(9 + M) + 14")
+    }
+    
+    //Test error cases
+    func testCalculatorBrainErrorCases(){
+        brain.clear()
+        //Valid operation
+        brain.setOperand(1.0)
+        brain.performOperation("+")
+        brain.setOperand(2.0)
+        brain.performOperation("=")
+        let brainResult = brain.evaluate()
+        
+        XCTAssertNotNil(brainResult)
+        XCTAssertEqual(3.0, brainResult.result)
+        XCTAssertEqual(false, brainResult.isPending)
+        XCTAssertEqual(nil, brainResult.error)
+        
+        brain.clear()
+        //Divide by zero
+        brain.setOperand(1.0)
+        brain.performOperation("÷")
+        brain.setOperand(0.0)
+        brain.performOperation("=")
+        let errorBrainResult = brain.evaluate()
+        
+        XCTAssertNotNil(errorBrainResult)
+        XCTAssertEqual(Double.infinity, errorBrainResult.result)
+        XCTAssertEqual(false, errorBrainResult.isPending)
+        XCTAssertEqual("Error: Divide by Zero", errorBrainResult.error)
+        
     }
     
 }
