@@ -66,7 +66,16 @@ class ViewController: UIViewController {
                 case (nil, _, nil, _): displayValue = 0
                 case (let result, _, _ , _): displayValue = result
             }
-            history.text = displayResult.description != " " ? displayResult.description + (displayResult.isPending ? "..." : " = ") : " "
+            
+            let historyText = displayResult.description != " " ? displayResult.description + (displayResult.isPending ? "..." : " = ") : " "
+            
+            //Include error text with history
+            if let errorText = displayResult.error {
+                history.text = historyText + " " + errorText
+            }else{
+                history.text = historyText
+            }
+            
         }
     }
     

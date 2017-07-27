@@ -82,6 +82,23 @@ class CalculatorUITests: XCTestCase {
         XCTAssert(app.staticTexts["M = "].exists)
         XCTAssert(app.staticTexts["√(9 + M) = "].exists)
     }
+    
+    //Test error messages
+    func testErrorMessage(){
+        let app = XCUIApplication()
+        let buttons = app.buttons
+        
+        //Exercise divide by zero
+        buttons["1"].tap()
+        buttons["÷"].tap()
+        buttons["0"].tap()
+        buttons["="].tap()
+
+        //Verify
+        XCTAssert(app.staticTexts["+∞"].exists)
+        XCTAssert(app.staticTexts["M = "].exists)
+        XCTAssert(app.staticTexts["1 ÷ 0 = Error: Divide By Zero"].exists)
+    }
 
     
 }
