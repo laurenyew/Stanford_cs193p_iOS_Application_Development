@@ -17,11 +17,15 @@
 - [x] 1.2 Extra: Change displayValue to be an optional double
 - [x] 1.3 Extra: Use NSNumberFormatter to format the display for 6 digits only
 - [x] 1.4 Extra: Make a button generate random nmber between 0 and 1
-- [ ] 2. Calculator Brain (More Swift, Structs, and Enums) -- WIP
+- [x] 2. Calculator Brain (More Swift, Structs, and Enums) 
+- [x] 2.1 Extra: Calculator brain with error validator
+- [x] 2.2 Extra: Add app icons
+- [x] 2.3 Extra: Create a launch screen
+- [ ] 3. Graphing Calculator
 
 **Reading**
 - [x] 1. Reading Assignment 1: Intro to Swift
-- [ ] 2. Reading Assignment 2: More Swift
+- [ ] 2. Reading Assignment 2: More Swift -- WIP
 - [ ] 3. Reading Assignment 3: The Rest of Swift
 
 #### Fall 2014 iOS7 Objective C (All Assignments + Bonus)

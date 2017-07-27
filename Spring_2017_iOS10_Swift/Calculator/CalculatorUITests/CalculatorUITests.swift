@@ -97,7 +97,7 @@ class CalculatorUITests: XCTestCase {
         //Verify
         XCTAssert(app.staticTexts["+∞"].exists)
         XCTAssert(app.staticTexts["M = "].exists)
-        XCTAssert(app.staticTexts["1 ÷ 0 = Error: Divide By Zero"].exists)
+        XCTAssert(app.staticTexts["1 ÷ 0 =  Error: Divide by Zero"].exists)
     }
 
     
