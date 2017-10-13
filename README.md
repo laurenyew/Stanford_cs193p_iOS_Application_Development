@@ -9,7 +9,8 @@
 - [x] 1. Course OVerview and Introduction to iOS 9, XCode, and Swift
 - [x] 2. Applying MVC
 - [x] 3. More Swift and Foundation Framework
-- [ ] 4. Views -- WIP
+- [x] 4. Views 
+- [ ] 5. Gestures and MVP -- WIP
 
 **Assignments**
 - [x] 1. Calculator (Intro to Swift and MVC)
@@ -21,7 +22,7 @@
 - [x] 2.1 Extra: Calculator brain with error validator
 - [x] 2.2 Extra: Add app icons
 - [x] 2.3 Extra: Create a launch screen
-- [ ] 3. Graphing Calculator
+- [ ] 3. Graphing Calculator -- WIP
 
 **Reading**
 - [x] 1. Reading Assignment 1: Intro to Swift
