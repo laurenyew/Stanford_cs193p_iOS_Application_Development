@@ -4,14 +4,14 @@
 //
 //  Created by laurenyew on 7/23/16.
 //  Copyright © 2016 CS193p. All rights reserved.
-//TODO: 
-//-Fix description / history
-//-Add unit tests
-//-Add ui tests
+//
+// -Fix description / history
+// -Add unit tests
+// -Add ui tests
 //
 import UIKit
 
-class ViewController: UIViewController {
+class CalculatorViewController: UIViewController {
     
     fileprivate struct Constants{
         static let NumDecimalDigits = 6
