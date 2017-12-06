@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C7G-P6-GE5">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Calculator Graph View Controller-->
+        <scene sceneID="CuW-RB-KUU">
+            <objects>
+                <viewController id="C7G-P6-GE5" customClass="CalculatorGraphViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dAg-60-OIO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lPJ-qj-leo">
+                                <rect key="frame" x="375" y="0.0" width="0.0" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vB0-bP-V3E" firstAttribute="top" secondItem="lPJ-qj-leo" secondAttribute="bottom" id="80K-yi-YsY"/>
+                            <constraint firstItem="lPJ-qj-leo" firstAttribute="top" secondItem="dAg-60-OIO" secondAttribute="top" id="eh9-jk-Hco"/>
+                            <constraint firstAttribute="trailing" secondItem="lPJ-qj-leo" secondAttribute="trailing" id="hJT-0U-hyY"/>
+                            <constraint firstItem="lPJ-qj-leo" firstAttribute="leading" secondItem="vB0-bP-V3E" secondAttribute="trailing" id="s1f-jF-5gM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vB0-bP-V3E"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ae0-xh-Zht" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="144.80000000000001" y="140.77961019490255"/>
+        </scene>
+    </scenes>
+</document>
