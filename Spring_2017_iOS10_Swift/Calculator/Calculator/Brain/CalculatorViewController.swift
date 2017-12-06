@@ -150,9 +150,9 @@ class CalculatorViewController: UIViewController {
     fileprivate func performBackSpace(){
         if displayValue != 0.0{
             var displayText = display.text!
-            if displayText.characters.count != 1{
+            if displayText.count != 1{
                 let endIndex = displayText.index(displayText.endIndex, offsetBy: -1)
-                displayText = displayText.substring(to: endIndex)
+                displayText = String(displayText[..<endIndex])
             }else{
                 displayText = "0"
             }
