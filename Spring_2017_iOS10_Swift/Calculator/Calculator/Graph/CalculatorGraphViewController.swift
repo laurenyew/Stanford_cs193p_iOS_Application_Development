@@ -15,9 +15,9 @@ class CalculatorGraphViewController: UIViewController{
     
     //TODO: setup graph on load
     //TODO: setup storyboard to show graph on load
-//    override func viewDidLoad() {
-//        
-//    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     
     

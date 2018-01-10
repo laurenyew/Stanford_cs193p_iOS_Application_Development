@@ -22,6 +22,7 @@ class CalculatorGraphView: UIView
     var lineWidth: CGFloat = 5.0
     @IBInspectable
     var color: UIColor = UIColor.blue
+    
     // Private Implementation
     private struct Ratios {
         static let skullRadiusToEyeOffset: CGFloat = 3
@@ -40,6 +41,7 @@ class CalculatorGraphView: UIView
     private enum Eye {
         case left
         case right }
+    
     private func pathForEye(_ eye: Eye) -> UIBezierPath
     {
         func centerOfEye(_ eye: Eye) -> CGPoint {
@@ -67,6 +69,7 @@ class CalculatorGraphView: UIView
         }
         path.lineWidth = lineWidth
         return path }
+    
     private func pathForMouth() -> UIBezierPath
     {
         let mouthWidth = skullRadius / Ratios.skullRadiusToMouthWidth
@@ -89,6 +92,7 @@ class CalculatorGraphView: UIView
         path.lineWidth = lineWidth
         return path
     }
+    
     private func pathForSkull() -> UIBezierPath {
         let path = UIBezierPath(
             arcCenter: skullCenter,
@@ -100,20 +104,20 @@ class CalculatorGraphView: UIView
         path.lineWidth = lineWidth
         return path
     }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        color.set()
-        pathForSkull().stroke()
-        pathForEye(.left).stroke()
-        pathForEye(.right).stroke()
-        pathForMouth().stroke()
+        drawGraph()
     }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        color.set()
-        pathForSkull().stroke()
-        pathForEye(.left).stroke()
-        pathForEye(.right).stroke()
-        pathForMouth().stroke()
+        drawGraph()
+    }
+    
+    func drawGraph(){
+        color.setFill()
+        
+        //TODO: Getting errors trying to draw here. Can't seem to put anything on the screen.
     }
 }
