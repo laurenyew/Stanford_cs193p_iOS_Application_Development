@@ -17,35 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lPJ-qj-leo" customClass="CalculatorGraphView" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="lPJ-qj-leo" customClass="CalculatorGraphView" customModule="Calculator" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="mouthCurvature">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="scale">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="eyesOpen" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hi There" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzN-0E-tgE">
-                                <rect key="frame" x="16" y="20" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lPJ-qj-leo" firstAttribute="bottom" secondItem="vB0-bP-V3E" secondAttribute="bottom" id="6yu-hG-NDH"/>
+                            <constraint firstItem="lPJ-qj-leo" firstAttribute="top" secondItem="dAg-60-OIO" secondAttribute="top" id="PzX-5Z-9th"/>
+                            <constraint firstItem="lPJ-qj-leo" firstAttribute="leading" secondItem="dAg-60-OIO" secondAttribute="leading" id="khJ-Ff-JEb"/>
+                            <constraint firstAttribute="trailing" secondItem="lPJ-qj-leo" secondAttribute="trailing" id="yc1-gs-G0e"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vB0-bP-V3E"/>
                     </view>
                 </viewController>
