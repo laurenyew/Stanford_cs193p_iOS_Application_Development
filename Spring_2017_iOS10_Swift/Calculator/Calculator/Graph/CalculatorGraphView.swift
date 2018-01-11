@@ -12,6 +12,9 @@ import UIKit
 class CalculatorGraphView: UIView
 {
     @IBInspectable
+    var color: UIColor = UIColor.blue
+    
+    @IBInspectable
     var scale: CGFloat = 0.9
     
     @IBInspectable
@@ -88,8 +91,7 @@ class CalculatorGraphView: UIView
     }
         
     override func draw(_ rect: CGRect) {
-    
-        UIColor.blue.setStroke()
+        color.setStroke()
         pathForSkull().stroke()
         pathForEye(.left).stroke()
         pathForEye(.right).stroke()
