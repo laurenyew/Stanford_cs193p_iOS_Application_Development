@@ -4,14 +4,14 @@
 //
 //  Created by laurenyew on 7/23/16.
 //  Copyright © 2016 CS193p. All rights reserved.
-//TODO: 
-//-Fix description / history
-//-Add unit tests
-//-Add ui tests
+//
+// -Fix description / history
+// -Add unit tests
+// -Add ui tests
 //
 import UIKit
 
-class ViewController: UIViewController {
+class CalculatorViewController: UIViewController {
     
     fileprivate struct Constants{
         static let NumDecimalDigits = 6
@@ -150,9 +150,9 @@ class ViewController: UIViewController {
     fileprivate func performBackSpace(){
         if displayValue != 0.0{
             var displayText = display.text!
-            if displayText.characters.count != 1{
+            if displayText.count != 1{
                 let endIndex = displayText.index(displayText.endIndex, offsetBy: -1)
-                displayText = displayText.substring(to: endIndex)
+                displayText = String(displayText[..<endIndex])
             }else{
                 displayText = "0"
             }
