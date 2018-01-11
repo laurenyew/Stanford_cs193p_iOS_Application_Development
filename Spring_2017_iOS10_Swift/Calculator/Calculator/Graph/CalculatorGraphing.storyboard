@@ -45,6 +45,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vB0-bP-V3E"/>
                     </view>
+                    <connections>
+                        <outlet property="graphView" destination="lPJ-qj-leo" id="G9h-bf-WXw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ae0-xh-Zht" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

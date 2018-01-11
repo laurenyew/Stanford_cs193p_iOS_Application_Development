@@ -10,7 +10,8 @@
 - [x] 2. Applying MVC
 - [x] 3. More Swift and Foundation Framework
 - [x] 4. Views / Drawing
-- [ ] 5. Gestures and MVP -- WIP
+- [x] 5. Gestures and MVP
+- [ ] 6. Multiple MVCs
 
 **Assignments**
 - [x] 1. Calculator (Intro to Swift and MVC)
