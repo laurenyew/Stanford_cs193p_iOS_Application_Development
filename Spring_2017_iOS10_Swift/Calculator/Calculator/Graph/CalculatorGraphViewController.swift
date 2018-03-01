@@ -18,6 +18,7 @@ class CalculatorGraphViewController: UIViewController{
         }
     }
     
+    @IBOutlet weak var graphLabel: UILabel!
     //TODO: setup graph on load
     //TODO: setup storyboard to show graph on load
     private func updateUI(){
