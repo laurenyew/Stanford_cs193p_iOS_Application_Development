@@ -5,6 +5,8 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Baseline standard spacing" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,31 +23,35 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="scale">
-                                        <real key="value" value="0.90000000000000002"/>
+                                        <real key="value" value="40"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="mouthCurvature">
-                                        <real key="value" value="1"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="axesColor">
+                                        <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sin(x)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5r-WX-DRg">
+                                <rect key="frame" x="8" y="638.5" width="375" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lPJ-qj-leo" firstAttribute="bottom" secondItem="vB0-bP-V3E" secondAttribute="bottom" id="6yu-hG-NDH"/>
+                            <constraint firstItem="lPJ-qj-leo" firstAttribute="baseline" secondItem="d5r-WX-DRg" secondAttribute="firstBaseline" constant="12.5" symbolType="layoutAnchor" id="Lm4-Tw-41Y"/>
                             <constraint firstItem="lPJ-qj-leo" firstAttribute="top" secondItem="dAg-60-OIO" secondAttribute="top" id="PzX-5Z-9th"/>
                             <constraint firstItem="lPJ-qj-leo" firstAttribute="leading" secondItem="dAg-60-OIO" secondAttribute="leading" id="khJ-Ff-JEb"/>
-                            <constraint firstAttribute="trailing" secondItem="lPJ-qj-leo" secondAttribute="trailing" id="yc1-gs-G0e"/>
+                            <constraint firstItem="d5r-WX-DRg" firstAttribute="width" secondItem="vB0-bP-V3E" secondAttribute="width" id="t6a-gN-vcb"/>
+                            <constraint firstItem="d5r-WX-DRg" firstAttribute="leading" secondItem="vB0-bP-V3E" secondAttribute="leading" constant="8" id="tNc-YU-acH"/>
+                            <constraint firstItem="lPJ-qj-leo" firstAttribute="width" secondItem="vB0-bP-V3E" secondAttribute="width" id="vF1-Va-jNM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vB0-bP-V3E"/>
                     </view>
                     <connections>
+                        <outlet property="graphLabel" destination="d5r-WX-DRg" id="mKK-UA-A9r"/>
                         <outlet property="graphView" destination="lPJ-qj-leo" id="G9h-bf-WXw"/>
                     </connections>
                 </viewController>

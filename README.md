@@ -23,7 +23,7 @@
 - [x] 2.1 Extra: Calculator brain with error validator
 - [x] 2.2 Extra: Add app icons
 - [x] 2.3 Extra: Create a launch screen
-- [ ] 3. Graphing Calculator -- WIP Drawing
+- [ ] 3. Graphing Calculator -- Got Axis, WIP Drawing Function
 
 **Reading**
 - [x] 1. Reading Assignment 1: Intro to Swift
