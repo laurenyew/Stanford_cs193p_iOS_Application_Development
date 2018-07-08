@@ -4,7 +4,32 @@
 
 **Stanford iTunesU Objective C iOS7, Swift iOS10/iOS11** (2014-2018). Making progress through Stanford coursework for developing iOS apps. Working through Swift course to concentrate on new iOS11 + xCode9 technology. Will complete Objective C course after. Plans to create a proof of concept app.
 
-####  Spring 2017 iOS Swift (All Assignments + Bonus)
+#### Fall 2017 iOS Swift (All Assignments)
+https://itunes.apple.com/us/podcast/developing-ios-11-apps-with-swift/id1315130780?mt=2
+**Lectures**
+- [ ] 1-4. Intro + Swift
+- [ ] 5. Drawing
+- [ ] 6. Multitouch
+- [ ] 7. Multiple MVCs, Timer, Animation
+- [ ] 8. Animation
+- [ ] 9. View Controller LifeCycle + ScrollView
+- [ ] 10. Multithreading + Autolayout
+- [ ] 11-12. Drag & Drop, TableView, CollectionView
+- [ ] 13-14. Persistance + Documents
+- [ ] 15. Alerts, Notifications, App Lifecycle
+- [ ] 16. Segues
+- [ ] 17. Core Motion + Camera 
+
+**Assignments**
+- [ ] 1. Concentration
+- [ ] 2. Set
+- [ ] 3. Graphical Set
+- [ ] 4. Animated Set
+- [ ] 5. Image Gallery
+- [ ] 6. Persistant Image Gallery 
+
+####  Spring 2017 iOS Swift (All Assignments + Bonus) 
+(No longer available online)
 **Lectures**
 - [x] 1. Course OVerview and Introduction to iOS 9, XCode, and Swift
 - [x] 2. Applying MVC
@@ -14,6 +39,7 @@
 - [ ] 6. Multiple MVCs
 
 **Assignments**
+(No longer available online)
 - [x] 1. Calculator (Intro to Swift and MVC)
 - [x] 1.1 Extra: Backspace button
 - [x] 1.2 Extra: Change displayValue to be an optional double
